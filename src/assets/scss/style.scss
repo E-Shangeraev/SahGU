@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
+@import './variables.scss';
+@import './mixins.scss';
+@import './globals.scss';
+
+// ==== Библиотеки ====
+@import '~normalize-css/normalize.css';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+// ==== Блоки ====
+@import './blocks/header.scss';
+@import './blocks/promo.scss';
+@import './blocks/news.scss';
+@import './blocks/bage.scss';
+@import './blocks/your-beginning.scss';
+@import './blocks/features.scss';
+@import './blocks/areas.scss';
+
+// ==== Компоненты ====
+@import './components/Button.scss';
+@import './components/Switch.scss';
+@import './components/Checkbox.scss';

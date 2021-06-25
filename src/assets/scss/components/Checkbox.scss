@@ -1,0 +1,27 @@
+.checkbox {
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-gap: 50px;
+  width: 90%;
+}
+.checkbox__input {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label {
+  opacity: 0.7;
+}
+.checkbox__label {
+  display: block;
+  padding: 20px 0;
+  @include text;
+  text-align: center;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #fff;
+  background-color: $purple;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: ease 0.25s;
+}

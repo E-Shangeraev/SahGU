@@ -1,0 +1,28 @@
+.areas__title {
+  text-align: center;
+
+  span {
+    color: $purple;
+  }
+}
+.areas__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.areas__text {
+  // max-width: 1120px;
+  max-width: 80%;
+  margin-bottom: 64px;
+}
+.areas__filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.areas__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 48px;
+}

@@ -1,0 +1,23 @@
+.your-beginning__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 48px;
+
+  .title,
+  .big-text,
+  .button {
+    grid-column-start: 2;
+    height: fit-content;
+  }
+  .button {
+    width: 60%;
+  }
+}
+.your-beginning__image {
+  grid-row: 1 / 4;
+  height: 100%;
+  object-fit: cover;
+}
+.your-beginning__title span {
+  color: $yellow;
+}

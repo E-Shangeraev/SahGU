@@ -1,0 +1,29 @@
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 30px;
+  width: 600px;
+  border: 1px solid $purple;
+  border-radius: 10px;
+}
+.switch__radio {
+  display: none;
+}
+.switch__radio:checked + .switch__label {
+  color: #fff;
+  background-color: $purple;
+}
+.switch__label {
+  padding: 10px 42px;
+  @include text;
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease 0.25s;
+}
