@@ -1,20 +1,31 @@
-import React from 'react'
-import { Parallax } from 'react-parallax'
-import Button from './components/Button'
-import Switch from './components/Switch'
-import Checkbox from './components/Checkbox'
+import React from 'react';
+import { Parallax } from 'react-parallax';
+import { v4 as uuidv4 } from 'uuid';
 
-import logo from './logo.png'
-import promo1 from './assets/img/promo-1.png'
-import promo2 from './assets/img/promo-2.png'
-import arrow from './assets/img/icons/arrow.svg'
-import newsBig from './assets/img/news-big.jpg'
-import news1 from './assets/img/news-1.jpg'
-import news2 from './assets/img/news-2.jpg'
-import yourBeginning from './assets/img/your-beginning.png'
-import features1 from './assets/img/features-1.png'
-import features2 from './assets/img/features-2.png'
-import Area from './components/Area'
+import Button from './components/Button';
+import Switch from './components/Switch';
+import Checkbox from './components/Checkbox';
+import Area from './components/Area';
+import Feedback from './components/Feedback';
+import DocumentsWay from './components/DocumentsWay';
+
+import logo from './logo.png';
+import promo1 from './assets/img/promo-1.png';
+import promo2 from './assets/img/promo-2.png';
+import arrow from './assets/img/icons/arrow.svg';
+import newsBig from './assets/img/news-big.jpg';
+import news1 from './assets/img/news-1.jpg';
+import news2 from './assets/img/news-2.jpg';
+import yourBeginning from './assets/img/your-beginning.png';
+import features1 from './assets/img/features-1.png';
+import features2 from './assets/img/features-2.png';
+import gosuslugi from './assets/img/icons/gosusllugi.png';
+import post from './assets/img/icons/post.png';
+import handshake from './assets/img/icons/handshake.png';
+import mail from './assets/img/icons/mail.png';
+import uniqueness1 from './assets/img/uniqueness-1.png';
+import uniqueness2 from './assets/img/uniqueness-2.png';
+import uniqueness3 from './assets/img/uniqueness-3.png';
 
 const areas = [
   {
@@ -32,7 +43,7 @@ const areas = [
     twoDiplomas: false,
     count: [18, 12, 233],
   },
-]
+];
 
 function App() {
   return (
@@ -256,21 +267,133 @@ function App() {
                   ]}
                 />
               </form>
-              {/* <ul className="areas__list">
-                {areas.map(item => (
+              <ul className="areas__list">
+                {areas.map((item) => (
                   <Area
+                    key={uuidv4()}
                     name={item.name}
                     twoDiplomas={item.twoDiplomas}
                     count={item.count}
                   />
                 ))}
-              </ul> */}
+              </ul>
+            </div>
+          </div>
+        </section>
+        <Feedback
+          title="Не можете определиться?"
+          text="Оставьте свой номер и мы поможем вам с выборм!"
+        />
+        <section className="documents">
+          <div className="wrapper">
+            <h2 className="title document__title">
+              Способы <span>подачи</span> документов
+            </h2>
+            <ul className="documents__ways">
+              <DocumentsWay
+                name="Через  личный кабинет на Госуслугах"
+                img={gosuslugi}
+              />
+              <DocumentsWay name="Почтой России" img={post} />
+              <DocumentsWay name="Лично" img={handshake} />
+              <DocumentsWay name="По электронной почте" img={mail} />
+            </ul>
+          </div>
+        </section>
+        <section className="uniqueness">
+          <div className="wrapper">
+            <h2 className="title uniqueness__title">
+              <span>Уникальность</span> СахГУ
+            </h2>
+            <img src={uniqueness1} alt="Фото студентов" />
+            <div className="uniqueness__container">
+              <div>
+                <h3 className="subtitle">Stud Life</h3>
+                <p className="text uniqueness__text">
+                  Университет — это точка для развития и притяжения островной
+                  молодежи.
+                  <br />
+                  <br />
+                  Здесь, на Сахалине, создана мощная система студенческого
+                  самоуправления и волонтерского движения. Любой студент
+                  университета, который готов предложить проект, может быть
+                  уверен в том, что он найдет поддержку, а также у него появится
+                  возможность реализовать свою идею.
+                  <br />
+                  <br />
+                  СахГУ это не только учеба, студенты университета могут
+                  попробовать свои силы в спорте, творчестве, социально-значимых
+                  проектах, проявить свои лидерские и организаторские
+                  способности. С этой целью в университете создано множество
+                  секций, кружков и объединений.
+                </p>
+              </div>
+              <div>
+                <h3 className="subtitle">Большая стипендия — это возможно!</h3>
+                <p className="text uniqueness__text">
+                  Для студента важно обеспечить себя во время учебы в
+                  университете.
+                  <br />
+                  <br />
+                  СахГУ дает такую возможность своим студентам, поэтому средний
+                  размер стипендии <b>превышает в 5 раз</b> стипендии в Москве и
+                  Санкт-Петербурге.
+                  <br />
+                  <br />
+                  Государственная повышенная стипендия, которую получают
+                  студенты СахГУ за активное участие в жизни вуза, высокую
+                  успеваемость, достижения в научной, общественной, спортивной
+                  или культурно-творческой деятельности достигает{' '}
+                  <b>20 000 ₽</b> в месяц.
+                  <br />
+                  <br />
+                  Помимо этого, студенты могут получать социальные, именные и
+                  другие стипендии.
+                </p>
+              </div>
+            </div>
+            <div className="uniqueness__container">
+              <div>
+                <img src={uniqueness2} alt="Фото студентов" />
+                <h3 className="subtitle">
+                  Международные
+                  <br /> программы по обмену
+                </h3>
+                <p className="text uniqueness__text">
+                  Более 25 лет развиваются отношения СахГУ с университетами
+                  Японии, Южной Кореи, Китая. Каждый семестр выделяются лучшие
+                  студенты для участия в программах по обмену. У каждого
+                  студента есть шанс получить опыт в ведущих вузах мира
+                </p>
+              </div>
+              <div>
+                <img src={uniqueness3} alt="Фото студентов" />
+                <h3 className="subtitle">Два диплома</h3>
+                <p className="text uniqueness__text">
+                  Программа «Два диплома» — это совместный образовательный
+                  проект СахГУ и крупных российских вузов.
+                  <br />
+                  <br />
+                  Студенты, участвующие в программе, помимо диплома островного
+                  вуза получают второй диплом, который дает возможность
+                  заниматься дополнительной деятельностью в рамках полученного
+                  образования.
+                  <br />
+                  <br />
+                  Программа реализуется согласно государственными требованиям и
+                  стандартам.
+                  <br />
+                  <br />
+                  Для участия необходимо поступить в СахГУ на бюджетную основу и
+                  выбрать один из предложенных профилей вуза-партнера.
+                </p>
+              </div>
             </div>
           </div>
         </section>
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Button from './Button'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from './Button';
 
 const Area = ({ name, twoDiplomas, count }) => (
   <li className="area">
@@ -22,12 +22,12 @@ const Area = ({ name, twoDiplomas, count }) => (
     </ul>
     <Button color="yellow">Подробнее</Button>
   </li>
-)
+);
 
 Area.propTypes = {
   name: PropTypes.string.isRequired,
   twoDiplomas: PropTypes.bool.isRequired,
-  count: PropTypes.arrayOf(PropTypes.string).isRequired,
-}
+  count: PropTypes.arrayOf(PropTypes.number).isRequired,
+};
 
-export default Area
+export default Area;

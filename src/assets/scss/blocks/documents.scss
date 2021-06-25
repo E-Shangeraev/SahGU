@@ -1,0 +1,10 @@
+.documents__ways {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 48px;
+}
+.document__title {
+  span {
+    color: $yellow;
+  }
+}

@@ -1,0 +1,73 @@
+.feedback__form {
+  padding: 80px 60px;
+  margin: 0 auto;
+  max-width: 1300px;
+  border-radius: 24px;
+  background-color: $purple;
+  background-image: url('../../img/feedback-phone.png');
+  // background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 20% 180px;
+}
+.feedback__container {
+  display: flex;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+}
+.feedback__left {
+  margin-right: 30px;
+
+  * {
+    color: #fff;
+  }
+  p {
+    @include big-text;
+  }
+}
+.feedback__phone {
+  font-weight: bold;
+}
+.feedback__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & > input,
+  textarea,
+  button {
+    margin-bottom: 40px;
+  }
+  label {
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0.02em;
+    color: #fff;
+  }
+  input,
+  textarea {
+    padding: 15px 20px;
+    border: 1px solid rgba(59, 59, 59, 0.3);
+    border-radius: 10px;
+  }
+}
+.feedback__agreement {
+  display: flex;
+
+  input {
+    margin-top: 4px;
+  }
+  label {
+    width: 60%;
+    margin-left: 10px;
+    @include text;
+
+    span {
+      text-decoration: underline;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.uniqueness img {
+  width: 100%;
+}
+.uniqueness__title {
+  text-align: center;
+
+  span {
+    color: $purple;
+  }
+}
+.uniqueness__container {
+  display: flex;
+
+  & > div:first-of-type {
+    margin-right: 50px;
+  }
+  & > div {
+    width: 50%;
+  }
+}
+.uniqueness__text {
+  b {
+    font-weight: bold;
+  }
+}
