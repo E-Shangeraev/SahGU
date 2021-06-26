@@ -1,0 +1,30 @@
+.parting-words__container {
+  display: flex;
+
+  img {
+    margin-right: 50px;
+    width: 50%;
+    object-fit: cover;
+  }
+  blockquote {
+    margin: 0;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+.parting-words__title {
+  margin-bottom: 48px;
+
+  span {
+    color: $purple;
+  }
+}
+.parting-words__name {
+  @include h3;
+
+  & + small {
+    display: block;
+    margin-bottom: 25px;
+    @include text;
+  }
+}

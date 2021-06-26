@@ -1,0 +1,14 @@
+.graduates__title {
+  span {
+    color: $purple;
+  }
+}
+.graduates__container {
+  display: flex;
+
+  & > div:first-child {
+    margin-right: 50px;
+    // width: 55%;
+    // flex-shrink: 0;
+  }
+}

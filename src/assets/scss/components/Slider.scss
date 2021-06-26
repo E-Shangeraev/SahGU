@@ -1,0 +1,60 @@
+.slider {
+  position: relative;
+  max-width: 40%;
+  flex: 1 0 auto;
+}
+.slider__buttons {
+  position: absolute;
+  bottom: 0;
+  right: 105%;
+  display: flex;
+
+  button {
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  button:first-of-type {
+    margin-right: 20px;
+    background-image: url('../../img/icons/arrow-left.svg');
+  }
+  button:last-of-type {
+    background-image: url('../../img/icons/arrow-right.svg');
+  }
+}
+.slide {
+  padding: 40px;
+  border-radius: 24px;
+  background-color: $gray-3;
+
+  blockquote {
+    margin: 0;
+    @include text;
+    white-space: normal;
+  }
+}
+.slide__top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+
+  img {
+    margin-right: 15px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
+  p {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.slide__name {
+  @include h4;
+
+  & + span {
+    font-size: 14px;
+  }
+}

@@ -8,11 +8,12 @@ import Checkbox from './components/Checkbox';
 import Area from './components/Area';
 import Feedback from './components/Feedback';
 import DocumentsWay from './components/DocumentsWay';
+import Slider from './components/Slider';
 
 import logo from './logo.png';
 import promo1 from './assets/img/promo-1.png';
 import promo2 from './assets/img/promo-2.png';
-import arrow from './assets/img/icons/arrow.svg';
+import arrowRight from './assets/img/icons/arrow-right.svg';
 import newsBig from './assets/img/news-big.jpg';
 import news1 from './assets/img/news-1.jpg';
 import news2 from './assets/img/news-2.jpg';
@@ -26,6 +27,15 @@ import mail from './assets/img/icons/mail.png';
 import uniqueness1 from './assets/img/uniqueness-1.png';
 import uniqueness2 from './assets/img/uniqueness-2.png';
 import uniqueness3 from './assets/img/uniqueness-3.png';
+import partingWords from './assets/img/parting-words.png';
+import contacts from './assets/img/contacts.jpg';
+import phone from './assets/img/icons/phone.svg';
+import letter from './assets/img/icons/letter.svg';
+import world from './assets/img/icons/world.svg';
+import mark from './assets/img/icons/mark.svg';
+import logoFooter from './assets/img/logo-footer.png';
+import instagram from './assets/img/icons/instagram.svg';
+import vk from './assets/img/icons/vk.svg';
 
 const areas = [
   {
@@ -111,7 +121,7 @@ function App() {
               <h2 className="title">Новости</h2>
               <Button outlined>
                 <span>Все новости</span>
-                <object data={arrow} type="image/svg+xml">
+                <object data={arrowRight} type="image/svg+xml">
                   Ваш браузер не поддерживает SVG
                 </object>
               </Button>
@@ -305,7 +315,11 @@ function App() {
             <h2 className="title uniqueness__title">
               <span>Уникальность</span> СахГУ
             </h2>
-            <img src={uniqueness1} alt="Фото студентов" />
+            <img
+              className="uniqueness__big-image"
+              src={uniqueness1}
+              alt="Фото студентов"
+            />
             <div className="uniqueness__container">
               <div>
                 <h3 className="subtitle">Stud Life</h3>
@@ -391,7 +405,165 @@ function App() {
             </div>
           </div>
         </section>
+        <section className="graduates">
+          <div className="wrapper">
+            <div className="graduates__container">
+              <div>
+                <h2 className="title graduates__title">
+                  Наши <span>выпускники</span>
+                </h2>
+                <p className="big-text">
+                  Выпускники СахГУ работают в компаниях нефтегазовой отрасли,
+                  банковских структурах, налоговых органах, на предприятиях и
+                  научно-исследовательских учреждениях, в
+                  государственныхорганах.
+                  <br />
+                  <br />
+                  Ежегодно проводимый мониторинг свидетельствует, что к концу
+                  года выпуска более 86% выпускников трудоустроены. Это один из
+                  лучших результатов в России.
+                </p>
+              </div>
+              <Slider />
+            </div>
+          </div>
+        </section>
+        <section className="parting-words">
+          <div className="wrapper">
+            <div className="parting-words__container">
+              <img
+                src={partingWords}
+                alt="Мария Ганченкова — ио ректора СахГУ"
+              />
+              <div>
+                <h2 className="title parting-words__title">
+                  <span>Слова</span> напутствия
+                </h2>
+                <span className="parting-words__name">Мария Ганченкова</span>
+                <small>ио ректора СахГУ</small>
+                <blockquote>
+                  Дорогие абитуриенты!
+                  <br />
+                  <br />
+                  Перед вами стоит важный выбор профессионального пути во
+                  взрослой жизни. Это решение позволит вам стать успешными и
+                  счастливыми.
+                  <br />
+                  <br />
+                  Наш университет – это место, где каждый имеет возможность
+                  реализовать свой личностный, научный и творческий потенциал.
+                  Это место, где традиционные для классического университета
+                  гуманитарные и естественнонаучные направления и специальности
+                  дополняются техническим образованием, востребованным на
+                  российском рынке труда. Мы ведем активную работу по обмен
+                  студентами и преподавателями с зарубежными вузами, а также
+                  даем возможность получения дипломов двух вузов.
+                  <br />
+                  <br />
+                  Мы делаем всё, чтобы университетское образование стало прочным
+                  фундаментом профессиональных возможностей выпускников. Мы
+                  заинтересованы в том, чтобы каждый выпускник обладал высоким
+                  интеллектом и яркой индивидуальностью.
+                  <br />
+                  <br />
+                  Важнейшим показателем вуза является качество подготовки его
+                  выпускников. Среди наших выпускников – ученые, спортсмены,
+                  руководители крупных предприятий региона.
+                  <br />
+                  <br />
+                  Сахалинский государственный университет открывает перед вами
+                  сотни дорог. Каким бы ни был выбор вашей будущей профессии,
+                  университет даст вам не только образование, но и верных
+                  друзей, надежных наставников, будущих деловых партнеров,
+                  наполнит смыслом и яркими красками студенческие годы.
+                  <br />
+                  <br />
+                  Мы ждем вас в стенах нашего университета.
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </section>
+        <Feedback
+          title="Остались вопросы?"
+          text="Оставьте свой номер и мы проконсультируем вас по любым вопросам,
+          связанным с&nbsp;поступлением"
+        />
+        <section className="contacts">
+          <div className="wrapper">
+            <div className="contacts__container">
+              <h2 className="title contacts__title">Контакты</h2>
+              <img src={contacts} alt="Фотография главного входа СахГУ" />
+              <div>
+                <p className="big-text contacts__text">
+                  Вы можете связаться с приёмной комиссией любым удобным
+                  способом
+                </p>
+                <ul className="contacts__list">
+                  <li>
+                    <img src={phone} alt="Телефон" />
+                    <a href="tel:8 (4242) 45−03−00">8 (4242) 45−03−00</a>
+                  </li>
+                  <li>
+                    <img src={letter} alt="Почта" />
+                    <a href="mailto:pk@sakhgu.ru">pk@sakhgu.ru</a>
+                  </li>
+                  <li>
+                    <img src={world} alt="Официальный сайт" />
+                    <div>
+                      <a href="sakhgu.ru">sakhgu.ru</a>
+                      <a href="sakhgu.ru/abitur/">sakhgu.ru/abitur/</a>
+                    </div>
+                  </li>
+                  <li>
+                    <img src={mark} alt="Адрес" />
+                    <span>
+                      693008, Сахалинская область,
+                      <br />
+                      г. Южно-Сахалинск, Ленина 290, каб. 13
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+      <footer className="footer">
+        <div className="footer__container">
+          <img className="footer__logo" src={logoFooter} alt="Логотип СахГУ" />
+          <div>
+            <nav className="footer__nav">
+              <ul>
+                <li>
+                  <a href="#1">Про СахГУ</a>
+                </li>
+                <li>
+                  <a href="#1">Направления подготовки</a>
+                </li>
+                <li>
+                  <a href="#1">Уникальность СахГУ</a>
+                </li>
+                <li>
+                  <a href="#1">Отзывы выпускников</a>
+                </li>
+                <li>
+                  <a href="#1">Контакты</a>
+                </li>
+              </ul>
+              <div className="footer__socials">
+                <a href="instagram.com">
+                  <img src={instagram} alt="instagram" />
+                </a>
+                <a href="vk.com">
+                  <img src={vk} alt="vk" />
+                </a>
+              </div>
+            </nav>
+            <Button>Согласие на обработку персональных данных</Button>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
