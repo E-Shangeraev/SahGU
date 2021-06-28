@@ -9,7 +9,7 @@ const phoneRegExp =
   // eslint-disable-next-line no-useless-escape
   /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10,11}$/
 
-const Feedback = ({ title, text }) => {
+const Feedback = ({ title, text, formId }) => {
   const validationSchema = yup.object().shape({
     name: yup
       .string()
@@ -78,7 +78,7 @@ const Feedback = ({ title, text }) => {
               }) => (
                 <div className="feedback__right">
                   <label
-                    htmlFor="name"
+                    htmlFor={`name-${formId}`}
                     className={dirty && !errors.name ? 'valid' : null}>
                     {touched.name && errors.name ? (
                       <p className="feedback__error">{errors.name}</p>
@@ -89,14 +89,14 @@ const Feedback = ({ title, text }) => {
                   <input
                     type="name"
                     name="name"
-                    id="name"
+                    id={`name-${formId}`}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.name}
                     placeholder="Иванов Иван Иванович"
                   />
                   <label
-                    htmlFor="phone"
+                    htmlFor={`phone-${formId}`}
                     className={dirty && !errors.phone ? 'valid' : null}>
                     {touched.phone && errors.phone ? (
                       <p className="feedback__error">{errors.phone}</p>
@@ -107,14 +107,14 @@ const Feedback = ({ title, text }) => {
                   <input
                     type="tel"
                     name="phone"
-                    id="phone"
+                    id={`phone-${formId}`}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.phone}
                     placeholder="+7 999 999 99 99"
                   />
                   <label
-                    htmlFor="text"
+                    htmlFor={`text-${formId}`}
                     className={dirty && !errors.text ? 'valid' : null}>
                     {touched.text && errors.text ? (
                       <p className="feedback__error">{errors.text}</p>
@@ -123,7 +123,7 @@ const Feedback = ({ title, text }) => {
                     )}
                   </label>
                   <textarea
-                    id="text"
+                    id={`text-${formId}`}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.text}
@@ -137,9 +137,13 @@ const Feedback = ({ title, text }) => {
                     Отправить
                   </Button>
                   <div className="feedback__agreement">
-                    <Field type="checkbox" id="checkbox" name="agreement" />
+                    <Field
+                      type="checkbox"
+                      id={`checkbox-${formId}`}
+                      name="agreement"
+                    />
                     <label
-                      htmlFor="checkbox"
+                      htmlFor={`checkbox-${formId}`}
                       className={
                         errors.agreement && touched.agreement
                           ? 'feedback__error'
@@ -162,6 +166,7 @@ const Feedback = ({ title, text }) => {
 Feedback.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  formId: PropTypes.string.isRequired,
 }
 
 export default Feedback

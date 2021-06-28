@@ -1,3 +1,9 @@
+.contacts {
+  padding-bottom: 100px;
+  background-image: url('../../img/feedback-3.svg');
+  background-repeat: no-repeat;
+  background-position: 30% 90%;
+}
 .contacts__container {
   display: grid;
   grid-template-columns: minmax(280px, 682px) 1fr;

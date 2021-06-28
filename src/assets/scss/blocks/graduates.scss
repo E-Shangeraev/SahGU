@@ -1,14 +1,38 @@
+.graduates__parallax {
+  overflow: visible !important;
+}
+.graduates__bg {
+  width: auto !important;
+  height: auto !important;
+  z-index: -10;
+}
+.graduates__bg-1 {
+  top: -30% !important;
+  left: 35% !important;
+}
+.graduates__bg-2 {
+  top: 5% !important;
+  left: 70% !important;
+}
+.graduates__bg-3 {
+  top: 90% !important;
+  left: 20% !important;
+}
 .graduates__title {
   span {
     color: $purple;
   }
 }
 .graduates__container {
+  position: relative;
   display: flex;
 
   & > div:first-child {
     margin-right: 50px;
-    // width: 55%;
-    // flex-shrink: 0;
+  }
+  & > div:last-child {
+    position: relative;
+    flex: 1 0 auto;
+    width: 40%;
   }
 }

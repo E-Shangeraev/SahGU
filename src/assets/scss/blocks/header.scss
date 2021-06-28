@@ -5,6 +5,11 @@
   padding: 7px 72px;
   background-color: #fff;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  animation: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
 }
 .header__logo {
   margin-right: 55px;

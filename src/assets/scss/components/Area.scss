@@ -1,14 +1,17 @@
 .area {
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   padding: 30px;
   border: 1px solid #e0e0e0;
   border-radius: 20px;
   background-color: $gray-3;
+  transition: ease 0.25s;
 
   & > *:not(:last-child) {
     margin-bottom: 20px;
+  }
+  &:hover {
+    transform: translateY(-5%);
   }
   .button {
     width: 60%;
