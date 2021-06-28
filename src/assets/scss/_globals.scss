@@ -58,8 +58,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
   box-shadow: 0 0 0 30px white inset !important;
-  -webkit-text-fill-color: white !important;
-  -webkit-padding-start: 0 !important;
+  -webkit-text-fill-color: black !important;
 }
 
 // ==== Общие классы ====
@@ -91,8 +90,6 @@ input:-webkit-autofill:active {
 }
 .big-text {
   @include big-text;
-}
-.subtitle {
 }
 .wrapper {
   padding: 90px 108px;

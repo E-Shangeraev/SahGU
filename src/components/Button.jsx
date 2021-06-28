@@ -1,11 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+/* eslint-disable react/button-has-type */
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
-const Button = ({ outlined, color, children, onClick }) => (
+const Button = ({ outlined, color, type, disabled, children, onClick }) => (
   <button
-    type="button"
+    type={type}
     onClick={onClick}
+    disabled={disabled}
     className={classNames('button', {
       'button--outlined': outlined,
       'button--yellow': color === 'yellow',
@@ -13,20 +15,24 @@ const Button = ({ outlined, color, children, onClick }) => (
     })}>
     {children}
   </button>
-);
+)
 
 Button.propTypes = {
   outlined: PropTypes.bool,
   color: PropTypes.string,
+  type: PropTypes.string,
+  disabled: PropTypes.bool,
   children: PropTypes.node,
   onClick: PropTypes.func,
-};
+}
 
 Button.defaultProps = {
   outlined: false,
   color: null,
+  type: 'button',
+  disabled: false,
   children: null,
   onClick: () => {},
-};
+}
 
-export default Button;
+export default Button
