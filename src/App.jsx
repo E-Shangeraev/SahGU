@@ -1,41 +1,41 @@
-import React from 'react';
-import { Parallax } from 'react-parallax';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react'
+import { Parallax } from 'react-parallax'
+import { v4 as uuidv4 } from 'uuid'
 
-import Button from './components/Button';
-import Switch from './components/Switch';
-import Checkbox from './components/Checkbox';
-import Area from './components/Area';
-import Feedback from './components/Feedback';
-import DocumentsWay from './components/DocumentsWay';
-import Slider from './components/Slider';
+import Button from './components/Button'
+import Switch from './components/Switch'
+import Checkbox from './components/Checkbox'
+import Area from './components/Area'
+import Feedback from './components/Feedback'
+import DocumentsWay from './components/DocumentsWay'
+import Slider from './components/Slider'
 
-import logo from './logo.png';
-import promo1 from './assets/img/promo-1.png';
-import promo2 from './assets/img/promo-2.png';
-import arrowRight from './assets/img/icons/arrow-right.svg';
-import newsBig from './assets/img/news-big.jpg';
-import news1 from './assets/img/news-1.jpg';
-import news2 from './assets/img/news-2.jpg';
-import yourBeginning from './assets/img/your-beginning.png';
-import features1 from './assets/img/features-1.png';
-import features2 from './assets/img/features-2.png';
-import gosuslugi from './assets/img/icons/gosusllugi.png';
-import post from './assets/img/icons/post.png';
-import handshake from './assets/img/icons/handshake.png';
-import mail from './assets/img/icons/mail.png';
-import uniqueness1 from './assets/img/uniqueness-1.png';
-import uniqueness2 from './assets/img/uniqueness-2.png';
-import uniqueness3 from './assets/img/uniqueness-3.png';
-import partingWords from './assets/img/parting-words.png';
-import contacts from './assets/img/contacts.jpg';
-import phone from './assets/img/icons/phone.svg';
-import letter from './assets/img/icons/letter.svg';
-import world from './assets/img/icons/world.svg';
-import mark from './assets/img/icons/mark.svg';
-import logoFooter from './assets/img/logo-footer.png';
-import instagram from './assets/img/icons/instagram.svg';
-import vk from './assets/img/icons/vk.svg';
+import logo from './logo.png'
+import promo1 from './assets/img/promo-1.png'
+import promo2 from './assets/img/promo-2.png'
+import arrowRight from './assets/img/icons/arrow-right.svg'
+import newsBig from './assets/img/news-big.jpg'
+import news1 from './assets/img/news-1.jpg'
+import news2 from './assets/img/news-2.jpg'
+import yourBeginning from './assets/img/your-beginning.png'
+import features1 from './assets/img/features-1.png'
+import features2 from './assets/img/features-2.png'
+import gosuslugi from './assets/img/icons/gosusllugi.png'
+import post from './assets/img/icons/post.png'
+import handshake from './assets/img/icons/handshake.png'
+import mail from './assets/img/icons/mail.png'
+import uniqueness1 from './assets/img/uniqueness-1.png'
+import uniqueness2 from './assets/img/uniqueness-2.png'
+import uniqueness3 from './assets/img/uniqueness-3.png'
+import partingWords from './assets/img/parting-words.png'
+import contacts from './assets/img/contacts.jpg'
+import phone from './assets/img/icons/phone.svg'
+import letter from './assets/img/icons/letter.svg'
+import world from './assets/img/icons/world.svg'
+import mark from './assets/img/icons/mark.svg'
+import logoFooter from './assets/img/logo-footer.png'
+import instagram from './assets/img/icons/instagram.svg'
+import vk from './assets/img/icons/vk.svg'
 
 const areas = [
   {
@@ -53,7 +53,7 @@ const areas = [
     twoDiplomas: false,
     count: [18, 12, 233],
   },
-];
+]
 
 function App() {
   return (
@@ -214,12 +214,12 @@ function App() {
               className="features__parallax-1"
               bgClassName="features__bg"
               bgImage={features2}
-              strength={300}>
+              strength={100}>
               <Parallax
                 className="features__parallax-2"
                 bgClassName="features__bg-2"
                 bgImage={features1}
-                strength={400}
+                strength={200}
               />
               <ul className="features__list">
                 <li>
@@ -278,7 +278,7 @@ function App() {
                 />
               </form>
               <ul className="areas__list">
-                {areas.map((item) => (
+                {areas.map(item => (
                   <Area
                     key={uuidv4()}
                     name={item.name}
@@ -350,15 +350,15 @@ function App() {
                   <br />
                   <br />
                   СахГУ дает такую возможность своим студентам, поэтому средний
-                  размер стипендии <b>превышает в 5 раз</b> стипендии в Москве и
-                  Санкт-Петербурге.
+                  размер стипендии <b>превышает в&nbsp;5 раз</b> стипендии
+                  в&nbsp;Москве и&nbsp;Санкт-Петербурге.
                   <br />
                   <br />
                   Государственная повышенная стипендия, которую получают
                   студенты СахГУ за активное участие в жизни вуза, высокую
                   успеваемость, достижения в научной, общественной, спортивной
                   или культурно-творческой деятельности достигает{' '}
-                  <b>20 000 ₽</b> в месяц.
+                  <b>20&nbsp;000&nbsp;₽</b> в месяц.
                   <br />
                   <br />
                   Помимо этого, студенты могут получать социальные, именные и
@@ -565,7 +565,7 @@ function App() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
