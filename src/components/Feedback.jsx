@@ -124,6 +124,7 @@ const Feedback = ({ title, text, formId }) => {
                   </label>
                   <textarea
                     id={`text-${formId}`}
+                    name="text"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.text}
