@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & > input,
+  textarea,
+  button {
+    margin-bottom: 40px;
+  }
+  label {
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0.02em;
+
+    &.valid {
+      color: #0f0;
+    }
+  }
+  input,
+  textarea {
+    padding: 15px 20px;
+    color: #000;
+    border: 1px solid rgba(59, 59, 59, 0.3);
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+
+    &:not([type='checkbox']):focus {
+      border: 1px solid $yellow;
+      box-shadow: 0 0 4px $yellow;
+    }
+  }
+}
+.form__agreement {
+  display: flex;
+
+  input {
+    margin-top: 4px;
+  }
+  label {
+    width: 70%;
+    margin-left: 10px;
+    @include text;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+}

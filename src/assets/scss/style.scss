@@ -23,6 +23,8 @@
 @import './blocks/parting-words.scss';
 @import './blocks/contacts.scss';
 @import './blocks/footer.scss';
+@import './blocks/error.scss';
+@import './blocks/form.scss';
 
 // ==== Компоненты ====
 @import './components/Button.scss';
@@ -30,5 +32,6 @@
 @import './components/Checkbox.scss';
 @import './components/Area.scss';
 @import './components/Feedback.scss';
-@import './components/DocumentsWay.scss';
 @import './components/Slider.scss';
+@import './components/Modal.scss';
+@import './components/ConsultationBlock.scss';

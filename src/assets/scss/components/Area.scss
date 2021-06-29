@@ -1,5 +1,7 @@
 .area {
   display: flex;
+  position: relative;
+  top: 0;
   flex-direction: column;
   padding: 30px;
   border: 1px solid #e0e0e0;
@@ -7,15 +9,21 @@
   background-color: $gray-3;
   transition: ease 0.25s;
 
-  & > *:not(:last-child) {
+  .area__name,
+  .bage,
+  .area__count {
     margin-bottom: 20px;
   }
   &:hover {
-    transform: translateY(-5%);
+    top: -5%;
   }
   .button {
     width: 60%;
   }
+}
+.area__block {
+  display: flex;
+  flex-direction: column;
 }
 .area__name {
   @include h4;

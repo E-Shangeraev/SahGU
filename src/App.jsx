@@ -9,8 +9,10 @@ import Switch from './components/Switch'
 import Checkbox from './components/Checkbox'
 import Area from './components/Area'
 import Feedback from './components/Feedback'
-import DocumentsWay from './components/DocumentsWay'
+import { Gosuslugi, Mail, Personal, Post } from './components/DocumentsBlock'
 import Slider from './components/Slider'
+import Modal from './components/Modal'
+import ConsultationBlock from './components/ConsultationBlock'
 
 import logo from './logo.png'
 import promo1 from './assets/img/promo-1.png'
@@ -71,28 +73,43 @@ function App() {
         <nav className="header__nav">
           <ul>
             <li>
-              <Link to="1" offset={200}>
+              <Link smooth to="1" offset={200}>
                 Про СахГУ
               </Link>
             </li>
             <li>
-              <Link to="2">Направления подготовки</Link>
+              <Link smooth to="2">
+                Направления подготовки
+              </Link>
             </li>
             <li>
-              <Link to="3">Уникальность СахГУ</Link>
+              <Link smooth to="3">
+                Уникальность СахГУ
+              </Link>
             </li>
             <li>
-              <Link to="4">Отзывы выпускников</Link>
+              <Link smooth to="4">
+                Отзывы выпускников
+              </Link>
             </li>
             <li>
-              <Link to="5">Контакты</Link>
+              <Link smooth to="5">
+                Контакты
+              </Link>
             </li>
           </ul>
         </nav>
         <a href="tel:8 (4242) 45−03−00" className="header__phone">
           8 (4242) 45−03−00
         </a>
-        <Button color="yellow">Получить консультацию</Button>
+        <Modal btnText="Получить консультацию" btnColor="yellow">
+          <ConsultationBlock
+            formId={uuidv4()}
+            title="Получить консультацию"
+            text="Оставьте свои контактные данные
+            и мы свяжемся с вами в ближайшее время"
+          />
+        </Modal>
       </header>
 
       <main>
@@ -120,10 +137,16 @@ function App() {
                     поступление
                   </p>
                   <div className="promo__buttons">
-                    <Button color="purple">Получить консультацию</Button>
-                    <a href="#2" className="button button--outlined">
+                    <Modal btnText="Получить консультацию" btnColor="purple">
+                      <ConsultationBlock
+                        title="Получить консультацию"
+                        text="Оставьте свои контактные данные
+                        и мы свяжемся с вами в ближайшее время"
+                      />
+                    </Modal>
+                    <Link smooth to="2" className="button button--outlined">
                       Узнать больше
-                    </a>
+                    </Link>
                   </div>
                 </ScrollAnimation>
               </div>
@@ -249,7 +272,13 @@ function App() {
                   центром, что делает востребованым выпускников СахГУ не только
                   в России, но и странах АТР
                 </p>
-                <Button color="purple">Хочу здесь учиться</Button>
+                <Modal btnText="Хочу здесь учиться" btnColor="purple">
+                  <ConsultationBlock
+                    title="Получить консультацию"
+                    text="Оставьте свои контактные данные
+                        и мы свяжемся с вами в ближайшее время"
+                  />
+                </Modal>
               </div>
             </div>
           </section>
@@ -386,13 +415,53 @@ function App() {
               Способы <span>подачи</span> документов
             </h2>
             <ul className="documents__ways">
-              <DocumentsWay
-                name="Через  личный кабинет на Госуслугах"
-                img={gosuslugi}
-              />
-              <DocumentsWay name="Почтой России" img={post} />
-              <DocumentsWay name="Лично" img={handshake} />
-              <DocumentsWay name="По электронной почте" img={mail} />
+              <li className="documents-way">
+                <img
+                  src={gosuslugi}
+                  alt="Через  личный кабинет на Госуслугах"
+                />
+                <span className="documents-way__name">
+                  Через личный кабинет на Госуслугах
+                </span>
+                <Modal
+                  btnText="Подробнее"
+                  btnColor="purple"
+                  containerClass="documents__modal documents__modal--gosuslugi">
+                  <Gosuslugi />
+                </Modal>
+              </li>
+              <li className="documents-way">
+                <img src={post} alt="Почтой России" />
+                <span className="documents-way__name">Почтой России</span>
+                <Modal
+                  btnText="Подробнее"
+                  btnColor="purple"
+                  containerClass="documents__modal documents__modal--post">
+                  <Post />
+                </Modal>
+              </li>
+              <li className="documents-way">
+                <img src={handshake} alt="Лично" />
+                <span className="documents-way__name">Лично</span>
+                <Modal
+                  btnText="Подробнее"
+                  btnColor="purple"
+                  containerClass="documents__modal documents__modal--personal">
+                  <Personal />
+                </Modal>
+              </li>
+              <li className="documents-way">
+                <img src={mail} alt="По электронной почте" />
+                <span className="documents-way__name">
+                  По электронной почте
+                </span>
+                <Modal
+                  btnText="Подробнее"
+                  btnColor="purple"
+                  containerClass="documents__modal documents__modal--mail">
+                  <Mail />
+                </Modal>
+              </li>
             </ul>
           </div>
         </section>
@@ -675,19 +744,29 @@ function App() {
             <nav className="footer__nav">
               <ul>
                 <li>
-                  <Link to="1">Про СахГУ</Link>
+                  <Link smooth to="1">
+                    Про СахГУ
+                  </Link>
                 </li>
                 <li>
-                  <Link to="2">Направления подготовки</Link>
+                  <Link smooth to="2">
+                    Направления подготовки
+                  </Link>
                 </li>
                 <li>
-                  <Link to="3">Уникальность СахГУ</Link>
+                  <Link smooth to="3">
+                    Уникальность СахГУ
+                  </Link>
                 </li>
                 <li>
-                  <Link to="4">Отзывы выпускников</Link>
+                  <Link smooth to="4">
+                    Отзывы выпускников
+                  </Link>
                 </li>
                 <li>
-                  <Link to="5">Контакты</Link>
+                  <Link smooth to="5">
+                    Контакты
+                  </Link>
                 </li>
               </ul>
               <div className="footer__socials">

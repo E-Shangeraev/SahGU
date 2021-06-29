@@ -1,15 +1,19 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
+import { v4 as uuidv4 } from 'uuid'
 import Button from './Button'
 
 const phoneRegExp =
   // eslint-disable-next-line no-useless-escape
   /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10,11}$/
 
-const Feedback = ({ title, text, formId }) => {
+const formId = uuidv4()
+
+const ConsultationBlock = ({ title, text }) => {
+  const [submited, setSubmited] = useState(false)
+
   const validationSchema = yup.object().shape({
     name: yup
       .string()
@@ -21,43 +25,29 @@ const Feedback = ({ title, text, formId }) => {
       .string()
       .matches(phoneRegExp, 'Проверьте корректность введенного номера')
       .required('Укажите номер телефона'),
-    text: yup
-      .string()
-      .min(10, 'Оставьте небольшой комментарий')
-      .required('Оставьте небольшой комментарий'),
     agreement: yup
       .bool()
       .oneOf([true], 'Accept Terms & Conditions is required'),
   })
 
   return (
-    <section className="feedback">
-      <div className="wrapper">
-        <div className="feedback__container">
-          <div className="feedback__left">
-            <h2 className="title feedback__title">{title}</h2>
-            <p>
-              {text}
-              <br />
-              <br />
-              Либо, вы можете позвонить нам самостоятельно по номеру:
-              <br />
-              <a className="feedback__phone" href="tel:8 (4242) 45−03−00">
-                8 (4242) 45−03−00
-              </a>
-            </p>
-          </div>
+    <div className="modal__block">
+      {!submited ? (
+        <>
+          <h3 className="modal__title">{title}</h3>
+          {text && <p className="text modal__text">{text}</p>}
+
           <Formik
             initialValues={{
               name: '',
               phone: '',
-              text: '',
               agreement: false,
             }}
             validateOnBlur
             onSubmit={(values, { resetForm }) => {
               console.log(values)
               resetForm()
+              setSubmited(true)
             }}
             validationSchema={validationSchema}>
             {({
@@ -70,14 +60,14 @@ const Feedback = ({ title, text, formId }) => {
               handleSubmit,
               dirty,
             }) => (
-              <form className="form feedback__form">
+              <form className="form modal__form">
                 <label
                   htmlFor={`name-${formId}`}
                   className={dirty && !errors.name ? 'valid' : null}>
                   {touched.name && errors.name ? (
                     <p className="error">{errors.name}</p>
                   ) : (
-                    'Имя'
+                    'Ваше имя*'
                   )}
                 </label>
                 <input
@@ -95,7 +85,7 @@ const Feedback = ({ title, text, formId }) => {
                   {touched.phone && errors.phone ? (
                     <p className="error">{errors.phone}</p>
                   ) : (
-                    'Телефон'
+                    'Телефон*'
                   )}
                 </label>
                 <input
@@ -106,23 +96,6 @@ const Feedback = ({ title, text, formId }) => {
                   onBlur={handleBlur}
                   value={values.phone}
                   placeholder="+7 999 999 99 99"
-                />
-                <label
-                  htmlFor={`text-${formId}`}
-                  className={dirty && !errors.text ? 'valid' : null}>
-                  {touched.text && errors.text ? (
-                    <p className="error">{errors.text}</p>
-                  ) : (
-                    'Комментарий'
-                  )}
-                </label>
-                <textarea
-                  id={`text-${formId}`}
-                  name="text"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.text}
-                  placeholder="Хочу поступить"
                 />
                 <Button
                   type="submit"
@@ -149,16 +122,26 @@ const Feedback = ({ title, text, formId }) => {
               </form>
             )}
           </Formik>
-        </div>
-      </div>
-    </section>
+        </>
+      ) : (
+        <>
+          <h3 className="modal__title">Спасибо за заявку!</h3>
+          <p className="text modal__text">
+            Мы свяжемся с вами в ближайшее время
+          </p>
+        </>
+      )}
+    </div>
   )
 }
 
-Feedback.propTypes = {
+ConsultationBlock.propTypes = {
   title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  formId: PropTypes.string.isRequired,
+  text: PropTypes.string,
 }
 
-export default Feedback
+ConsultationBlock.defaultProps = {
+  text: null,
+}
+
+export default ConsultationBlock

@@ -38,6 +38,9 @@
       color: $yellow;
     }
   }
+  li {
+    cursor: pointer;
+  }
 }
 .footer__socials {
   padding: 20px 0;

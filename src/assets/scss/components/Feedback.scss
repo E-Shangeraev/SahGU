@@ -34,7 +34,8 @@
   width: auto !important;
   z-index: 2 !important;
 }
-.feedback__form {
+.feedback__container {
+  display: flex;
   padding: 80px 60px;
   margin: 0 auto;
   max-width: 1300px;
@@ -42,19 +43,13 @@
   background-color: $purple;
   background-image: url('../../img/feedback-phone.png');
   background-repeat: no-repeat;
-  background-position: 20% 180px;
-}
-.feedback__container {
-  display: flex;
-
-  & > div {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-  }
+  background-position: 20% 200px;
 }
 .feedback__left {
+  display: flex;
+  flex-direction: column;
   margin-right: 30px;
+  width: 65%;
 
   * {
     color: #fff;
@@ -66,67 +61,12 @@
 .feedback__phone {
   font-weight: bold;
 }
-.feedback__right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  & > input,
-  textarea,
-  button {
-    margin-bottom: 40px;
-  }
-  label {
-    font-size: 12px;
-    line-height: 160%;
-    letter-spacing: 0.02em;
+.feedback__form {
+  label,
+  label span {
     color: #fff;
-
-    &.valid {
-      color: #0f0;
-    }
-  }
-  input,
-  textarea {
-    padding: 15px 20px;
-    color: #000;
-    border: 1px solid rgba(59, 59, 59, 0.3);
-    border-radius: 10px;
-    resize: none;
-    outline: none;
-
-    &:focus {
-      border: 1px solid $yellow;
-      box-shadow: 0 0 4px $yellow;
-    }
   }
 }
-.feedback__agreement {
-  display: flex;
-
-  input {
-    margin-top: 4px;
-  }
-  label {
-    width: 60%;
-    margin-left: 10px;
-    @include text;
-
-    span {
-      text-decoration: underline;
-      color: #fff;
-    }
-  }
-}
-.feedback__error {
-  // width: fit-content;
-  // border-radius: 10px;
-  // padding: 0 15px;
-  // margin-bottom: 15px;
-  // background-color: white;
-  font-weight: bold;
-  &,
-  span {
-    color: rgb(219, 25, 25) !important;
-  }
+.feedback .form__agreement span {
+  color: #fff;
 }

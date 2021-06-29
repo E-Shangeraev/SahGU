@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Button from './Button';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Modal from './Modal'
+import AreaBlock from './AreaBlock'
 
 const Area = ({ name, twoDiplomas, count }) => (
   <li className="area">
@@ -20,14 +21,16 @@ const Area = ({ name, twoDiplomas, count }) => (
         <span>проходной балл</span>
       </li>
     </ul>
-    <Button color="yellow">Подробнее</Button>
+    <Modal btnText="Подробнее" btnColor="yellow">
+      <AreaBlock name={name} twoDiplomas={twoDiplomas} count={count} />
+    </Modal>
   </li>
-);
+)
 
 Area.propTypes = {
   name: PropTypes.string.isRequired,
   twoDiplomas: PropTypes.bool.isRequired,
   count: PropTypes.arrayOf(PropTypes.number).isRequired,
-};
+}
 
-export default Area;
+export default Area
