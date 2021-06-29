@@ -1,6 +1,7 @@
 import React from 'react'
 import { Parallax } from 'react-parallax'
 import ScrollAnimation from 'react-animate-on-scroll'
+import { Link } from 'react-scroll'
 import { v4 as uuidv4 } from 'uuid'
 
 import Button from './components/Button'
@@ -70,19 +71,21 @@ function App() {
         <nav className="header__nav">
           <ul>
             <li>
-              <a href="#1">Про СахГУ</a>
+              <Link to="1" offset={200}>
+                Про СахГУ
+              </Link>
             </li>
             <li>
-              <a href="#1">Направления подготовки</a>
+              <Link to="2">Направления подготовки</Link>
             </li>
             <li>
-              <a href="#1">Уникальность СахГУ</a>
+              <Link to="3">Уникальность СахГУ</Link>
             </li>
             <li>
-              <a href="#1">Отзывы выпускников</a>
+              <Link to="4">Отзывы выпускников</Link>
             </li>
             <li>
-              <a href="#1">Контакты</a>
+              <Link to="5">Контакты</Link>
             </li>
           </ul>
         </nav>
@@ -256,7 +259,7 @@ function App() {
           animateIn="animate__fadeInUp"
           animateOut="animate__fadeOut"
           animateOnce>
-          <section className="features">
+          <section className="features" id="1">
             <div className="wrapper">
               <Parallax
                 className="features__parallax-1"
@@ -298,7 +301,7 @@ function App() {
           </section>
         </ScrollAnimation>
 
-        <section className="areas">
+        <section className="areas" id="2">
           <div className="wrapper">
             <div className="areas__container">
               <ScrollAnimation animateIn="animate__fadeIn" animateOnce>
@@ -398,7 +401,7 @@ function App() {
           animateOut="animate__fadeOut"
           animateOnce
           delay={500}>
-          <section className="uniqueness">
+          <section className="uniqueness" id="3">
             <div className="wrapper">
               <div className="uniqueness__column">
                 <h2 className="title uniqueness__title">
@@ -504,7 +507,7 @@ function App() {
           animateIn="animate__fadeIn"
           animateOut="animate__fadeOut"
           animateOnce>
-          <section className="graduates">
+          <section className="graduates" id="4">
             <div className="wrapper">
               <Parallax
                 className="graduates__parallax"
@@ -625,7 +628,7 @@ function App() {
             </Parallax>
           </Parallax>
         </ScrollAnimation>
-        <section className="contacts">
+        <section className="contacts" id="5">
           <div className="wrapper">
             <div className="contacts__container">
               <h2 className="title contacts__title">Контакты</h2>
@@ -672,19 +675,19 @@ function App() {
             <nav className="footer__nav">
               <ul>
                 <li>
-                  <a href="#1">Про СахГУ</a>
+                  <Link to="1">Про СахГУ</Link>
                 </li>
                 <li>
-                  <a href="#1">Направления подготовки</a>
+                  <Link to="2">Направления подготовки</Link>
                 </li>
                 <li>
-                  <a href="#1">Уникальность СахГУ</a>
+                  <Link to="3">Уникальность СахГУ</Link>
                 </li>
                 <li>
-                  <a href="#1">Отзывы выпускников</a>
+                  <Link to="4">Отзывы выпускников</Link>
                 </li>
                 <li>
-                  <a href="#1">Контакты</a>
+                  <Link to="5">Контакты</Link>
                 </li>
               </ul>
               <div className="footer__socials">

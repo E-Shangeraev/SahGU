@@ -36,6 +36,7 @@
   li {
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
   li::after {
     position: absolute;
