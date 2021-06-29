@@ -9,7 +9,7 @@
   display: none;
 }
 .checkbox__input:checked + .checkbox__label {
-  opacity: 0.7;
+  opacity: 1;
 }
 .checkbox__label {
   display: block;
@@ -19,6 +19,7 @@
   font-weight: bold;
   white-space: nowrap;
   color: #fff;
+  opacity: 0.7;
   background-color: $purple;
   border-radius: 5px;
   box-sizing: border-box;

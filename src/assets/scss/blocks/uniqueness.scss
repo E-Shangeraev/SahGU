@@ -1,8 +1,8 @@
 .uniqueness__big-image {
   position: relative;
-  width: 70%;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  // left: 50%;
+  // transform: translateX(-50%);
 }
 .uniqueness__title {
   margin-bottom: 40px;
@@ -21,6 +21,12 @@
   & > div {
     width: 50%;
   }
+}
+.uniqueness__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px;
 }
 .uniqueness__text {
   b {

@@ -1,6 +1,7 @@
 .documents-way {
   display: flex;
   flex-direction: column;
+  // justify-content: space-between;
   padding: 30px;
   background-color: $gray-3;
   border: 1px solid #e0e0e0;
@@ -14,9 +15,14 @@
     transform: translateY(-5%);
   }
   img {
-    width: 50px;
+    width: fit-content;
+    min-height: 80px;
   }
   .button {
+    margin-top: auto;
     width: 50%;
   }
+}
+.documents-way__name {
+  @include h4;
 }
