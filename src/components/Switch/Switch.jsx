@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './Switch.scss'
 
 const Switch = ({ options }) => {
   const { name, firstValue, secondValue } = options

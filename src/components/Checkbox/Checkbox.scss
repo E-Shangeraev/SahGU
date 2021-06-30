@@ -1,3 +1,6 @@
+@import '../../assets/scss/mixins.scss';
+@import '../../assets/scss/variables.scss';
+
 .checkbox {
   margin: 30px 0;
   display: grid;
@@ -25,4 +28,22 @@
   box-sizing: border-box;
   cursor: pointer;
   transition: ease 0.25s;
+}
+
+@media (max-width: 1440px) {
+  .checkbox {
+    grid-gap: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .checkbox {
+    margin-top: 15px;
+    width: 100%;
+    grid-gap: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .checkbox {
+    grid-gap: 15px;
+  }
 }

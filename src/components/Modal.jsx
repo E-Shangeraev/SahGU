@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Transition } from 'react-transition-group'
 import PropTypes from 'prop-types'
-import Button from './Button'
+import Button from './Button/Button'
 
 const Modal = React.memo(({ btnText, btnColor, children, containerClass }) => {
   const modalRef = useRef()

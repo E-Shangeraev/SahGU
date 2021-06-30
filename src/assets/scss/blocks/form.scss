@@ -48,3 +48,16 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .form {
+    & > input,
+    textarea,
+    button {
+      margin-bottom: 20px;
+    }
+  }
+  .form__agreement label {
+    width: 100%;
+  }
+}

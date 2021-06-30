@@ -1,9 +1,12 @@
 .parting-words__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
 
   img {
-    margin-right: 50px;
-    width: 50%;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    height: 100%;
     object-fit: cover;
   }
   blockquote {
@@ -13,8 +16,6 @@
   }
 }
 .parting-words__title {
-  margin-bottom: 48px;
-
   span {
     color: $purple;
   }
@@ -24,7 +25,24 @@
 
   & + small {
     display: block;
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
     @include text;
+  }
+}
+
+@media (max-width: 1440px) {
+  .parting-words__container img {
+    height: 50%;
+  }
+}
+@media (max-width: 1024px) {
+  .parting-words__container {
+    grid-template-columns: 1fr;
+
+    img {
+      grid-row: 2 / 3;
+      width: 100%;
+      height: auto;
+    }
   }
 }

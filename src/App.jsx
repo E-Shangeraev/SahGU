@@ -4,17 +4,18 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import { Link } from 'react-scroll'
 import { v4 as uuidv4 } from 'uuid'
 
-import Button from './components/Button'
-import Switch from './components/Switch'
-import Checkbox from './components/Checkbox'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import Button from './components/Button/Button'
+import Switch from './components/Switch/Switch'
+import Checkbox from './components/Checkbox/Checkbox'
 import Area from './components/Area'
-import Feedback from './components/Feedback'
+import Feedback from './components/Feedback/Feedback'
 import { Gosuslugi, Mail, Personal, Post } from './components/DocumentsBlock'
-import Slider from './components/Slider'
+import Slider from './components/Slider/Slider'
 import Modal from './components/Modal'
 import ConsultationBlock from './components/ConsultationBlock'
 
-import logo from './logo.png'
 import promo1 from './assets/img/promo-1.png'
 import promo2 from './assets/img/promo-2.png'
 import arrowRight from './assets/img/icons/arrow-right.svg'
@@ -43,9 +44,6 @@ import phone from './assets/img/icons/phone.svg'
 import letter from './assets/img/icons/letter.svg'
 import world from './assets/img/icons/world.svg'
 import mark from './assets/img/icons/mark.svg'
-import logoFooter from './assets/img/logo-footer.png'
-import instagram from './assets/img/icons/instagram.svg'
-import vk from './assets/img/icons/vk.svg'
 
 const areas = [
   {
@@ -68,88 +66,52 @@ const areas = [
 function App() {
   return (
     <div className="App">
-      <header className="header">
-        <img className="header__logo" src={logo} alt="Логотип СахГУ" />
-        <nav className="header__nav">
-          <ul>
-            <li>
-              <Link smooth to="1" offset={200}>
-                Про СахГУ
-              </Link>
-            </li>
-            <li>
-              <Link smooth to="2">
-                Направления подготовки
-              </Link>
-            </li>
-            <li>
-              <Link smooth to="3">
-                Уникальность СахГУ
-              </Link>
-            </li>
-            <li>
-              <Link smooth to="4">
-                Отзывы выпускников
-              </Link>
-            </li>
-            <li>
-              <Link smooth to="5">
-                Контакты
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <a href="tel:8 (4242) 45−03−00" className="header__phone">
-          8 (4242) 45−03−00
-        </a>
-        <Modal btnText="Получить консультацию" btnColor="yellow">
-          <ConsultationBlock
-            formId={uuidv4()}
-            title="Получить консультацию"
-            text="Оставьте свои контактные данные
-            и мы свяжемся с вами в ближайшее время"
-          />
-        </Modal>
-      </header>
-
+      <Header />
       <main>
         <section className="promo">
           <div className="wrapper">
             <div className="promo__container">
-              <div>
-                <ScrollAnimation
-                  animateIn="animate__fadeIn"
-                  animateOut="animate__fadeOut"
-                  animateOnce>
-                  <h1 className="promo__title">
-                    Сахалинский Государственный Университет
-                  </h1>
-                </ScrollAnimation>
-                <ScrollAnimation
-                  animateIn="animate__fadeInUp"
-                  animateOut="animate__fadeOut"
-                  delay={1000}
-                  animateOnce>
-                  <span className="promo__title">— лучшее начало пути</span>
-                  <p className="text promo__text">
-                    Оставьте заявку и получите консультацию о направлениях
-                    подготовки, проходных баллах и других вопросах про
-                    поступление
-                  </p>
-                  <div className="promo__buttons">
-                    <Modal btnText="Получить консультацию" btnColor="purple">
-                      <ConsultationBlock
-                        title="Получить консультацию"
-                        text="Оставьте свои контактные данные
+              <ScrollAnimation
+                animateIn="animate__fadeIn"
+                animateOut="animate__fadeOut"
+                animateOnce>
+                <h1 className="promo__title">
+                  Сахалинский
+                  <br />
+                  Государственный
+                  <br />
+                  Университет
+                </h1>
+              </ScrollAnimation>
+              <ScrollAnimation
+                animateIn="animate__fadeInUp"
+                animateOut="animate__fadeOut"
+                delay={1000}
+                animateOnce>
+                <span className="promo__title">— лучшее начало пути</span>
+              </ScrollAnimation>
+              <ScrollAnimation
+                animateIn="animate__fadeInUp"
+                animateOut="animate__fadeOut"
+                delay={1000}
+                animateOnce>
+                <p className="text promo__text">
+                  Оставьте заявку и получите консультацию о направлениях
+                  подготовки, проходных баллах и других вопросах про поступление
+                </p>
+                <div className="promo__buttons">
+                  <Modal btnText="Получить консультацию" btnColor="purple">
+                    <ConsultationBlock
+                      title="Получить консультацию"
+                      text="Оставьте свои контактные данные
                         и мы свяжемся с вами в ближайшее время"
-                      />
-                    </Modal>
-                    <Link smooth to="2" className="button button--outlined">
-                      Узнать больше
-                    </Link>
-                  </div>
-                </ScrollAnimation>
-              </div>
+                    />
+                  </Modal>
+                  <Link smooth to="2" className="button button--outlined">
+                    Узнать больше
+                  </Link>
+                </div>
+              </ScrollAnimation>
 
               <ScrollAnimation
                 animateIn="animate__fadeInUp"
@@ -160,7 +122,7 @@ function App() {
                   className="promo__parallax"
                   bgClassName="promo__bg"
                   bgImage={promo2}
-                  strength={500}>
+                  strength={200}>
                   <img src={promo1} alt="Фото студентов" />
                 </Parallax>
               </ScrollAnimation>
@@ -195,10 +157,10 @@ function App() {
                       <span className="news__title">
                         Приемная кампания 2021
                       </span>
-                      <span className="text news__text">
+                      <p className="text news__text">
                         В Сахалинском Государствнном университете началась
                         приёмная кампания.
-                      </span>
+                      </p>
                     </div>
                   </a>
                 </li>
@@ -208,7 +170,8 @@ function App() {
                       <img
                         src={news1}
                         // eslint-disable-next-line max-len
-                        alt="Сахалинский госуниверситет будет готовить специалистов АСУ"
+                        alt="Сахалинский госуниверситет
+                        будет готовить специалистов АСУ"
                       />
                     </div>
                     <div className="news__bottom">
@@ -217,11 +180,11 @@ function App() {
                         Сахалинский госуниверситет будет готовить специалистов
                         АСУ
                       </span>
-                      <span className="text news__text">
+                      <p className="text news__text">
                         Соглашение о сотрудничестве заключил Сахалинский
                         государственный университет с ООО «Иокогава Электрик
                         Сахалин».
-                      </span>
+                      </p>
                     </div>
                   </a>
                 </li>
@@ -233,10 +196,10 @@ function App() {
                     <div className="news__bottom">
                       <div className="bage">21 июня, 2021</div>
                       <span className="news__title">Билет на скорый поезд</span>
-                      <span className="text news__text">
+                      <p className="text news__text">
                         Творческие студии университета приглашают студентов и
                         жителей города на отчетный концерт.
-                      </span>
+                      </p>
                     </div>
                   </a>
                 </li>
@@ -465,6 +428,7 @@ function App() {
             </ul>
           </div>
         </section>
+
         <ScrollAnimation
           animateIn="animate__fadeIn"
           animateOut="animate__fadeOut"
@@ -572,6 +536,7 @@ function App() {
             </div>
           </section>
         </ScrollAnimation>
+
         <ScrollAnimation
           animateIn="animate__fadeIn"
           animateOut="animate__fadeOut"
@@ -619,6 +584,7 @@ function App() {
             </div>
           </section>
         </ScrollAnimation>
+
         <section className="parting-words">
           <div className="wrapper">
             <div className="parting-words__container">
@@ -626,55 +592,55 @@ function App() {
                 src={partingWords}
                 alt="Мария Ганченкова — ио ректора СахГУ"
               />
-              <div>
-                <h2 className="title parting-words__title">
-                  <span>Слова</span> напутствия
-                </h2>
+              <h2 className="title parting-words__title">
+                <span>Слова</span> напутствия
+              </h2>
+              <p>
                 <span className="parting-words__name">Мария Ганченкова</span>
                 <small>ио ректора СахГУ</small>
-                <blockquote>
-                  Дорогие абитуриенты!
-                  <br />
-                  <br />
-                  Перед вами стоит важный выбор профессионального пути во
-                  взрослой жизни. Это решение позволит вам стать успешными и
-                  счастливыми.
-                  <br />
-                  <br />
-                  Наш университет – это место, где каждый имеет возможность
-                  реализовать свой личностный, научный и творческий потенциал.
-                  Это место, где традиционные для классического университета
-                  гуманитарные и естественнонаучные направления и специальности
-                  дополняются техническим образованием, востребованным на
-                  российском рынке труда. Мы ведем активную работу по обмен
-                  студентами и преподавателями с зарубежными вузами, а также
-                  даем возможность получения дипломов двух вузов.
-                  <br />
-                  <br />
-                  Мы делаем всё, чтобы университетское образование стало прочным
-                  фундаментом профессиональных возможностей выпускников. Мы
-                  заинтересованы в том, чтобы каждый выпускник обладал высоким
-                  интеллектом и яркой индивидуальностью.
-                  <br />
-                  <br />
-                  Важнейшим показателем вуза является качество подготовки его
-                  выпускников. Среди наших выпускников – ученые, спортсмены,
-                  руководители крупных предприятий региона.
-                  <br />
-                  <br />
-                  Сахалинский государственный университет открывает перед вами
-                  сотни дорог. Каким бы ни был выбор вашей будущей профессии,
-                  университет даст вам не только образование, но и верных
-                  друзей, надежных наставников, будущих деловых партнеров,
-                  наполнит смыслом и яркими красками студенческие годы.
-                  <br />
-                  <br />
-                  Мы ждем вас в стенах нашего университета.
-                </blockquote>
-              </div>
+              </p>
+              <blockquote>
+                Дорогие абитуриенты!
+                <br />
+                <br />
+                Перед вами стоит важный выбор профессионального пути во взрослой
+                жизни. Это решение позволит вам стать успешными и счастливыми.
+                <br />
+                <br />
+                Наш университет – это место, где каждый имеет возможность
+                реализовать свой личностный, научный и творческий потенциал. Это
+                место, где традиционные для классического университета
+                гуманитарные и естественнонаучные направления и специальности
+                дополняются техническим образованием, востребованным на
+                российском рынке труда. Мы ведем активную работу по обмен
+                студентами и преподавателями с зарубежными вузами, а также даем
+                возможность получения дипломов двух вузов.
+                <br />
+                <br />
+                Мы делаем всё, чтобы университетское образование стало прочным
+                фундаментом профессиональных возможностей выпускников. Мы
+                заинтересованы в том, чтобы каждый выпускник обладал высоким
+                интеллектом и яркой индивидуальностью.
+                <br />
+                <br />
+                Важнейшим показателем вуза является качество подготовки его
+                выпускников. Среди наших выпускников – ученые, спортсмены,
+                руководители крупных предприятий региона.
+                <br />
+                <br />
+                Сахалинский государственный университет открывает перед вами
+                сотни дорог. Каким бы ни был выбор вашей будущей профессии,
+                университет даст вам не только образование, но и верных друзей,
+                надежных наставников, будущих деловых партнеров, наполнит
+                смыслом и яркими красками студенческие годы.
+                <br />
+                <br />
+                Мы ждем вас в стенах нашего университета.
+              </blockquote>
             </div>
           </div>
         </section>
+
         <ScrollAnimation
           animateIn="animate__fadeIn"
           animateOut="animate__fadeOut">
@@ -697,6 +663,7 @@ function App() {
             </Parallax>
           </Parallax>
         </ScrollAnimation>
+
         <section className="contacts" id="5">
           <div className="wrapper">
             <div className="contacts__container">
@@ -737,51 +704,8 @@ function App() {
           </div>
         </section>
       </main>
-      <footer className="footer">
-        <div className="footer__container">
-          <img className="footer__logo" src={logoFooter} alt="Логотип СахГУ" />
-          <div>
-            <nav className="footer__nav">
-              <ul>
-                <li>
-                  <Link smooth to="1">
-                    Про СахГУ
-                  </Link>
-                </li>
-                <li>
-                  <Link smooth to="2">
-                    Направления подготовки
-                  </Link>
-                </li>
-                <li>
-                  <Link smooth to="3">
-                    Уникальность СахГУ
-                  </Link>
-                </li>
-                <li>
-                  <Link smooth to="4">
-                    Отзывы выпускников
-                  </Link>
-                </li>
-                <li>
-                  <Link smooth to="5">
-                    Контакты
-                  </Link>
-                </li>
-              </ul>
-              <div className="footer__socials">
-                <a href="instagram.com">
-                  <img src={instagram} alt="instagram" />
-                </a>
-                <a href="vk.com">
-                  <img src={vk} alt="vk" />
-                </a>
-              </div>
-            </nav>
-            <Button>Согласие на обработку персональных данных</Button>
-          </div>
-        </div>
-      </footer>
+
+      <Footer />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 .documents__ways {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 48px;
 }
 .document__title {
   span {
@@ -41,7 +41,6 @@
   padding: 30px;
   background-color: #f2f2f2;
   background-repeat: no-repeat;
-  // background-size: 100% 100%;
   background-position: 90% 10%;
   border: 1px solid #e0e0e0;
   border-radius: 24px;
@@ -80,4 +79,23 @@
   list-style: disc;
   padding-left: 20px;
   margin-bottom: 24px;
+}
+
+@media (max-width: 1024px) {
+  .documents__ways {
+    grid-gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .documents__ways {
+    grid-gap: 15px;
+  }
+  .documents-way {
+    padding: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .documents__ways {
+    grid-template-columns: 1fr;
+  }
 }

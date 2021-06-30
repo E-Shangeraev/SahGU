@@ -36,3 +36,39 @@
     width: 40%;
   }
 }
+
+@media (max-width: 1440px) {
+  .graduates__container {
+    & > div {
+      width: 50%;
+    }
+    & > div:first-child {
+      margin-right: 30px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .graduates__bg-1 {
+    top: -15% !important;
+  }
+  .graduates__bg-3 {
+    top: 60% !important;
+    left: 45% !important;
+  }
+}
+@media (max-width: 1024px) {
+  .graduates__container {
+    display: block;
+
+    & > div {
+      width: 100% !important;
+    }
+    & > div:first-child {
+      margin-right: 0px;
+      margin-bottom: 50px;
+    }
+  }
+  .graduates__bg-1 {
+    display: none;
+  }
+}

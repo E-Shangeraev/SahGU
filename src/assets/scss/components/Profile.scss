@@ -1,0 +1,40 @@
+.profile {
+  &:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
+  .area__count {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 40px 0;
+  }
+  .button {
+    white-space: nowrap;
+    width: fit-content !important;
+  }
+}
+.profile__name {
+  display: inline-block;
+  margin-bottom: 40px;
+  @include text;
+
+  &::before {
+    content: '•';
+    margin-right: 10px;
+  }
+}
+.profile__subtitle {
+  @include h4;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.profile__list {
+  margin-left: 20px;
+  margin-bottom: 40px;
+  @include text;
+  list-style: disc;
+
+  li:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+}

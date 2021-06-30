@@ -7,13 +7,14 @@
 .contacts__container {
   display: grid;
   grid-template-columns: minmax(280px, 682px) 1fr;
-  grid-column-gap: 195px;
+  grid-column-gap: 15%;
 
-  img {
+  & > img {
     align-self: flex-end;
     max-width: 682px;
     max-height: 414px;
     grid-row: 2 / 3;
+    border-radius: 10px;
   }
   div {
     display: flex;
@@ -42,7 +43,6 @@
 
     img {
       margin-right: 20px;
-      padding: 10px 0;
     }
     a {
       transition: ease 0.25s;
@@ -50,5 +50,45 @@
     a:hover {
       color: $purple;
     }
+  }
+}
+
+@media (max-width: 1366px) {
+  .contacts__text {
+    margin-bottom: 30px;
+  }
+  .contacts__container {
+    grid-column-gap: 10%;
+  }
+}
+@media (max-width: 1200px) {
+  .contacts__container {
+    display: block;
+
+    & > img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      margin-bottom: 30px;
+    }
+  }
+  .contacts__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 25px;
+  }
+}
+@media (max-width: 1024px) {
+  .contacts__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .contacts__list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .contacts__text {
+    width: 100%;
   }
 }

@@ -1,3 +1,6 @@
+@import '../../assets/scss/mixins.scss';
+@import '../../assets/scss/variables.scss';
+
 .switch {
   display: flex;
   align-items: center;
@@ -26,4 +29,20 @@
   border-radius: 5px;
   cursor: pointer;
   transition: ease 0.25s;
+}
+
+@media (max-width: 768px) {
+  .switch {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .switch {
+    flex-direction: column;
+  }
+  .switch__label {
+    width: 100%;
+    white-space: normal;
+  }
 }

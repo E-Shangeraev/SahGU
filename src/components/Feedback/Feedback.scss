@@ -1,5 +1,8 @@
+@import '../../assets/scss/mixins.scss';
+@import '../../assets/scss/variables.scss';
+
 .feedback {
-  background-image: url('../../img/feedback-3.svg');
+  background-image: url('../../assets/img/feedback-3.svg');
   background-repeat: no-repeat;
 }
 .feedback:first-of-type {
@@ -41,7 +44,7 @@
   max-width: 1300px;
   border-radius: 24px;
   background-color: $purple;
-  background-image: url('../../img/feedback-phone.png');
+  background-image: url('../../assets/img/feedback-phone.png');
   background-repeat: no-repeat;
   background-position: 20% 200px;
 }
@@ -69,4 +72,41 @@
 }
 .feedback .form__agreement span {
   color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .feedback__bg-4 {
+    width: 105px !important;
+    z-index: -1 !important;
+  }
+  .feedback__bg-3 {
+    width: 50% !important;
+  }
+  .feedback__container {
+    padding: 60px 40px;
+  }
+}
+@media (max-width: 900px) {
+  .feedback__bg-1 {
+    width: 125px !important;
+  }
+  .feedback__container {
+    display: block;
+    padding: 60px 40px;
+  }
+  .feedback__bg-2 {
+    display: none !important;
+  }
+  .feedback__left {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .feedback__container {
+    padding: 40px 20px;
+  }
+  .feedback__bg-4 {
+    top: 5% !important;
+  }
 }

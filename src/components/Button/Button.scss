@@ -1,3 +1,5 @@
+@import '/src/assets/scss/variables.scss';
+
 .button {
   display: flex;
   align-items: center;
@@ -9,6 +11,7 @@
   font-weight: bold;
   font-size: 18px;
   color: #fff;
+  white-space: nowrap;
   transition: ease 0.25s;
   cursor: pointer !important;
 
@@ -30,5 +33,22 @@
   }
   &--outlined:hover {
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 1366px) {
+  .button {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .button {
+    padding: 15px 25px;
+  }
+}
+@media (max-width: 500px) {
+  .button {
+    font-size: 14px;
   }
 }

@@ -10,7 +10,6 @@
 @import 'animate.css/animate.min.css';
 
 // ==== Блоки ====
-@import './blocks/header.scss';
 @import './blocks/promo.scss';
 @import './blocks/news.scss';
 @import './blocks/bage.scss';
@@ -22,16 +21,11 @@
 @import './blocks/graduates.scss';
 @import './blocks/parting-words.scss';
 @import './blocks/contacts.scss';
-@import './blocks/footer.scss';
 @import './blocks/error.scss';
 @import './blocks/form.scss';
 
 // ==== Компоненты ====
-@import './components/Button.scss';
-@import './components/Switch.scss';
-@import './components/Checkbox.scss';
 @import './components/Area.scss';
-@import './components/Feedback.scss';
-@import './components/Slider.scss';
+@import './components/Profile.scss';
 @import './components/Modal.scss';
 @import './components/ConsultationBlock.scss';

@@ -5,22 +5,22 @@ import ConsultationBlock from './ConsultationBlock'
 
 const AreaBlock = ({ name, twoDiplomas, count }) => (
   <div className="area__block">
-    <span className="area__name">{name}</span>
+    <h3 className="area__name">{name}</h3>
     {twoDiplomas ? <span className="bage">Программа «2 диплома»</span> : null}
     <ul className="area__profiles">
       <li className="profile">
         <span className="profile__name">
           Профиль 1: «Начальное образование»
         </span>
-        <h3 className="profile__entry">Всступительные испытания</h3>
-        <ul className="profile__entry-list">
+        <h4 className="profile__subtitle">Вступительные испытания</h4>
+        <ul className="profile__list">
           <li>Обществознание (45);</li>
           <li>русский язык (40);</li>
           <li>математика (профильная) / биология (39/39).</li>
         </ul>
-        <h3 className="profile__activities">
+        <h4 className="profile__subtitle">
           Виды профессиональной деятельности
-        </h3>
+        </h4>
         <p className="text profile__text">
           Педагогическая, проектная, культурно-просветительская,
           исследовательская.
@@ -47,16 +47,16 @@ const AreaBlock = ({ name, twoDiplomas, count }) => (
         </Modal>
       </li>
       <li className="profile">
-        <span className="profile__name">Профиль 2: «Физическая культура»</span>
-        <h3 className="profile__entry">Всступительные испытания</h3>
-        <ul className="profile__entry-list">
+        <h3 className="profile__name">Профиль 2: «Физическая культура»</h3>
+        <h3 className="profile__entry">Вступительные испытания</h3>
+        <ul className="profile__list">
           <li>Профессиональное испытание (30);</li>
           <li>Обществознание (45);</li>
           <li>Русский язык (40).</li>
         </ul>
-        <h3 className="profile__activities">
+        <h4 className="profile__activities">
           Виды профессиональной деятельности
-        </h3>
+        </h4>
         <p className="text profile__text">
           Педагогическая, проектная, культурно-просветительская,
           исследовательская.

@@ -1,3 +1,5 @@
+@import '../../assets/scss/variables.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -12,13 +14,14 @@
   animation-fill-mode: forwards;
 }
 .header__logo {
-  margin-right: 55px;
+  margin-right: 3%;
 }
 .header__phone {
-  margin: 0 50px;
+  margin: 0 3%;
   font-size: 16px;
   font-weight: bold;
   color: $purple;
+  white-space: nowrap;
   transition: ease 0.25s;
 
   &:hover {
@@ -26,7 +29,7 @@
   }
 }
 .header__nav {
-  flex: 1 0 auto;
+  width: 100%;
   font-size: 16px;
 
   ul {
@@ -37,6 +40,9 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
+  }
+  li:not(:last-of-type) {
+    margin-right: 15px;
   }
   li::after {
     position: absolute;
@@ -51,5 +57,54 @@
   }
   li:hover::after {
     transform: translateX(0);
+  }
+  a {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1600px) {
+  .header {
+    padding: 7px 40px;
+
+    .button {
+      display: none;
+      padding: 20px 15px;
+    }
+  }
+
+  .header__phone {
+    margin-right: 0;
+  }
+}
+@media (max-width: 1366px) {
+  .header__logo {
+    width: 120px;
+  }
+  .header__nav li,
+  .header__phone {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1200px) {
+  .header {
+    padding: 7px 25px;
+  }
+  .header__logo {
+    width: 100px;
+  }
+}
+@media (max-width: 1024px) {
+  .header__logo {
+    width: 150px;
+  }
+  .header__nav,
+  .header__phone {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .header__logo {
+    width: 120px;
   }
 }

@@ -3,7 +3,8 @@ import React from 'react'
 import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
-import Button from './Button'
+import Button from '@components/Button/Button'
+import './Feedback.scss'
 
 const phoneRegExp =
   // eslint-disable-next-line no-useless-escape

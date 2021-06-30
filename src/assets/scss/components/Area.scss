@@ -29,8 +29,9 @@
   @include h4;
 }
 .area__count {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 15px;
   margin-top: auto;
 
   li span {

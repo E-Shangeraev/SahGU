@@ -1,6 +1,6 @@
 .your-beginning__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 55% 1fr;
   grid-gap: 48px;
 
   .title,
@@ -8,6 +8,9 @@
   .button {
     grid-column-start: 2;
     height: fit-content;
+  }
+  .title {
+    white-space: nowrap;
   }
   .button {
     width: 60%;
@@ -17,7 +20,39 @@
   grid-row: 1 / 4;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 .your-beginning__title span {
   color: $yellow;
+}
+
+@media (max-width: 1366px) {
+  .your-beginning__container {
+    grid-gap: 30px;
+  }
+}
+@media (max-width: 1024px) {
+  .your-beginning__container {
+    grid-template-columns: 1fr;
+
+    .title,
+    .big-text,
+    .button {
+      grid-column-start: 1;
+    }
+    .button {
+      width: 50%;
+    }
+  }
+  .your-beginning__image {
+    grid-row: 2 / 3;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .your-beginning__container .button {
+    width: 100%;
+  }
 }

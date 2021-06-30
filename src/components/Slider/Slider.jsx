@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef } from 'react'
-import PropTypes from 'prop-types'
 import SlickSlider from 'react-slick'
-import Button from './Button'
-import image1 from '../assets/img/Slider/1.jpg'
+import Button from '@components/Button/Button'
+import './Slider.scss'
+import image1 from '@assets/img/Slider/1.jpg'
 
-const Slider = props => {
+const Slider = () => {
   const sliderRef = useRef()
   const sliderContainerRef = useRef()
 
