@@ -24,4 +24,4 @@ jobs:
             npm run client:build
             pm2 stop sakhgu
             service nginx restart
-            pm2 start cfry
+            pm2 start sakhgu

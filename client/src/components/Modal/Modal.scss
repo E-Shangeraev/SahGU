@@ -22,15 +22,15 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  overflow-y: auto;
+  max-height: 80vh;
   transform: translate(-50%, -50%);
 
   &--default {
     padding: 60px;
     max-width: 520px;
-    max-height: 640px;
     border-radius: 12px;
     background-color: #fff;
-    overflow-y: auto;
   }
   &::-webkit-scrollbar {
     width: 6px;
@@ -38,6 +38,7 @@
   }
   &::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #f5f5f5;
   }
   &::-webkit-scrollbar-thumb {
@@ -123,5 +124,31 @@
   textarea,
   button {
     margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .modal__container--default {
+  }
+}
+@media (max-width: 900px) {
+  .modal__container--default {
+    padding: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .modal__title {
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .modal__container--default {
+    max-width: 80vw;
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .modal__container--default {
+    max-width: 90vw;
   }
 }

@@ -49,11 +49,20 @@
   }
 }
 
+@media (max-width: 1366px) {
+  .form {
+    input,
+    textarea {
+      font-size: 16px;
+    }
+  }
+}
 @media (max-width: 500px) {
   .form {
     & > input,
     textarea,
     button {
+      font-size: 14px;
       margin-bottom: 20px;
     }
   }
