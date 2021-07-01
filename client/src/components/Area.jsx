@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Modal from './Modal'
+import Modal from '@components/Modal/Modal'
 import AreaBlock from './AreaBlock'
 
 const Area = ({ name, twoDiplomas, count }) => (

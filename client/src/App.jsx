@@ -13,7 +13,7 @@ import Area from './components/Area'
 import Feedback from './components/Feedback/Feedback'
 import { Gosuslugi, Mail, Personal, Post } from './components/DocumentsBlock'
 import Slider from './components/Slider/Slider'
-import Modal from './components/Modal'
+import Modal from './components/Modal/Modal'
 import ConsultationBlock from './components/ConsultationBlock'
 
 import promo1 from './assets/img/promo-1.png'

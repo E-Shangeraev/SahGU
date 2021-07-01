@@ -16,6 +16,9 @@ html {
 #root {
   height: 100%;
 }
+#portal {
+  position: relative;
+}
 .App {
   display: flex;
   flex-direction: column;
