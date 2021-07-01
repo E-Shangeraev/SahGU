@@ -1,12 +1,14 @@
 // ==== Библиотеки ====
 const express = require('express')
 const path = require('path')
+require('dotenv').config()
 
 const app = express()
 
 // ==== Middlewares ====
 app.use(express.json({ extended: true }))
 
+// ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 
@@ -16,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // ==== App Start ====
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 const start = async () => {
   try {
