@@ -4,16 +4,39 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=production node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "client:install": "npm install --prefix client",
+    "client:build": "npm run build --prefix client",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/E-Shangeraev/SakhGU.git"
   },
-  "author": "",
+  "keywords": [
+    "MERN",
+    "MongoDB",
+    "Express",
+    "React",
+    "Node.js"
+  ],
+  "author": "E-Shangeraev <e.shangeraev@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/E-Shangeraev/SakhGU/issues"
   },
-  "homepage": "https://github.com/E-Shangeraev/SakhGU#readme"
+  "homepage": "https://github.com/E-Shangeraev/SakhGU#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "cross-env": "^7.0.3",
+    "editorconfig-checker": "^4.0.2",
+    "express-formidable": "^1.2.0",
+    "nodemon": "^2.0.9"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.0"
+  }
 }
