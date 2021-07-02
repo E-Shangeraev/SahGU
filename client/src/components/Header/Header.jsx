@@ -35,29 +35,21 @@ const Header = () => {
         <nav className="header__nav">
           <ul>
             <li>
-              <Link smooth to="1" offset={200}>
+              <a href="#1" offset={200}>
                 Про СахГУ
-              </Link>
+              </a>
             </li>
             <li>
-              <Link smooth to="2">
-                Направления подготовки
-              </Link>
+              <a href="#2">Направления подготовки</a>
             </li>
             <li>
-              <Link smooth to="3">
-                Уникальность СахГУ
-              </Link>
+              <a href="#3">Уникальность СахГУ</a>
             </li>
             <li>
-              <Link smooth to="4">
-                Отзывы выпускников
-              </Link>
+              <a href="#4">Отзывы выпускников</a>
             </li>
             <li>
-              <Link smooth to="5">
-                Контакты
-              </Link>
+              <a href="#5">Контакты</a>
             </li>
           </ul>
         </nav>
