@@ -25,8 +25,8 @@ const Header = () => {
   }, [])
   return (
     <header className={classNames('header', { 'header--overlay': toggleMenu })}>
-      <a href="/">
-        <img className="header__logo" src={logo} alt="Логотип СахГУ" />
+      <a className="header__logo" href="/">
+        <img src={logo} alt="Логотип СахГУ" />
       </a>
       <div
         className={classNames('header__menu', {

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
@@ -11,6 +11,8 @@ const phoneRegExp =
   /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10,11}$/
 
 const Feedback = ({ title, text, formId }) => {
+  const [submited, setSubmited] = useState(false)
+
   const validationSchema = yup.object().shape({
     name: yup
       .string()
@@ -56,9 +58,14 @@ const Feedback = ({ title, text, formId }) => {
               agreement: false,
             }}
             validateOnBlur
-            onSubmit={(values, { resetForm }) => {
-              console.log(values)
+            onSubmit={async (values, { resetForm }) => {
+              fetch('/api/mail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json;charset=utf-8' },
+                body: JSON.stringify(values),
+              })
               resetForm()
+              setSubmited(true)
             }}
             validationSchema={validationSchema}>
             {({

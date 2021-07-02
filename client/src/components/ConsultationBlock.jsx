@@ -45,7 +45,11 @@ const ConsultationBlock = ({ title, text }) => {
             }}
             validateOnBlur
             onSubmit={(values, { resetForm }) => {
-              console.log(values)
+              fetch('/api/mail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(values),
+              })
               resetForm()
               setSubmited(true)
             }}
