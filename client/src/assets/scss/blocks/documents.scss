@@ -39,6 +39,7 @@
 }
 .documents__modal {
   padding: 30px;
+  max-width: 520px;
   background-color: #f2f2f2;
   background-repeat: no-repeat;
   background-position: 90% 10%;
@@ -92,6 +93,12 @@
   }
   .documents-way {
     padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .documents__modal {
+    max-width: 80vw;
+    width: 100%;
   }
 }
 @media (max-width: 500px) {
