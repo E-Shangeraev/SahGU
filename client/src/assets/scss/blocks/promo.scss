@@ -1,4 +1,5 @@
 .promo {
+  margin-top: 100px;
   height: calc(100vh - 100px);
 
   .wrapper {
@@ -84,6 +85,7 @@ span.promo__title {
 }
 @media (max-width: 1366px) {
   .promo {
+    margin-top: 95px;
     height: calc(100vh - 95px);
   }
   h1.promo__title,
