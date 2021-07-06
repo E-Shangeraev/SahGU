@@ -66,6 +66,13 @@
     @include text;
     line-height: 32px;
   }
+  a {
+    color: $purple;
+    transition: ease 0.25s;
+  }
+  a:hover {
+    color: #000;
+  }
 }
 
 .documents-block__title {
