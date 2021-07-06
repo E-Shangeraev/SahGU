@@ -1,0 +1,36 @@
+const { model, Schema, Types } = require('mongoose')
+
+const ExamSchema = new Schema({
+  id: { type: Types.ObjectId, ref: 'Subjects' },
+  score: Number,
+  alternativeId: { type: Types.ObjectId, ref: 'Subjects' },
+  alternativeScore: Number,
+})
+
+const AreaSchema = new Schema({
+  qualification: {
+    type: new Schema({
+      0: Boolean,
+      1: Boolean,
+    }),
+    required: true,
+  },
+  code: { type: String, required: true },
+  name: { type: String, required: true },
+  profile: { type: [String], required: true },
+  activities: { type: [String], required: true },
+  twoDiplomas: Boolean,
+  exams: [ExamSchema],
+  budget: Schema({
+    count: { type: Number, required: false },
+    score: { type: Number, required: false },
+  }),
+  paid: Schema({
+    count: { type: Number, required: false },
+    cost: { type: Number, required: false },
+  }),
+})
+
+const Area = model('Areas', AreaSchema)
+
+module.exports = { Area, AreaSchema }

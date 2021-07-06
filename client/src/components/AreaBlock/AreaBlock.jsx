@@ -21,14 +21,14 @@ const AreaBlock = ({ item }) => {
         </ul>
         <h4 className="area-block__subtitle">Вступительные испытания</h4>
         <ul className="area-block__list">
-          {exams.map(exam => (
+          {/* {exams.map(exam => (
             <li>
               {exam.alternativeName
                 ? `${exam.name} (${exam.score}) /
                 ${exam.alternativeName} (${exam.alternativeScore})`
                 : `${exam.name} (${exam.score})`}
             </li>
-          ))}
+          ))} */}
         </ul>
         <h4 className="area-block__subtitle">
           Виды профессиональной деятельности

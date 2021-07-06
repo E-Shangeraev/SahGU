@@ -1,19 +1,33 @@
-// ==== Libraries ====
+// ==== Imports ====
 const express = require('express')
+const mongoose = require('mongoose')
 const path = require('path')
+const { default: AdminBro } = require('admin-bro')
+const options = require('./admin/admin.options')
 require('dotenv').config()
 
 const app = express()
 
 // ==== Routes ====
-const { mailRouter } = require('./routes')
+const {
+  buildAdminRouter,
+  mailRouter,
+  areasRouter,
+  subjectRouter,
+} = require('./routes')
+
+// ==== Admin options ====
+const admin = new AdminBro(options)
+const adminRouter = buildAdminRouter(admin)
 
 // ==== Middlewares ====
-app.use(express.urlencoded({ extended: true }))
 app.use(express.json({ extended: true }))
 
 // ==== API ====
+app.use(admin.options.rootPath, adminRouter)
 app.use('/api/mail', mailRouter)
+app.use('/api/areas', areasRouter)
+app.use('/api/subjects', subjectRouter)
 
 // ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {
@@ -26,12 +40,18 @@ if (process.env.NODE_ENV === 'production') {
 
 // ==== App Start ====
 const PORT = process.env.PORT || 5000
+const MONGO_URI = process.env.MONGO_URI
 
 const start = async () => {
   try {
+    await mongoose.connect(MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+
     app.listen(PORT, () => console.log(`App has been started on port ${PORT}`))
   } catch (err) {
-    console.log(`Server error`, err.message)
+    console.log('Server error', err.message)
     process.exit(1)
   }
 }

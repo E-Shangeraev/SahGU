@@ -14,7 +14,7 @@ export const fetchAreas = qualification => dispatch => {
   dispatch(setLoaded(false))
 
   axios
-    .get(`http://localhost:3001/areas?qualification=${qualification}`)
+    .get(`/api/areas?qualification=${qualification}`)
     .then(({ data }) => dispatch(setAreas(data)))
 }
 

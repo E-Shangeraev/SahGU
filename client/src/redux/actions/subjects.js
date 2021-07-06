@@ -23,7 +23,5 @@ export const removeActiveSubject = activeSubjectId => ({
 export const fetchSubjects = () => dispatch => {
   dispatch(setLoaded(false))
 
-  axios
-    .get('http://localhost:3001/subjects')
-    .then(({ data }) => dispatch(setSubjects(data)))
+  axios.get('/api/subjects').then(({ data }) => dispatch(setSubjects(data)))
 }
