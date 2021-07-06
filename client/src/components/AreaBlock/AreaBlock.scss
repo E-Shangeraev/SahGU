@@ -1,4 +1,6 @@
-.profile {
+@import '../../assets/scss/mixins.scss';
+
+.area-block__profile {
   &:not(:last-of-type) {
     margin-bottom: 40px;
   }
@@ -13,25 +15,15 @@
     width: fit-content !important;
   }
 }
-.profile__name {
-  display: inline-block;
-  margin-top: 1.5em;
-  margin-bottom: 40px;
-  @include text;
-
-  &::before {
-    content: '•';
-    margin-right: 10px;
-  }
-}
-.profile__subtitle {
+.area-block__subtitle {
   @include h4;
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin: 0;
 }
-.profile__list {
-  margin-left: 20px;
-  margin-bottom: 40px;
+.area-block__text {
+  margin: 20px 0;
+}
+.area-block__list {
+  margin: 40px 0 40px 20px;
   @include text;
   list-style: disc;
 

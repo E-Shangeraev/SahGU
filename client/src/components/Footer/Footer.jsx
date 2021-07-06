@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-scroll'
+// import { Link } from 'react-scroll'
 import logoFooter from '@assets/img/logo-footer.png'
 import instagram from '@assets/img/icons/instagram.svg'
 import vk from '@assets/img/icons/vk.svg'

@@ -3,7 +3,7 @@ import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
-import Button from './Button/Button'
+import Button from '@components/Button/Button'
 
 const phoneRegExp =
   // eslint-disable-next-line no-useless-escape

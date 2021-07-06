@@ -7,14 +7,11 @@ import { v4 as uuidv4 } from 'uuid'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Button from './components/Button/Button'
-import Switch from './components/Switch/Switch'
-import Checkbox from './components/Checkbox/Checkbox'
-import Area from './components/Area'
 import Feedback from './components/Feedback/Feedback'
 import { Gosuslugi, Mail, Personal, Post } from './components/DocumentsBlock'
 import Slider from './components/Slider/Slider'
 import Modal from './components/Modal/Modal'
-import ConsultationBlock from './components/ConsultationBlock'
+import ConsultationBlock from './components/ConsultationBlock/ConsultationBlock'
 
 import promo1 from './assets/img/promo-1.png'
 import promo2 from './assets/img/promo-2.png'
@@ -44,24 +41,7 @@ import phone from './assets/img/icons/phone.svg'
 import letter from './assets/img/icons/letter.svg'
 import world from './assets/img/icons/world.svg'
 import mark from './assets/img/icons/mark.svg'
-
-const areas = [
-  {
-    name: 'Педагогическое образование (бакалавриат)',
-    twoDiplomas: true,
-    count: [15, 15, 138],
-  },
-  {
-    name: 'Туризм (бакалавриат)',
-    twoDiplomas: false,
-    count: [18, 10, 130],
-  },
-  {
-    name: 'Лингвистика (бакалавриат)',
-    twoDiplomas: false,
-    count: [18, 12, 233],
-  },
-]
+import Areas from './components/Areas/Areas'
 
 function App() {
   return (
@@ -293,62 +273,7 @@ function App() {
           </section>
         </ScrollAnimation>
 
-        <section className="areas" id="2">
-          <div className="wrapper">
-            <div className="areas__container">
-              <ScrollAnimation animateIn="animate__fadeIn" animateOnce>
-                <h2 className="title areas__title">
-                  <span>Направления </span>подготовки
-                </h2>
-                <p className="big-text areas__text">
-                  Вы можете ознакомиться со всеми направлениями обучения на 2021
-                  год, выбрать предметы которые сдаёте и посмотреть именно те,
-                  которые были бы интересны вам!
-                </p>
-              </ScrollAnimation>
-              <form className="areas__filters">
-                <Switch
-                  options={{
-                    name: 'type',
-                    firstValue: 'Магистратура',
-                    secondValue: 'Бакалавр/Специалитет',
-                  }}
-                />
-                <Switch
-                  options={{
-                    name: 'areas',
-                    firstValue: 'Все направления',
-                    secondValue: 'Выбрать редметы',
-                  }}
-                />
-                <Checkbox
-                  values={[
-                    'Информатика',
-                    'Русский язык',
-                    'Биология',
-                    'Литература',
-                    'Физика',
-                    'Иностранный язык',
-                    'Математика',
-                    'Обществознание',
-                    'История',
-                    'География',
-                  ]}
-                />
-              </form>
-              <ul className="areas__list">
-                {areas.map(item => (
-                  <Area
-                    key={uuidv4()}
-                    name={item.name}
-                    twoDiplomas={item.twoDiplomas}
-                    count={item.count}
-                  />
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
+        <Areas />
 
         <ScrollAnimation
           animateIn="animate__fadeIn"

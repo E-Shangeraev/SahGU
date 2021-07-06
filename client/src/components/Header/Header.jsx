@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-scroll'
+// import { Link } from 'react-scroll'
 import { Transition } from 'react-transition-group'
 import { v4 as uuidv4 } from 'uuid'
 import classNames from 'classnames'
 import Modal from '@components/Modal/Modal'
-import ConsultationBlock from '@components/ConsultationBlock'
+import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './Header.scss'
 import logo from './logo.png'
 
