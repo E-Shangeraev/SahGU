@@ -63,6 +63,16 @@
     margin-right: 20px;
   }
 }
+.footer__policy {
+  @include text;
+  color: #fff;
+  white-space: nowrap;
+  transition: ease 0.25s;
+
+  &:hover {
+    color: $yellow;
+  }
+}
 
 @media (max-width: 1600px) {
   .footer__logo {

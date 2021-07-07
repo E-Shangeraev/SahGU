@@ -38,7 +38,12 @@ const Footer = () => (
             </a>
           </div>
         </nav>
-        <Button>Согласие на обработку персональных данных</Button>
+        <a
+          className="footer__policy"
+          href="/Politika_v_otnoshenii_obrabotki_personalnykh_dannykh.pdf"
+          target="_blank">
+          Согласие на обработку персональных данных
+        </a>
       </div>
     </div>
   </footer>
