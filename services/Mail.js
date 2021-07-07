@@ -17,8 +17,8 @@ class Mail {
   }
   createMailOption(data, subject) {
     const mailOption = {
-      from: `<eldar@mygang.ru>`,
-      to: 'eldar@mygang.ru',
+      from: `<${process.env.MAIL_LOGIN}>`,
+      to: process.env.MAIL_LOGIN,
       subject: subject,
       html: data,
     }
@@ -31,8 +31,8 @@ class Mail {
       port: 587,
       secure: false,
       auth: {
-        user: 'eldar@mygang.ru',
-        pass: '1234509876',
+        user: process.env.MAIL_LOGIN,
+        pass: process.env.MAIL_PASSWORD,
       },
     })
 
