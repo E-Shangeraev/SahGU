@@ -22,6 +22,7 @@ const options = {
       labels: {
         Admin: 'Администраторы',
         Subjects: 'Предметы подготовки',
+        Areas: 'Направления подготовки',
       },
       buttons: {
         filter: 'Фильтр',
