@@ -10,21 +10,27 @@ const Area = ({ item }) => {
 
   return (
     <li className="area">
-      <span className="area__name">{name}</span>
+      {name && <span className="area__name">{name}</span>}
       {twoDiplomas ? <span className="bage">Программа «2 диплома»</span> : null}
       <ul className="area__count">
-        <li key={uuidv4()}>
-          <span>{budget.count}</span>
-          <span>бюджетных мест</span>
-        </li>
-        <li>
-          <span>{paid.count}</span>
-          <span>платных мест</span>
-        </li>
-        <li>
-          <span>{budget.score}</span>
-          <span>проходной балл</span>
-        </li>
+        {budget && (
+          <li key={uuidv4()}>
+            <span>{budget.count ? budget.count : '—'}</span>
+            <span>бюджетных мест</span>
+          </li>
+        )}
+        {paid && (
+          <li>
+            <span>{paid.count ? paid.count : '—'}</span>
+            <span>платных мест</span>
+          </li>
+        )}
+        {budget && (
+          <li>
+            <span>{budget.score ? budget.score : '—'}</span>
+            <span>проходной балл</span>
+          </li>
+        )}
       </ul>
       <Modal btnText="Подробнее" btnColor="yellow">
         <AreaBlock item={item} />
