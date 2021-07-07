@@ -4,11 +4,18 @@ const Mail = () => (
   <div className="documents-block documents-block--post">
     <h3 className="documents-block__title">По электронной почте</h3>
     <p className="documents-block__text">
-      Скачай с сайта (раздел &quot;Абитуриентам&quot;, &quot;Бакалавриат&quot;
+      Скачать с{' '}
+      <a
+        // eslint-disable-next-line max-len
+        href="https://vk.com/away.php?utf=1&to=http%3A%2F%2Fsakhgu.ru%2Fabitur%2Fbakalavriat%2F"
+        target="_blank"
+        rel="noreferrer">
+        сайта
+      </a>{' '}
       бланк заявления на поступление и заявление о согласии на обработку
-      персональных данных. Заполни их.
+      персональных данных. Заполнить их.
     </p>
-    <span>Отсканируй или сфотографируй остальные документы:</span>
+    <span>Отсканировать или сфотографировать остальные документы:</span>
     <ul className="documents-block__list">
       <li>
         паспорт (страницы, где находится фото, прописка и страница со сведениями
@@ -22,7 +29,7 @@ const Mail = () => (
       </li>
     </ul>
     <p className="documents-block__text">
-      Отсканированные документы пришли на адрес{' '}
+      Отсканированные документы прислать на адрес{' '}
       <a href="mailto:pk@sakhgu.ru">pk@sakhgu.ru</a>.
     </p>
   </div>
