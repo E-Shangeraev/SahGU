@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
+import Modal from '@components/Modal/Modal'
 import Button from '@components/Button/Button'
 import './Feedback.scss'
 
@@ -11,7 +12,7 @@ const phoneRegExp =
   /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10,11}$/
 
 const Feedback = ({ title, text, formId }) => {
-  // const [submited, setSubmited] = useState(false)
+  const [submited, setSubmited] = useState(false)
 
   const validationSchema = yup.object().shape({
     name: yup
@@ -65,7 +66,7 @@ const Feedback = ({ title, text, formId }) => {
                 body: JSON.stringify(values),
               })
               resetForm()
-              // setSubmited(true)
+              setSubmited(true)
             }}
             validationSchema={validationSchema}>
             {({
@@ -139,6 +140,12 @@ const Feedback = ({ title, text, formId }) => {
                   disabled={!isValid && !dirty}>
                   Отправить
                 </Button>
+                <Modal active={submited} withButton={false}>
+                  <h3 className="modal__title">Спасибо за заявку!</h3>
+                  <p className="text modal__text">
+                    Мы свяжемся с вами в ближайшее время
+                  </p>
+                </Modal>
                 <div className="form__agreement">
                   <Field
                     type="checkbox"

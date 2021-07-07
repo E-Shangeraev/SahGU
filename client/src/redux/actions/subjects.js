@@ -26,5 +26,7 @@ export const fetchSubjects = () => dispatch => {
   axios
     .get('/api/subjects')
     .then(({ data }) => dispatch(setSubjects(data)))
-    .catch(error => console.log(error))
+    .catch(error => {
+      throw error
+    })
 }

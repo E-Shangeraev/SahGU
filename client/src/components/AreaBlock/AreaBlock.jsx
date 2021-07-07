@@ -6,7 +6,8 @@ import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './AreaBlock.scss'
 
 const AreaBlock = React.memo(({ item }) => {
-  const { name, twoDiplomas, budget, paid, profile, exams, activities } = item
+  const { name, code, twoDiplomas, budget, paid, profile, exams, activities } =
+    item
 
   return (
     <div className="area-block">
@@ -51,6 +52,8 @@ const AreaBlock = React.memo(({ item }) => {
         </ul>
         <Modal btnText="Хочу поступить сюда" btnColor="yellow">
           <ConsultationBlock
+            areaName={name}
+            areaCode={code}
             title="Оставьте свои контактные данные
             и мы свяжемся с вами в ближайшее время"
           />

@@ -3,20 +3,23 @@ require('dotenv').config()
 
 class Mail {
   async sendMail(body) {
+    console.log(body)
     if (!Object.keys(body).length) {
       throw new Error('Отсутствует тело запроса')
     }
     const mailBody = this.createMailBody(body)
-    const mailOption = this.createMailOption(mailBody)
+    const mailOption = body.areaName
+      ? this.createMailOption(mailBody, 'СахГУ — Заявка на поступление')
+      : this.createMailOption(mailBody, 'СахГУ')
     const mailTransport = this.createMailTransport()
 
     return await mailTransport.sendMail(mailOption)
   }
-  createMailOption(data) {
+  createMailOption(data, subject) {
     const mailOption = {
       from: `<eldar@mygang.ru>`,
       to: 'eldar@mygang.ru',
-      subject: 'СахГУ',
+      subject: subject,
       html: data,
     }
 
@@ -35,7 +38,7 @@ class Mail {
 
     return transporter
   }
-  createMailBody({ name, phone, text }) {
+  createMailBody({ name, phone, text, areaName, areaCode }) {
     return `
     <!DOCTYPE html>
     <html lang="ru">
@@ -133,11 +136,39 @@ class Mail {
                 class="body__list"
                 style="padding: 0; margin: 0; list-style: none"
               >
+                ${
+                  areaName
+                    ? `
+                  <li style="padding: 25px 0; font-size: 14px">
+                    <b
+                      style="
+                        display: inline-block;
+                        width: 130px;
+                        border-right: 1px solid #adadad;
+                      "
+                      >Специальность:</b
+                    >
+                    <span style="padding-left: 15px">${areaName}</span>
+                  </li>
+                  <li style="padding: 25px 0; font-size: 14px">
+                    <b
+                      style="
+                        display: inline-block;
+                        width: 130px;
+                        border-right: 1px solid #adadad;
+                      "
+                      >Код:</b
+                    >
+                    <span style="padding-left: 15px">${areaCode}</span>
+                  </li>
+                  `
+                    : ''
+                }
                 <li style="padding: 25px 0; font-size: 14px">
                   <b
                     style="
                       display: inline-block;
-                      width: 100px;
+                      width: 130px;
                       border-right: 1px solid #adadad;
                     "
                     >Имя:</b
@@ -148,7 +179,7 @@ class Mail {
                   <b
                     style="
                       display: inline-block;
-                      width: 100px;
+                      width: 130px;
                       border-right: 1px solid #adadad;
                     "
                     >Телефон:</b
@@ -164,7 +195,7 @@ class Mail {
                       <b
                         style="
                           display: inline-block;
-                          width: 100px;
+                          width: 130px;
                           border-right: 1px solid #adadad;
                         "
                         >Текст сообщения:</b

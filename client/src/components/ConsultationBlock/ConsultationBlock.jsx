@@ -11,7 +11,7 @@ const phoneRegExp =
 
 const formId = uuidv4()
 
-const ConsultationBlock = ({ title, text }) => {
+const ConsultationBlock = ({ title, text, areaName, areaCode }) => {
   const [submited, setSubmited] = useState(false)
 
   const validationSchema = yup.object().shape({
@@ -42,6 +42,8 @@ const ConsultationBlock = ({ title, text }) => {
               name: '',
               phone: '',
               agreement: false,
+              areaName,
+              areaCode,
             }}
             validateOnBlur
             onSubmit={(values, { resetForm }) => {
@@ -142,10 +144,14 @@ const ConsultationBlock = ({ title, text }) => {
 ConsultationBlock.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string,
+  areaName: PropTypes.string,
+  areaCode: PropTypes.string,
 }
 
 ConsultationBlock.defaultProps = {
   text: null,
+  areaName: null,
+  areaCode: null,
 }
 
 export default ConsultationBlock
