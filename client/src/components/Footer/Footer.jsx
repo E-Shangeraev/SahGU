@@ -3,7 +3,6 @@ import React from 'react'
 import logoFooter from '@assets/img/logo-footer.png'
 import instagram from '@assets/img/icons/instagram.svg'
 import vk from '@assets/img/icons/vk.svg'
-import Button from '@components/Button/Button'
 import './Footer.scss'
 
 const Footer = () => (

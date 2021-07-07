@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
+import ym from 'react-yandex-metrika'
 import Modal from '@components/Modal/Modal'
 import Button from '@components/Button/Button'
 import './Feedback.scss'
@@ -67,6 +68,7 @@ const Feedback = ({ title, text, formId }) => {
               })
               resetForm()
               setSubmited(true)
+              ym(82554970, 'reachGoal', 'click_zayavka')
             }}
             validationSchema={validationSchema}>
             {({

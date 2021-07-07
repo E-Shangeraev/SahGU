@@ -3,6 +3,7 @@ import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
+import ym from 'react-yandex-metrika'
 import Button from '@components/Button/Button'
 
 const phoneRegExp =
@@ -54,6 +55,7 @@ const ConsultationBlock = ({ title, text, areaName, areaCode }) => {
               })
               resetForm()
               setSubmited(true)
+              ym(82554970, 'reachGoal', 'click_zayavka')
             }}
             validationSchema={validationSchema}>
             {({
