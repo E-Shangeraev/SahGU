@@ -23,5 +23,8 @@ export const removeActiveSubject = activeSubjectId => ({
 export const fetchSubjects = () => dispatch => {
   dispatch(setLoaded(false))
 
-  axios.get('/api/subjects').then(({ data }) => dispatch(setSubjects(data)))
+  axios
+    .get('/api/subjects')
+    .then(({ data }) => dispatch(setSubjects(data)))
+    .catch(error => console.log(error))
 }

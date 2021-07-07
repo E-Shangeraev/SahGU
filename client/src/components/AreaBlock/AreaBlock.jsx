@@ -1,10 +1,11 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import PropTypes from 'prop-types'
 import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './AreaBlock.scss'
 
-const AreaBlock = ({ item }) => {
+const AreaBlock = React.memo(({ item }) => {
   const { name, twoDiplomas, budget, paid, profile, exams, activities } = item
 
   return (
@@ -14,21 +15,21 @@ const AreaBlock = ({ item }) => {
       <div className="area-block__profile">
         <ul className="area-block__list">
           {profile.map((profileName, index) => (
-            <li>
+            <li key={uuidv4()}>
               Профиль {index + 1}: {profileName}
             </li>
           ))}
         </ul>
         <h4 className="area-block__subtitle">Вступительные испытания</h4>
         <ul className="area-block__list">
-          {/* {exams.map(exam => (
-            <li>
-              {exam.alternativeName
-                ? `${exam.name} (${exam.score}) /
-                ${exam.alternativeName} (${exam.alternativeScore})`
-                : `${exam.name} (${exam.score})`}
+          {exams.map(exam => (
+            <li key={uuidv4()}>
+              {exam.alternative
+                ? `${exam.main.name} (${exam.mainScore}) /
+                ${exam.alternative.name} (${exam.alternativeScore})`
+                : `${exam.main.name} (${exam.mainScore})`}
             </li>
-          ))} */}
+          ))}
         </ul>
         <h4 className="area-block__subtitle">
           Виды профессиональной деятельности
@@ -57,7 +58,7 @@ const AreaBlock = ({ item }) => {
       </div>
     </div>
   )
-}
+})
 
 AreaBlock.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,

@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import PropTypes from 'prop-types'
 import Modal from '@components/Modal/Modal'
 import AreaBlock from '@components/AreaBlock/AreaBlock'
@@ -12,7 +13,7 @@ const Area = ({ item }) => {
       <span className="area__name">{name}</span>
       {twoDiplomas ? <span className="bage">Программа «2 диплома»</span> : null}
       <ul className="area__count">
-        <li>
+        <li key={uuidv4()}>
           <span>{budget.count}</span>
           <span>бюджетных мест</span>
         </li>

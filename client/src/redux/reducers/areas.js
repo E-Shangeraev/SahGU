@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-prototype-builtins */
 const initialState = {
   items: [],
@@ -11,12 +12,12 @@ function checkMatches(active, array) {
     const alternativeArray = []
 
     array.forEach(obj => {
-      if (obj.hasOwnProperty('alternativeId')) {
-        simpleArray.push(obj.id)
-        alternativeArray.push(obj.alternativeId)
+      if (obj.hasOwnProperty('alternative')) {
+        simpleArray.push(obj.main._id)
+        alternativeArray.push(obj.alternative._id)
+      } else {
+        simpleArray.push(obj.main._id)
       }
-      simpleArray.push(obj.id)
-      alternativeArray.push(obj.id)
     })
 
     return simpleArray.includes(item) || alternativeArray.includes(item)

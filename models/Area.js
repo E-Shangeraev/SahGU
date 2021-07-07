@@ -1,9 +1,9 @@
 const { model, Schema, Types } = require('mongoose')
 
 const ExamSchema = new Schema({
-  id: { type: Types.ObjectId, ref: 'Subjects' },
-  score: Number,
-  alternativeId: { type: Types.ObjectId, ref: 'Subjects' },
+  main: { type: Types.ObjectId, ref: 'Subjects' },
+  mainScore: Number,
+  alternative: { type: Types.ObjectId, ref: 'Subjects' },
   alternativeScore: Number,
 })
 

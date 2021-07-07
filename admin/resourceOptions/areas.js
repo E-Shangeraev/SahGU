@@ -3,17 +3,7 @@ const { Area } = require('../../models/Area')
 
 /** @type {AdminBro.ResourceOtions} */
 const options = {
-  listProperties: [
-    'qualification',
-    'code',
-    'name',
-    'profile',
-    'activities',
-    'twoDiplomas',
-    'exams',
-    'budget',
-    'paid',
-  ],
+  listProperties: ['code', 'name', 'twoDiplomas', 'budget', 'paid'],
   editProperties: [
     'qualification',
     'code',
