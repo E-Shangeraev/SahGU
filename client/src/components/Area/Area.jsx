@@ -7,7 +7,6 @@ import './Area.scss'
 
 const Area = ({ item }) => {
   const { name, twoDiplomas, budget, paid } = item
-
   return (
     <li className="area">
       {name && <span className="area__name">{name}</span>}

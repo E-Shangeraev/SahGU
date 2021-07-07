@@ -63,7 +63,7 @@ const Areas = () => {
             </h2>
             <p className="big-text areas__text">
               Вы можете ознакомиться со всеми направлениями обучения на 2021
-              год, выбрать предметы которые сдаёте и посмотреть именно те,
+              год, выбрать предметы, которые сдаёте, и посмотреть именно те,
               которые были бы интересны вам!
             </p>
           </ScrollAnimation>
@@ -72,7 +72,7 @@ const Areas = () => {
               options={{
                 name: 'qualification',
                 first: { label: 'Магистратура', value: 1 },
-                second: { label: 'Бакалавр/Специалитет', value: 0 },
+                second: { label: 'Бакалавриат/Специалитет', value: 0 },
               }}
               onChange={onSelectQualification}
             />
