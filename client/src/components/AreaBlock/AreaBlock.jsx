@@ -49,34 +49,37 @@ const AreaBlock = React.memo(({ item }) => {
             <p className="text area-block__text">{activities.join(', ')}</p>
           </>
         )}
-        <ul className="area__count">
-          {budget && (
-            <li key={uuidv4()}>
-              <span>{budget.count ? budget.count : '—'}</span>
-              <span>бюджетных мест</span>
-            </li>
-          )}
-          {paid && (
-            <li>
-              <span>{paid.count ? paid.count : '—'}</span>
-              <span>платных мест</span>
-            </li>
-          )}
-          {budget && (
-            <li>
-              <span>{budget.score ? budget.score : '—'}</span>
-              <span>проходной балл</span>
-            </li>
-          )}
-          {paid && (
-            <li>
-              <span>
-                {paid.cost ? `${paid.cost.toLocaleString('ru-RU')} ₽` : '—'}
-              </span>
-              <span>стоимость за год</span>
-            </li>
-          )}
-        </ul>
+        {(budget || paid) && (
+          <ul className="area__count">
+            {budget && (
+              <li key={uuidv4()}>
+                <span>{budget.count ? budget.count : '—'}</span>
+                <span>бюджетных мест</span>
+              </li>
+            )}
+            {paid && (
+              <li>
+                <span>{paid.count ? paid.count : '—'}</span>
+                <span>платных мест</span>
+              </li>
+            )}
+            {budget && (
+              <li>
+                <span>{budget.score ? budget.score : '—'}</span>
+                <span>проходной балл</span>
+              </li>
+            )}
+            {paid && (
+              <li>
+                <span>
+                  {paid.cost ? `${paid.cost.toLocaleString('ru-RU')} ₽` : '—'}
+                </span>
+                <span>стоимость за год</span>
+              </li>
+            )}
+          </ul>
+        )}
+
         <Modal btnText="Хочу поступить сюда" btnColor="yellow">
           <ConsultationBlock
             areaName={name}

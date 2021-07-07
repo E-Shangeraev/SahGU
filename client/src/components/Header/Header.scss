@@ -260,7 +260,7 @@
     height: 75px;
 
     &::before {
-      top: 75px;
+      display: none;
     }
   }
   .header__menu {

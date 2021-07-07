@@ -87,8 +87,11 @@
   }
 }
 @media (max-width: 900px) {
-  .feedback__bg-1 {
-    width: 125px !important;
+  .feedback__bg-1,
+  .feedback__bg-3,
+  .feedback__bg-4 {
+    // width: 125px !important;
+    display: none !important;
   }
   .feedback__container {
     display: block;

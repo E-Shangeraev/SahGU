@@ -104,6 +104,9 @@
   }
 }
 @media (max-width: 1200px) {
+  .features {
+    overflow: hidden;
+  }
   .features__list {
     div {
       padding: 30px;
@@ -162,7 +165,6 @@
   }
   .features__parallax-2 {
     max-height: 400px;
-    // height: 100%;
   }
   .features__bg-2 {
     top: 30%;

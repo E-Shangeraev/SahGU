@@ -35,21 +35,29 @@ const Header = () => {
         <nav className="header__nav">
           <ul>
             <li>
-              <a href="#1" offset={200}>
+              <a href="#1" offset={200} onClick={() => setToggleMenu(false)}>
                 Про СахГУ
               </a>
             </li>
             <li>
-              <a href="#2">Направления подготовки</a>
+              <a href="#2" onClick={() => setToggleMenu(false)}>
+                Направления подготовки
+              </a>
             </li>
             <li>
-              <a href="#3">Уникальность СахГУ</a>
+              <a href="#3" onClick={() => setToggleMenu(false)}>
+                Уникальность СахГУ
+              </a>
             </li>
             <li>
-              <a href="#4">Отзывы выпускников</a>
+              <a href="#4" onClick={() => setToggleMenu(false)}>
+                Отзывы выпускников
+              </a>
             </li>
             <li>
-              <a href="#5">Контакты</a>
+              <a href="#5" onClick={() => setToggleMenu(false)}>
+                Контакты
+              </a>
             </li>
           </ul>
         </nav>
