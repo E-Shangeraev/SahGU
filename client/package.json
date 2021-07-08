@@ -35,8 +35,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject",
-    "server": "npx json-server --watch public/db.json --port=3001"
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": [
@@ -64,7 +63,6 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "json-server": "^0.16.3"
+    "eslint-plugin-react": "^7.24.0"
   }
 }

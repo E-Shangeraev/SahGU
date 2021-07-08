@@ -3,8 +3,6 @@
 
 .area {
   display: flex;
-  position: relative;
-  top: 0;
   flex-direction: column;
   padding: 30px;
   border: 1px solid #e0e0e0;
@@ -18,7 +16,7 @@
     margin-bottom: 20px;
   }
   &:hover {
-    top: -5%;
+    transform: translateY(-5%);
   }
   .button {
     width: 60%;
