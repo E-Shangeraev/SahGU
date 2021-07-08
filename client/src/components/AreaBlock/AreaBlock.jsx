@@ -33,7 +33,6 @@ const AreaBlock = React.memo(({ item, year }) => {
         </ul>
         {twoDiplomas && (
           <>
-            <h4 className="area-block__subtitle">Описание</h4>
             <p className="text area-block__text">
               Обучаясь на этом направлении, вы можете получить два диплома: один
               от СахГУ, а второй — от ВУЗа-партнера (например, МГУ)
@@ -59,7 +58,12 @@ const AreaBlock = React.memo(({ item, year }) => {
             </ul>
           </>
         )}
-        {description && <p className="text area-block__text">{description}</p>}
+        {description && (
+          <>
+            <h4 className="area-block__subtitle">Описание</h4>
+            <p className="text area-block__text">{description}</p>
+          </>
+        )}
         {activities && (
           <>
             <h4 className="area-block__subtitle">

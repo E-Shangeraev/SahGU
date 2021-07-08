@@ -46,16 +46,21 @@ const Header = () => {
             </li>
             <li>
               <a href="#3" onClick={() => setToggleMenu(false)}>
-                Уникальность СахГУ
+                Подать документы
               </a>
             </li>
             <li>
               <a href="#4" onClick={() => setToggleMenu(false)}>
-                Отзывы выпускников
+                Уникальность СахГУ
               </a>
             </li>
             <li>
               <a href="#5" onClick={() => setToggleMenu(false)}>
+                Отзывы выпускников
+              </a>
+            </li>
+            <li>
+              <a href="#6" onClick={() => setToggleMenu(false)}>
                 Контакты
               </a>
             </li>

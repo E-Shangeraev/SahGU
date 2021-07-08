@@ -29,10 +29,13 @@ const Footer = () => (
             </li>
           </ul>
           <div className="footer__socials">
-            <a href="instagram.com">
+            <a
+              href="https://www.instagram.com/sakhgu/"
+              target="_blank"
+              rel="noreferrer">
               <img src={instagram} alt="instagram" />
             </a>
-            <a href="vk.com">
+            <a href="https://vk.com/sakhgu" target="_blank" rel="noreferrer">
               <img src={vk} alt="vk" />
             </a>
           </div>

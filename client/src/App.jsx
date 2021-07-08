@@ -297,7 +297,7 @@ function App() {
           </Parallax>
         </ScrollAnimation>
 
-        <section className="documents">
+        <section className="documents" id="3">
           <div className="wrapper">
             <h2 className="title document__title">
               Способы <span>подачи</span> документов
@@ -359,7 +359,7 @@ function App() {
           animateOut="animate__fadeOut"
           animateOnce
           delay={500}>
-          <section className="uniqueness" id="3">
+          <section className="uniqueness" id="4">
             <div className="wrapper">
               <div className="uniqueness__column">
                 <h2 className="title uniqueness__title">
@@ -432,7 +432,14 @@ function App() {
                     Более 25 лет развиваются отношения СахГУ с университетами
                     Японии, Южной Кореи, Китая. Каждый семестр выделяются лучшие
                     студенты для участия в программах по обмену. У каждого
-                    студента есть шанс получить опыт в ведущих вузах мира.
+                    студента есть шанс получить опыт в ведущих вузах мира:
+                    Харбинский педагогический университет (Harbin Normal
+                    University, Китайская народная республика), Университет
+                    Донсо (Dongseo University, Республика Корея), Пусанский
+                    университет иностранных языков (Busan University of Foreign
+                    Studies,Республика Корея), Международный университет Саппоро
+                    (Sapporo International University, Япония), Университет
+                    Хоккайдо (Hokkaido University, Япония) и многие другие.
                   </p>
                 </div>
                 <div>
@@ -466,7 +473,7 @@ function App() {
           animateIn="animate__fadeIn"
           animateOut="animate__fadeOut"
           animateOnce>
-          <section className="graduates" id="4">
+          <section className="graduates" id="5">
             <div className="wrapper">
               <Parallax
                 className="graduates__parallax"
@@ -589,7 +596,7 @@ function App() {
           </Parallax>
         </ScrollAnimation>
 
-        <section className="contacts" id="5">
+        <section className="contacts" id="6">
           <div className="wrapper">
             <div className="contacts__container">
               <h2 className="title contacts__title">Контакты</h2>
