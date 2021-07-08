@@ -6,7 +6,7 @@ import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './AreaBlock.scss'
 
-const AreaBlock = React.memo(({ item }) => {
+const AreaBlock = React.memo(({ item, year }) => {
   const { name, code, twoDiplomas, budget, paid, profile, exams, activities } =
     item
 
@@ -67,6 +67,7 @@ const AreaBlock = React.memo(({ item }) => {
               <li>
                 <span>{budget.score ? budget.score : '—'}</span>
                 <span>проходной балл</span>
+                <span>за {year} год</span>
               </li>
             )}
             {paid && (
@@ -95,6 +96,7 @@ const AreaBlock = React.memo(({ item }) => {
 
 AreaBlock.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
+  year: PropTypes.number.isRequired,
 }
 
 export default AreaBlock

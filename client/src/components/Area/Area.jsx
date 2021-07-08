@@ -5,6 +5,8 @@ import Modal from '@components/Modal/Modal'
 import AreaBlock from '@components/AreaBlock/AreaBlock'
 import './Area.scss'
 
+const year = new Date().getFullYear() - 1
+
 const Area = ({ item }) => {
   const { name, twoDiplomas, budget, paid } = item
   return (
@@ -28,11 +30,12 @@ const Area = ({ item }) => {
           <li>
             <span>{budget.score ? budget.score : '—'}</span>
             <span>проходной балл</span>
+            <span>за {year} год</span>
           </li>
         )}
       </ul>
       <Modal btnText="Подробнее" btnColor="yellow">
-        <AreaBlock item={item} />
+        <AreaBlock item={item} year={year} />
       </Modal>
     </li>
   )
