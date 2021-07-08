@@ -473,7 +473,7 @@ function App() {
           animateIn="animate__fadeIn"
           animateOut="animate__fadeOut"
           animateOnce>
-          <section className="graduates" id="5">
+          <section className="graduates">
             <div className="wrapper">
               <Parallax
                 className="graduates__parallax"
@@ -596,7 +596,7 @@ function App() {
           </Parallax>
         </ScrollAnimation>
 
-        <section className="contacts" id="6">
+        <section className="contacts" id="5">
           <div className="wrapper">
             <div className="contacts__container">
               <h2 className="title contacts__title">Контакты</h2>

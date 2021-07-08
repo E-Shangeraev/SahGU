@@ -45,22 +45,12 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#3" onClick={() => setToggleMenu(false)}>
-                Подать документы
-              </a>
-            </li>
-            <li>
               <a href="#4" onClick={() => setToggleMenu(false)}>
                 Уникальность СахГУ
               </a>
             </li>
             <li>
               <a href="#5" onClick={() => setToggleMenu(false)}>
-                Отзывы выпускников
-              </a>
-            </li>
-            <li>
-              <a href="#6" onClick={() => setToggleMenu(false)}>
                 Контакты
               </a>
             </li>
@@ -68,6 +58,12 @@ const Header = () => {
         </nav>
         <a href="tel:8 (4242) 45−03−00" className="header__phone">
           8 (4242) 45−03−00
+        </a>
+        <a
+          href="#3"
+          className="button button--purple"
+          onClick={() => setToggleMenu(false)}>
+          Подать документы
         </a>
         <Modal btnText="Получить консультацию" btnColor="yellow">
           <ConsultationBlock

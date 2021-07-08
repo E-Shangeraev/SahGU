@@ -15,6 +15,14 @@
   animation-duration: 1s;
   animation-delay: 1.5s;
   animation-fill-mode: forwards;
+
+  .button {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+  a.button {
+    margin-right: 2%;
+  }
 }
 .header__menu {
   display: flex;
@@ -62,7 +70,7 @@
   margin-right: 3%;
 }
 .header__phone {
-  margin: 0 3%;
+  margin: 0 5%;
   font-size: 16px;
   font-weight: bold;
   color: $purple;
@@ -112,13 +120,13 @@
   .header {
     padding: 7px 40px;
   }
-  .header__menu .button {
-    display: none;
-    padding: 20px 15px;
-  }
-
-  .header__phone {
-    margin-right: 0;
+  .header__menu {
+    button.button {
+      display: none;
+    }
+    a.button {
+      margin-right: 0;
+    }
   }
 }
 @media (max-width: 1366px) {
@@ -188,6 +196,14 @@
     z-index: -1;
 
     .button {
+      min-width: 225px;
+      width: 60%;
+    }
+    a.button {
+      order: 2;
+      margin-bottom: 20px;
+    }
+    button.button {
       order: 2;
       margin-bottom: 20px;
       display: block;
