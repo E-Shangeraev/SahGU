@@ -25,10 +25,7 @@ const AreaBlock = React.memo(({ item, year }) => {
       {name && <h3 className="area__name">{name}</h3>}
       {twoDiplomas && <span className="bage">Программа «2 диплома»</span>}
       {twoDiplomasDesc && (
-        <>
-          <h4 className="area-block__subtitle">О программе</h4>
-          <p className="text area-block__text">{twoDiplomasDesc}</p>
-        </>
+        <p className="text area-block__text">{twoDiplomasDesc}</p>
       )}
       <div className="area-block__profile">
         <ul className="area-block__list">
@@ -65,10 +62,12 @@ const AreaBlock = React.memo(({ item, year }) => {
         )}
         {activities && (
           <>
-            <h4 className="area-block__subtitle">
-              Виды профессиональной деятельности
-            </h4>
-            <p className="text area-block__text">{activities.join(', ')}</p>
+            <h4 className="area-block__subtitle">Трудоустройство</h4>
+            <ul className="area-block__list">
+              {activities.map(activity => (
+                <li key={uuidv4()}>{activity}</li>
+              ))}
+            </ul>
           </>
         )}
         {(budget || paid) && (

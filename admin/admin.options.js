@@ -43,7 +43,7 @@ const options = {
             name: 'Название',
             profile: 'Профиль',
             description: 'Описание',
-            activities: 'Виды профессиональной деятельности',
+            activities: 'Трудоустройство',
             twoDiplomas: 'Программа "Два диплома"',
             twoDiplomasDesc: 'О программе',
             exams: 'Вступительные экзамены',
