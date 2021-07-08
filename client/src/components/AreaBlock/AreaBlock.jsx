@@ -7,8 +7,17 @@ import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './AreaBlock.scss'
 
 const AreaBlock = React.memo(({ item, year }) => {
-  const { name, code, twoDiplomas, budget, paid, profile, exams, activities } =
-    item
+  const {
+    name,
+    code,
+    twoDiplomas,
+    description,
+    budget,
+    paid,
+    profile,
+    exams,
+    activities,
+  } = item
 
   return (
     <div className="area-block">
@@ -22,6 +31,15 @@ const AreaBlock = React.memo(({ item, year }) => {
             </li>
           ))}
         </ul>
+        {twoDiplomas && (
+          <>
+            <h4 className="area-block__subtitle">Описание</h4>
+            <p className="text area-block__text">
+              Обучаясь на этом направлении, вы можете получить два диплома: один
+              от СахГУ, а второй — от ВУЗа-партнера (например, МГУ)
+            </p>
+          </>
+        )}
         {Object.keys(exams[0]).length > 1 && (
           <>
             <h4 className="area-block__subtitle">Вступительные испытания</h4>
@@ -41,6 +59,7 @@ const AreaBlock = React.memo(({ item, year }) => {
             </ul>
           </>
         )}
+        {description && <p className="text area-block__text">{description}</p>}
         {activities && (
           <>
             <h4 className="area-block__subtitle">

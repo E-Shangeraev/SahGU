@@ -9,6 +9,7 @@ const options = {
     'code',
     'name',
     'profile',
+    'description',
     'activities',
     'twoDiplomas',
     'exams',

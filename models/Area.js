@@ -18,6 +18,7 @@ const AreaSchema = new Schema({
   code: { type: String, required: true },
   name: { type: String, required: true },
   profile: { type: [String], required: true },
+  description: { type: String, required: false },
   activities: { type: [String], required: true },
   twoDiplomas: Boolean,
   exams: [ExamSchema],
