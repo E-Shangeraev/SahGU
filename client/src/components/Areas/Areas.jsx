@@ -87,18 +87,24 @@ const Areas = () => {
                   onChange={onSelectType}
                 />
                 {subjectsLoaded && type === 1 ? (
-                  <ul className="subjects">
-                    {subjectsItems.map(item => (
-                      <Subject key={item._id} name={item.name} id={item._id} />
-                    ))}
-                  </ul>
+                  <>
+                    <h3 className="subtitle">
+                      Выберите предметы, которые вы сдаете на ЕГЭ
+                    </h3>
+                    <ul className="subjects">
+                      {subjectsItems.map(item => (
+                        <Subject
+                          key={item._id}
+                          name={item.name}
+                          id={item._id}
+                        />
+                      ))}
+                    </ul>
+                  </>
                 ) : null}
               </>
             ) : null}
           </div>
-          <h3 className="subtitle">
-            Выберите предметы, которые вы сдаете на ЕГЭ
-          </h3>
           {areasLoaded && type === 0 && (
             <ul className="areas__list">
               {areaItems.map(item => (
