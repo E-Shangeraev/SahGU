@@ -12,6 +12,7 @@ const options = {
     'description',
     'activities',
     'twoDiplomas',
+    'twoDiplomasDesc',
     'exams',
     'budget',
     'paid',

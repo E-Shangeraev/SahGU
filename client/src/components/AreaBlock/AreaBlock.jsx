@@ -11,6 +11,7 @@ const AreaBlock = React.memo(({ item, year }) => {
     name,
     code,
     twoDiplomas,
+    twoDiplomasDesc,
     description,
     budget,
     paid,
@@ -22,7 +23,13 @@ const AreaBlock = React.memo(({ item, year }) => {
   return (
     <div className="area-block">
       {name && <h3 className="area__name">{name}</h3>}
-      {twoDiplomas ? <span className="bage">Программа «2 диплома»</span> : null}
+      {twoDiplomas && <span className="bage">Программа «2 диплома»</span>}
+      {twoDiplomasDesc && (
+        <>
+          <h4 className="area-block__subtitle">О программе</h4>
+          <p className="text area-block__text">{twoDiplomasDesc}</p>
+        </>
+      )}
       <div className="area-block__profile">
         <ul className="area-block__list">
           {profile.map((profileName, index) => (
@@ -31,12 +38,10 @@ const AreaBlock = React.memo(({ item, year }) => {
             </li>
           ))}
         </ul>
-        {twoDiplomas && (
+        {description && (
           <>
-            <p className="text area-block__text">
-              Обучаясь на этом направлении, вы можете получить два диплома: один
-              от СахГУ, а второй — от ВУЗа-партнера (например, МГУ)
-            </p>
+            <h4 className="area-block__subtitle">Описание</h4>
+            <p className="text area-block__text">{description}</p>
           </>
         )}
         {Object.keys(exams[0]).length > 1 && (
@@ -56,12 +61,6 @@ const AreaBlock = React.memo(({ item, year }) => {
                 </li>
               ))}
             </ul>
-          </>
-        )}
-        {description && (
-          <>
-            <h4 className="area-block__subtitle">Описание</h4>
-            <p className="text area-block__text">{description}</p>
           </>
         )}
         {activities && (

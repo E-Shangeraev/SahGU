@@ -21,6 +21,7 @@ const AreaSchema = new Schema({
   description: { type: String, required: false },
   activities: { type: [String], required: true },
   twoDiplomas: Boolean,
+  twoDiplomasDesc: { type: String, required: false },
   exams: [ExamSchema],
   budget: Schema({
     count: { type: Number, required: false },
