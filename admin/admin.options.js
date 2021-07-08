@@ -46,6 +46,7 @@ const options = {
             activities: 'Трудоустройство',
             twoDiplomas: 'Программа "Два диплома"',
             twoDiplomasDesc: 'О программе',
+            partners: 'Партнеры',
             exams: 'Вступительные экзамены',
             'exams.main': 'Основной',
             'exams.mainScore': 'Кол-во баллов осн.',

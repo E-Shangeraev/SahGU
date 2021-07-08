@@ -13,6 +13,7 @@ const AreaBlock = React.memo(({ item, year }) => {
     twoDiplomas,
     twoDiplomasDesc,
     description,
+    partners,
     budget,
     paid,
     profile,
@@ -66,6 +67,16 @@ const AreaBlock = React.memo(({ item, year }) => {
             <ul className="area-block__list">
               {activities.map(activity => (
                 <li key={uuidv4()}>{activity}</li>
+              ))}
+            </ul>
+          </>
+        )}
+        {partners && (
+          <>
+            <h4 className="area-block__subtitle">Партнеры</h4>
+            <ul className="area-block__list">
+              {partners.map(partner => (
+                <li key={uuidv4()}>{partner}</li>
               ))}
             </ul>
           </>
