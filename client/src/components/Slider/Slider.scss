@@ -3,6 +3,7 @@
 
 .slider {
   position: relative;
+  // height: 100%;
 
   .slick-track {
     position: absolute;
@@ -43,6 +44,8 @@
   padding: 40px;
   border-radius: 24px;
   background-color: $gray-3;
+  height: 100%;
+  box-sizing: border-box;
 
   blockquote {
     margin: 0;
@@ -87,11 +90,6 @@
   .slider {
     margin-bottom: 40px;
   }
-}
-@media (max-width: 768px) {
-  .slide {
-    padding: 20px;
-  }
   .slider__buttons {
     display: flex;
     justify-content: center;
@@ -99,5 +97,10 @@
     top: 0;
     left: 0;
     right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .slide {
+    padding: 20px;
   }
 }

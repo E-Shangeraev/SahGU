@@ -81,7 +81,7 @@ const Areas = () => {
                 <Switch
                   options={{
                     name: 'type',
-                    first: { label: 'Выбрать предметы', value: 1 },
+                    first: { label: 'На основе ЕГЭ', value: 1 },
                     second: { label: 'Все направления', value: 0 },
                   }}
                   onChange={onSelectType}
@@ -96,6 +96,9 @@ const Areas = () => {
               </>
             ) : null}
           </div>
+          <h3 className="subtitle">
+            Выберите предметы, которые вы сдаете на ЕГЭ
+          </h3>
           {areasLoaded && type === 0 && (
             <ul className="areas__list">
               {areaItems.map(item => (
