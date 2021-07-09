@@ -61,14 +61,14 @@ const Feedback = ({ title, text, formId }) => {
             }}
             validateOnBlur
             onSubmit={async (values, { resetForm }) => {
-              fetch('/api/mail', {
+              await fetch('/api/mail', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json;charset=utf-8' },
                 body: JSON.stringify(values),
               })
+              ym('reachGoal', 'click_zayavka')
               resetForm()
               setSubmited(true)
-              ym(82554970, 'reachGoal', 'click_zayavka')
             }}
             validationSchema={validationSchema}>
             {({

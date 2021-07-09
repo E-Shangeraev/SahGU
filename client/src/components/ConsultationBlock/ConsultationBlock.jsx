@@ -47,15 +47,15 @@ const ConsultationBlock = ({ title, text, areaName, areaCode }) => {
               areaCode,
             }}
             validateOnBlur
-            onSubmit={(values, { resetForm }) => {
-              fetch('/api/mail', {
+            onSubmit={async (values, { resetForm }) => {
+              await fetch('/api/mail', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(values),
               })
+              ym('reachGoal', 'click_zayavka')
               resetForm()
               setSubmited(true)
-              ym(82554970, 'reachGoal', 'click_zayavka')
             }}
             validationSchema={validationSchema}>
             {({
