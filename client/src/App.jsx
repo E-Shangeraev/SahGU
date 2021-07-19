@@ -147,6 +147,27 @@ function App() {
                 <li className="news__preview">
                   <a href="/">
                     <div className="news__image">
+                      <img src={news2} alt="Билет на скорый поезд" />
+                    </div>
+                    <div className="news__bottom">
+                      <div className="bage">19 июля, 2021</div>
+                      <span className="news__title">
+                        CахГУ – в топ-100 вузов России по успешности
+                        трудоустройства выпускников
+                      </span>
+                      <p className="text news__text">
+                        Сахалинский государственный университет занял 61 строчку
+                        рейтинга вузов по успешности трудоустройства
+                        выпускников, составленного HeadHunter – крупнейшей
+                        российской платформы онлайн-рекрутинга.
+                      </p>
+                    </div>
+                  </a>
+                </li>
+
+                <li className="news__preview">
+                  <a href="/">
+                    <div className="news__image">
                       <img
                         src={news1}
                         // eslint-disable-next-line max-len
@@ -164,21 +185,6 @@ function App() {
                         Соглашение о сотрудничестве заключил Сахалинский
                         государственный университет с ООО «Иокогава Электрик
                         Сахалин».
-                      </p>
-                    </div>
-                  </a>
-                </li>
-                <li className="news__preview">
-                  <a href="/">
-                    <div className="news__image">
-                      <img src={news2} alt="Билет на скорый поезд" />
-                    </div>
-                    <div className="news__bottom">
-                      <div className="bage">21 июня, 2021</div>
-                      <span className="news__title">Билет на скорый поезд</span>
-                      <p className="text news__text">
-                        Творческие студии университета приглашают студентов и
-                        жителей города на отчетный концерт.
                       </p>
                     </div>
                   </a>
