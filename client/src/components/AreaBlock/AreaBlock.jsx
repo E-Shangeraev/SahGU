@@ -61,7 +61,7 @@ const AreaBlock = React.memo(({ item, year }) => {
             </ul>
           </>
         )}
-        {activities && (
+        {activities.length ? (
           <>
             <h4 className="area-block__subtitle">Трудоустройство</h4>
             <ul className="area-block__list">
@@ -70,8 +70,8 @@ const AreaBlock = React.memo(({ item, year }) => {
               ))}
             </ul>
           </>
-        )}
-        {partners && (
+        ) : null}
+        {partners.length ? (
           <>
             <h4 className="area-block__subtitle">Партнеры</h4>
             <ul className="area-block__list">
@@ -80,7 +80,7 @@ const AreaBlock = React.memo(({ item, year }) => {
               ))}
             </ul>
           </>
-        )}
+        ) : null}
         {(budget || paid) && (
           <ul className="area__count">
             {budget && (
