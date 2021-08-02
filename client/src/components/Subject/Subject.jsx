@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { setActiveSubjects, removeActiveSubject } from '@redux/actions/subjects'
 import './Subject.scss'
 
-const Subjects = React.memo(({ id, name }) => {
+const Subject = React.memo(({ id, name }) => {
   const dispatch = useDispatch()
   const [active, setActive] = useState(false)
 
@@ -32,9 +32,9 @@ const Subjects = React.memo(({ id, name }) => {
   )
 })
 
-Subjects.propTypes = {
+Subject.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 }
 
-export default Subjects
+export default Subject

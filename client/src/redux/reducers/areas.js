@@ -49,6 +49,11 @@ const areas = (state = initialState, action) => {
         items: action.payload,
         isLoaded: true,
       }
+    case 'SET_ACTIVE_AREA':
+      return {
+        ...state,
+        activeAreas: action.payload,
+      }
     case 'GET_AREAS_BY_SUBJECTS': {
       const filteredItems = findAreasBySubjects(action.payload, state.items)
 
