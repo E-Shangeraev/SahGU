@@ -1,14 +1,13 @@
 .promo {
-  // margin-top: 100px;
+  position: relative;
   height: 100vh;
-  // height: calc(100vh - 100px);
+  z-index: 0;
 
   &--blue {
     background-color: $blue;
   }
   .wrapper {
     padding-top: 190px;
-    position: relative;
     display: flex;
     align-items: center;
   }
@@ -19,7 +18,7 @@
   grid-template-columns: max-content 1fr auto;
   grid-template-rows: min-content;
   width: 100%;
-  // z-index: 2;
+  z-index: 2;
 
   & > div:nth-of-type(2) {
     max-width: 550px;
@@ -62,7 +61,7 @@
   }
   li {
     color: $purple;
-    font-size: 26px;
+    @include big-text;
     line-height: 150%;
 
     b {
@@ -144,7 +143,10 @@ span.promo__title {
     padding-top: 180px;
   }
   .promo__two-diplomas {
-    right: 70px;
+    img {
+      width: 50%;
+      right: 70px;
+    }
   }
   h1.promo__title,
   span.promo__title,
@@ -226,6 +228,25 @@ span.promo__title {
   .promo__title b {
     font-size: 38px;
   }
+  .promo__two-diplomas {
+    position: relative;
+
+    img {
+      position: relative;
+      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+    }
+  }
+  .promo__stats {
+    justify-content: flex-start;
+
+    ul {
+      width: 100%;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }
 @media (max-width: 900px) {
   .promo .wrapper {
@@ -241,6 +262,9 @@ span.promo__title {
   }
   .promo__bg {
     top: 0% !important;
+  }
+  .promo__two-diplomas img {
+    width: 90%;
   }
 }
 @media (max-width: 768px) {
@@ -260,6 +284,11 @@ span.promo__title {
   .promo__bg {
     top: 10% !important;
     height: auto !important;
+  }
+}
+@media (max-width: 600px) {
+  .promo__stats ul {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 500px) {
