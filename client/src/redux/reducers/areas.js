@@ -52,7 +52,7 @@ const areas = (state = initialState, action) => {
     case 'SET_ACTIVE_AREA':
       return {
         ...state,
-        activeAreas: action.payload,
+        activeAreas: state.items.find(item => item._id === action.payload),
       }
     case 'GET_AREAS_BY_SUBJECTS': {
       const filteredItems = findAreasBySubjects(action.payload, state.items)

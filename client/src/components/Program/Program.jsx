@@ -28,7 +28,7 @@ const Program = React.memo(() => {
   const onSelectArea = e => dispatch(setActiveArea(e.target.id))
 
   useEffect(() => {
-    dispatch(fetchAreasWithTwoDiplomas())
+    dispatch(fetchAreasWithTwoDiplomas(qualification))
   }, [])
 
   return (
@@ -55,10 +55,10 @@ const Program = React.memo(() => {
                         type="button"
                         id={item._id}
                         className={classNames({
-                          active: activeArea === item._id,
+                          active: activeArea._id === item._id,
                         })}
                         onClick={onSelectArea}>
-                        {item.profile}
+                        {item.name}
                       </button>
                     </li>
                   ))}
@@ -74,54 +74,35 @@ const Program = React.memo(() => {
               </button>
             </div>
           </div>
-          <div className="program__description">
-            <h3 className="subtitle">Педагогическое образование</h3>
-            <p className="text program__text">
-              Педагогическое образование — это направление подготовки
-              преподавателей общеобразовательных дисциплин в школе,
-              дополнительного образования детей и работников смежных
-              специальностей.
-            </p>
-            <ul className="program__features">
-              <li>
-                <img src={checkMark} alt="Галочка" />
-                <span>20 факультетов</span>
-              </li>
-              <li>
-                <img src={checkMark} alt="Галочка" />
-                <span>200 программ</span>
-              </li>
-              <li>
-                <img src={checkMark} alt="Галочка" />
-                <span>Отсрочка от армии</span>
-              </li>
-              <li>
-                <img src={checkMark} alt="Галочка" />
-                <span>Трудоустройство студентов</span>
-              </li>
-            </ul>
-            <img
-              className="program__photo"
-              src={program}
-              alt="Фотография с занятия"
-            />
-            <p className="text program__text">
-              Педагогическое образование — это направление подготовки
-              преподавателей общеобразовательных дисциплин в школе,
-              дополнительного образования детей и работников смежных
-              специальностей. Педагогическое образование — это направление
-              подготовки преподавателей общеобразовательных дисциплин в школе,
-              дополнительного образования детей и работников смежных
-              специальностей.
-            </p>
-            <Modal btnText="Получить консультацию" btnColor="purple">
-              <ConsultationBlock
-                title="Получить консультацию"
-                text="Оставьте свои контактные данные
-                        и мы свяжемся с вами в ближайшее время"
+          {areasLoaded && (
+            <div className="program__description">
+              <h3 className="subtitle">{activeArea.name}</h3>
+              <p className="text program__text">{activeArea.description}</p>
+              {activeArea.features ? (
+                <ul className="program__features">
+                  {activeArea.features.map(item => (
+                    <li key={uuidv4()}>
+                      <img src={checkMark} alt="Галочка" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              <img
+                className="program__photo"
+                src={program}
+                alt="Фотография с занятия"
               />
-            </Modal>
-          </div>
+              <p className="text program__text">{activeArea.more}</p>
+              <Modal btnText="Получить консультацию" btnColor="purple">
+                <ConsultationBlock
+                  title="Получить консультацию"
+                  text="Оставьте свои контактные данные
+                        и мы свяжемся с вами в ближайшее время"
+                />
+              </Modal>
+            </div>
+          )}
         </div>
       </div>
     </section>

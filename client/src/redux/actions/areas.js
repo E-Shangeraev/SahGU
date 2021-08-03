@@ -10,9 +10,9 @@ export const setAreas = areas => ({
   payload: areas,
 })
 
-export const setActiveArea = area => ({
+export const setActiveArea = id => ({
   type: 'SET_ACTIVE_AREA',
-  payload: area,
+  payload: id,
 })
 
 export const fetchAreas = qualification => dispatch => {
@@ -23,14 +23,16 @@ export const fetchAreas = qualification => dispatch => {
     .then(({ data }) => dispatch(setAreas(data)))
 }
 
-export const fetchAreasWithTwoDiplomas = () => dispatch => {
+export const fetchAreasWithTwoDiplomas = qualification => dispatch => {
   dispatch(setLoaded(false))
 
-  axios.get(`/api/areas/two-diplomas`).then(({ data }) => {
-    dispatch(setAreas(data))
-    // eslint-disable-next-line no-underscore-dangle
-    dispatch(setActiveArea(data[0]._id))
-  })
+  axios
+    .get(`/api/areas/two-diplomas?qualification=${qualification}`)
+    .then(({ data }) => {
+      dispatch(setAreas(data))
+      // eslint-disable-next-line no-underscore-dangle
+      dispatch(setActiveArea(data[0]._id))
+    })
 }
 
 export const getAreasBySubject = subjectsId => ({

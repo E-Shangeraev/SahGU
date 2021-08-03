@@ -1,13 +1,15 @@
-const { Area } = require('../models/Area')
-const { Subject } = require('../models/Subject')
+const { Area: AreaModel } = require('../models/Area')
+const { TwoDiplomas: TwoDiplomasModel } = require('../models/TwoDiplomas')
 
-class AreaController {
-  async getItems(req, res) {
+class Area {
+  constructor(model) {
+    this.model = model
+  }
+  getItems = async (req, res) => {
     try {
       const { qualification } = req.query
-      const items = await Area.find({
-        [`qualification.${qualification}`]: true,
-      })
+      const items = await this.model
+        .find({ [`qualification.${qualification}`]: true })
         .populate('exams.main')
         .populate('exams.alternative')
 
@@ -19,4 +21,7 @@ class AreaController {
   }
 }
 
-module.exports = new AreaController()
+const AreaController = new Area(AreaModel)
+const TwoDiplomasController = new Area(TwoDiplomasModel)
+
+module.exports = { AreaController, TwoDiplomasController }

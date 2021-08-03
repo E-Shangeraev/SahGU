@@ -1,7 +1,7 @@
 const { default: AdminBro } = require('admin-bro')
 const AdminBroMongoose = require('@admin-bro/mongoose')
 
-const { Admin, Subject, Area } = require('./resourceOptions')
+const { Admin, Subject, Area, TwoDiplomas } = require('./resourceOptions')
 
 AdminBro.registerAdapter(AdminBroMongoose)
 
@@ -23,6 +23,7 @@ const options = {
         Admin: 'Администраторы',
         Subjects: 'Предметы подготовки',
         Areas: 'Направления подготовки',
+        TwoDiplomas: 'Программа "Два диплома"',
       },
       buttons: {
         filter: 'Фильтр',
@@ -60,10 +61,22 @@ const options = {
             'paid.cost': 'Стоимость обучения',
           },
         },
+        TwoDiplomas: {
+          properties: {
+            qualification: 'Квалификация',
+            'qualification.0': 'Бакалавр',
+            'qualification.1': 'Магистр',
+            name: 'Название',
+            description: 'Описание',
+            features: 'Преимущества',
+            uploadedFile: 'Фото',
+            more: 'Подробное описание',
+          },
+        },
       },
     },
   },
-  resources: [Admin, Subject, Area],
+  resources: [Admin, Subject, Area, TwoDiplomas],
   branding: {
     companyName: 'СахГУ',
     logo: '',
