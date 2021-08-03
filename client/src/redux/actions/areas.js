@@ -23,16 +23,14 @@ export const fetchAreas = qualification => dispatch => {
     .then(({ data }) => dispatch(setAreas(data)))
 }
 
-export const fetchAreasWithTwoDiplomas = qualification => dispatch => {
+export const fetchAreasWithTwoDiplomas = () => dispatch => {
   dispatch(setLoaded(false))
 
-  axios
-    .get(`/api/areas/two-diplomas?qualification=${qualification}`)
-    .then(({ data }) => {
-      dispatch(setAreas(data))
-      // eslint-disable-next-line no-underscore-dangle
-      dispatch(setActiveArea(data[0]._id))
-    })
+  axios.get(`/api/areas/two-diplomas`).then(({ data }) => {
+    dispatch(setAreas(data))
+    // eslint-disable-next-line no-underscore-dangle
+    dispatch(setActiveArea(data[0]._id))
+  })
 }
 
 export const getAreasBySubject = subjectsId => ({

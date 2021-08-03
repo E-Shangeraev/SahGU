@@ -12,7 +12,6 @@
 .program__container {
   display: flex;
   width: 100%;
-  // justify-content: space-between;
 
   & > div {
     height: fit-content;
@@ -20,14 +19,30 @@
     border-radius: 24px;
     background: $blue;
   }
+  .subtitle {
+    margin: 0;
+  }
 }
 .program__filter {
   width: 30%;
   flex-shrink: 0;
   margin-right: 50px;
+  padding-bottom: 0;
 
+  ul {
+    overflow: hidden;
+    transition: ease 0.5s;
+    opacity: 0;
+  }
   .subtitle {
-    margin: 1em 0;
+    margin-bottom: 0;
+    transition: ease 0.5s;
+  }
+  .subtitle.active {
+    margin-bottom: 1em;
+  }
+  .subtitle.active + ul {
+    opacity: 1;
   }
   li {
     button {
@@ -36,7 +51,6 @@
       border-radius: 10px;
       text-align: left;
       font-size: 18px;
-      // white-space: nowrap;
       transition: ease 0.25s;
       cursor: pointer !important;
     }
@@ -49,10 +63,8 @@
     }
   }
   & > div {
-    padding: 0 50px;
-  }
-  & > div:not(:last-of-type) {
-    padding-bottom: 50px;
+    padding: 50px;
+    // padding-top: 0;
   }
   & > div:first-of-type {
     border-bottom: 1px solid #e0e0e0;
@@ -60,7 +72,7 @@
 }
 .program__description {
   padding: 50px;
-  padding-top: 0;
+  // padding-top: 0;
 }
 .program__photo {
   width: 100%;
@@ -72,7 +84,7 @@
 }
 .program__features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+  grid-template-columns: repeat(4, minmax(150px, 200px));
   grid-row-gap: 2em;
   justify-content: space-between;
   margin: 50px 0;

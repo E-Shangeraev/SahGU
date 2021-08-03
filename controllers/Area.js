@@ -8,10 +8,16 @@ class Area {
   getItems = async (req, res) => {
     try {
       const { qualification } = req.query
-      const items = await this.model
-        .find({ [`qualification.${qualification}`]: true })
-        .populate('exams.main')
-        .populate('exams.alternative')
+      let items
+
+      if (qualification) {
+        items = await this.model
+          .find({ [`qualification.${qualification}`]: true })
+          .populate('exams.main')
+          .populate('exams.alternative')
+      } else {
+        items = await this.model.find()
+      }
 
       res.status(200).json(items)
     } catch (error) {

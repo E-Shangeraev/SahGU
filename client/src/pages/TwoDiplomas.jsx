@@ -20,6 +20,14 @@ import program from '@assets/img/program.jpg'
 const TwoDiplomas = () => (
   <main>
     <section className="promo promo--blue">
+      <ScrollAnimation
+        className="promo__two-diplomas"
+        animateIn="animate__fadeInUp"
+        animateOut="animate__fadeOut"
+        delay={1000}
+        animateOnce>
+        <img src={promo33} alt="Фото студентки" />
+      </ScrollAnimation>
       <div className="wrapper">
         <div className="promo__container">
           <ScrollAnimation
@@ -87,17 +95,6 @@ const TwoDiplomas = () => (
             </div>
           </ScrollAnimation>
         </div>
-        <ScrollAnimation
-          animateIn="animate__fadeInUp"
-          animateOut="animate__fadeOut"
-          delay={1000}
-          animateOnce>
-          <img
-            className="promo__two-diplomas"
-            src={promo33}
-            alt="Фото студентки"
-          />
-        </ScrollAnimation>
       </div>
     </section>
 
