@@ -10,6 +10,7 @@ import { fetchAreasWithTwoDiplomas, setActiveArea } from '@redux/actions/areas'
 import './Program.scss'
 import checkMark from '@assets/img/check-mark.svg'
 import program from '@assets/img/program.jpg'
+import arrow from '@assets/img/arrow.svg'
 
 const Program = React.memo(() => {
   const dispatch = useDispatch()
@@ -24,30 +25,9 @@ const Program = React.memo(() => {
   const bachelorRef = useRef()
   const magistracyRef = useRef()
 
-  const smoothOpenList = param => {
-    if (param === 0) {
-      bachelorRef.current.style.maxHeight = `
-      ${bachelorRef.current.scrollHeight}px`
-
-      magistracyRef.current.style.maxHeight = '0px'
-    }
-    if (param === 1) {
-      magistracyRef.current.style.maxHeight = `
-      ${magistracyRef.current.scrollHeight}px`
-
-      bachelorRef.current.style.maxHeight = '0px'
-    }
-  }
-
   const onSelectQualification = e => setActiveQualification(+e.target.value)
 
   const onSelectArea = e => dispatch(setActiveArea(e.target.id))
-
-  useEffect(() => {
-    if (areasLoaded) {
-      smoothOpenList(activeQualification)
-    }
-  }, [activeQualification])
 
   useEffect(() => {
     dispatch(fetchAreasWithTwoDiplomas())
@@ -72,11 +52,12 @@ const Program = React.memo(() => {
               <button
                 type="button"
                 className={classNames('subtitle', {
-                  'active': activeQualification === 0,
+                  active: activeQualification === 0,
                 })}
                 value={0}
                 onClick={onSelectQualification}>
                 Бакалавриат
+                <img className="arrow" src={arrow} alt="Стрелочка" />
               </button>
               <ul ref={bachelorRef}>
                 {areasLoaded &&
@@ -99,13 +80,14 @@ const Program = React.memo(() => {
               <button
                 type="button"
                 className={classNames('subtitle', {
-                  'active': activeQualification === 1,
+                  active: activeQualification === 1,
                 })}
                 value={1}
                 onClick={onSelectQualification}>
                 Магистратура
+                <img className="arrow" src={arrow} alt="Стрелочка" />
               </button>
-              <ul ref={magistracyRef} style={{ maxHeight: '0px' }}>
+              <ul ref={magistracyRef}>
                 {areasLoaded &&
                   magistracy.map(item => (
                     <li key={uuidv4()}>
@@ -127,7 +109,7 @@ const Program = React.memo(() => {
             <div className="program__description">
               <h3 className="subtitle">{activeArea.name}</h3>
               <p className="text program__text">{activeArea.description}</p>
-              {activeArea.features ? (
+              {activeArea.features && (
                 <ul className="program__features">
                   {activeArea.features.map(item => (
                     <li key={uuidv4()}>
@@ -136,7 +118,7 @@ const Program = React.memo(() => {
                     </li>
                   ))}
                 </ul>
-              ) : null}
+              )}
               <img
                 className="program__photo"
                 src={program}
@@ -145,6 +127,7 @@ const Program = React.memo(() => {
               <p className="text program__text">{activeArea.more}</p>
               <Modal btnText="Получить консультацию" btnColor="purple">
                 <ConsultationBlock
+                  areaName={activeArea.name}
                   title="Получить консультацию"
                   text="Оставьте свои контактные данные
                         и мы свяжемся с вами в ближайшее время"

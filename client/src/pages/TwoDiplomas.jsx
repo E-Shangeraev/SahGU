@@ -14,8 +14,6 @@ import Contacts from '@components/Contacts/Contacts'
 import promo33 from '@assets/img/promo-33.png'
 import feedback2 from '@assets/img/feedback-2.svg'
 import feedback3 from '@assets/img/feedback-4.svg'
-import checkMark from '@assets/img/check-mark.svg'
-import program from '@assets/img/program.jpg'
 
 const TwoDiplomas = () => (
   <main>
