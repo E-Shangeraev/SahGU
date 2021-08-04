@@ -10,7 +10,6 @@ import { fetchAreasWithTwoDiplomas, setActiveArea } from '@redux/actions/areas'
 import './Program.scss'
 import checkMark from '@assets/img/check-mark.svg'
 import program from '@assets/img/program.jpg'
-import arrow from '@assets/img/arrow.svg'
 
 const Program = React.memo(() => {
   const dispatch = useDispatch()
@@ -22,12 +21,25 @@ const Program = React.memo(() => {
   const [bachelors, setBachelors] = useState()
   const [magistracy, setMagistracy] = useState()
   const [activeQualification, setActiveQualification] = useState(0)
-  const bachelorRef = useRef()
-  const magistracyRef = useRef()
+  // const bachelorRef = useRef()
+  // const magistracyRef = useRef()
+  const programDescriptionRef = useRef()
 
-  const onSelectQualification = e => setActiveQualification(+e.target.value)
+  const onSelectQualification = e => {
+    setActiveQualification(+e.target.value)
+    e.target.classList.toggle('active')
+  }
 
-  const onSelectArea = e => dispatch(setActiveArea(e.target.id))
+  const onSelectArea = e => {
+    dispatch(setActiveArea(e.target.id))
+    if (window.innerWidth <= 1024 && programDescriptionRef) {
+      const element = programDescriptionRef.current
+      window.scrollTo(
+        0,
+        element.getBoundingClientRect().top + window.pageYOffset - 100
+      )
+    }
+  }
 
   useEffect(() => {
     dispatch(fetchAreasWithTwoDiplomas())
@@ -58,7 +70,7 @@ const Program = React.memo(() => {
                 onClick={onSelectQualification}>
                 Бакалавриат
               </button>
-              <ul ref={bachelorRef}>
+              <ul>
                 {areasLoaded &&
                   bachelors.map(item => (
                     <li key={uuidv4()}>
@@ -85,7 +97,7 @@ const Program = React.memo(() => {
                 onClick={onSelectQualification}>
                 Магистратура
               </button>
-              <ul ref={magistracyRef}>
+              <ul>
                 {areasLoaded &&
                   magistracy.map(item => (
                     <li key={uuidv4()}>
@@ -104,7 +116,7 @@ const Program = React.memo(() => {
             </div>
           </div>
           {areasLoaded && (
-            <div className="program__description">
+            <div className="program__description" ref={programDescriptionRef}>
               <h3 className="subtitle">{activeArea.name}</h3>
               <p className="text program__text">{activeArea.description}</p>
               {activeArea.features && (
