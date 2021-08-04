@@ -43,14 +43,23 @@
     margin-bottom: 0;
     transition: ease 0.5s;
 
-    .arrow {
+    &::after {
+      position: relative;
+      content: '';
+      background-image: url('../../assets/img/arrow.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 20px;
+      height: 20px;
       transition: ease 0.5s;
+      transform-origin: center;
     }
   }
   .subtitle.active {
     margin-bottom: 1em;
 
-    .arrow {
+    &::after {
       transform: rotate(180deg);
     }
   }

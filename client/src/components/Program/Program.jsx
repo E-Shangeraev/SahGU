@@ -57,7 +57,6 @@ const Program = React.memo(() => {
                 value={0}
                 onClick={onSelectQualification}>
                 Бакалавриат
-                <img className="arrow" src={arrow} alt="Стрелочка" />
               </button>
               <ul ref={bachelorRef}>
                 {areasLoaded &&
@@ -85,7 +84,6 @@ const Program = React.memo(() => {
                 value={1}
                 onClick={onSelectQualification}>
                 Магистратура
-                <img className="arrow" src={arrow} alt="Стрелочка" />
               </button>
               <ul ref={magistracyRef}>
                 {areasLoaded &&
