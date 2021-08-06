@@ -21,8 +21,6 @@ const Program = React.memo(() => {
   const [bachelors, setBachelors] = useState()
   const [magistracy, setMagistracy] = useState()
   const [activeQualification, setActiveQualification] = useState(0)
-  // const bachelorRef = useRef()
-  // const magistracyRef = useRef()
   const programDescriptionRef = useRef()
 
   const onSelectQualification = e => {
@@ -34,9 +32,10 @@ const Program = React.memo(() => {
     dispatch(setActiveArea(e.target.id))
     if (window.innerWidth <= 1024 && programDescriptionRef) {
       const element = programDescriptionRef.current
+      const headerHeight = 100
       window.scrollTo(
         0,
-        element.getBoundingClientRect().top + window.pageYOffset - 100
+        element.getBoundingClientRect().top + window.pageYOffset - headerHeight
       )
     }
   }

@@ -4,6 +4,7 @@ import Header from '@components/Header/Header'
 import Footer from '@components/Footer/Footer'
 import Main from '@pages/Main'
 import TwoDiplomas from '@pages/TwoDiplomas'
+import Contacts from '@pages/Contacts'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/two-diplomas" exact component={TwoDiplomas} />
+          <Route path="/contacts" exact component={Contacts} />
         </Switch>
       </BrowserRouter>
       <Footer />
