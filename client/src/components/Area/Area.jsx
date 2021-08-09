@@ -9,6 +9,26 @@ const year = new Date().getFullYear() - 1
 
 const Area = ({ item }) => {
   const { name, twoDiplomas, budget, paid } = item
+
+  const getWordEnding = (num, word) => {
+    if (num) {
+      const str = num.toString()
+      if (str.match(/[11-20]$/g)) {
+        return word
+      }
+      if (str.match(/1$/g)) {
+        return word
+          .replace('й', 'е')
+          .replace('ых', 'ое')
+          .replace('мест', 'место')
+      }
+      if (str.match(/[2-4]$/g)) {
+        return word.replace('й', 'я').replace('мест', 'места')
+      }
+    }
+    return word
+  }
+
   return (
     <li className="area">
       {name && <span className="area__name">{name}</span>}
@@ -17,13 +37,13 @@ const Area = ({ item }) => {
         {budget && (
           <li key={uuidv4()}>
             <span>{budget.count ? budget.count : '—'}</span>
-            <span>бюджетных мест</span>
+            <span>{getWordEnding(budget.count, 'бюджетных мест')}</span>
           </li>
         )}
         {paid && (
           <li>
             <span>{paid.count ? paid.count : '—'}</span>
-            <span>платных мест</span>
+            <span>{getWordEnding(paid.count, 'платных мест')}</span>
           </li>
         )}
         {budget && (

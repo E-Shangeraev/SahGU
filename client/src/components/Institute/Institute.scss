@@ -75,7 +75,6 @@
 .institute__button {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-top: auto;
   width: 100%;
@@ -89,7 +88,8 @@
   &::after {
     position: relative;
     content: '';
-    background-image: url('../../assets/img/arrow.svg');
+    margin-left: 15px;
+    background-image: url('../../assets/img/arrow-yellow.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;

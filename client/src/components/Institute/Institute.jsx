@@ -21,6 +21,20 @@ const Institute = ({ name, areas }) => {
 
   const handleButtonToggle = () => setOpen(!open)
 
+  const getWordEnding = (num, word) => {
+    const str = num.toString()
+    if (str.match(/[11-20]$/g)) {
+      return word
+    }
+    if (str.match(/1$/g)) {
+      return word.replace('й', 'е').replace('ых', 'ое').replace('мест', 'место')
+    }
+    if (str.match(/[2-4]$/g)) {
+      return word.replace('й', 'я').replace('мест', 'места')
+    }
+    return word
+  }
+
   useEffect(() => {
     if (open) {
       instituteRef.current.style.minHeight = `
@@ -40,15 +54,17 @@ const Institute = ({ name, areas }) => {
               <ul className="institute__count">
                 <li>
                   <span>{areas.length}</span>
-                  <span>направлений</span>
+                  <span>{getWordEnding(areas.length, 'направлений')}</span>
                 </li>
                 <li>
                   <span>{getBudgetCount()}</span>
-                  <span>бюджетных мест</span>
+                  <span>
+                    {getWordEnding(getBudgetCount(), 'бюджетных мест')}
+                  </span>
                 </li>
                 <li>
                   <span>{getPaidCount()}</span>
-                  <span>платных мест</span>
+                  <span>{getWordEnding(getPaidCount(), 'платных мест')}</span>
                 </li>
               </ul>
               <ul
