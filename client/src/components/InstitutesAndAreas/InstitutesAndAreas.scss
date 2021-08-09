@@ -1,31 +1,30 @@
 @import '../../assets/scss/variables.scss';
 
-.areas__title {
+.institutes-and-areas {
+  background-color: $blue;
+}
+.institutes-and-areas__title {
   text-align: center;
 
   span {
+    display: block;
     color: $purple;
   }
 }
-.areas__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.areas__text {
+.institutes-and-areas__text {
   max-width: 80%;
   margin: 0 auto;
   margin-bottom: 64px;
 }
 
 @media (max-width: 1200px) {
-  .areas__text {
+  .institutes-and-areas__text {
     max-width: 100%;
     margin-bottom: 40px;
   }
 }
 @media (max-width: 768px) {
-  .areas__text {
+  .institutes-and-areas__text {
     margin-bottom: 30px;
   }
 }

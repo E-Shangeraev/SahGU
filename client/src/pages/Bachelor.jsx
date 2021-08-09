@@ -1,9 +1,12 @@
+/* eslint-disable max-len */
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 import { Link } from 'react-scroll'
 import Modal from '@components/Modal/Modal'
-// eslint-disable-next-line max-len
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
+import InstitutesAndAreas from '@components/InstitutesAndAreas/InstitutesAndAreas'
+
+import promo2 from '@assets/img/Bachelor/promo-2.png'
 
 const Bachelor = () => (
   <main>
@@ -15,10 +18,9 @@ const Bachelor = () => (
             animateOut="animate__fadeOut"
             animateOnce>
             <h1 className="promo__title">
-              Поступи в СахГУ
-              <br />и получи <b>два диплома</b>
+              Поступи на
               <br />
-              одновременно
+              <b>бакалавриат</b> в СахГУ
             </h1>
           </ScrollAnimation>
           <ScrollAnimation
@@ -27,8 +29,8 @@ const Bachelor = () => (
             delay={1000}
             animateOnce>
             <p className="text promo__text">
-              СахГУ совместно с правительством региона разработало программу для
-              сотрудничества с некоторыми вузами страны, в том числе ведущими.
+              Оставьте заявку и получите консультацию о&nbsp;направлениях
+              подготовки, проходных баллах и других вопросах про поступление
             </p>
             <div className="promo__buttons">
               <Modal btnText="Получить консультацию" btnColor="white">
@@ -38,14 +40,28 @@ const Bachelor = () => (
                         и мы свяжемся с вами в ближайшее время"
                 />
               </Modal>
-              <Link smooth to="2" className="button button--outlined">
+              <Link smooth to="2" className="button button--white-outlined">
                 Узнать больше
               </Link>
             </div>
           </ScrollAnimation>
+          <ScrollAnimation
+            animateIn="animate__fadeInUp"
+            animateOut="animate__fadeOut"
+            delay={1000}
+            animateOnce>
+            <img src={promo2} alt="Наши преимущества" />
+          </ScrollAnimation>
         </div>
       </div>
     </section>
+
+    <ScrollAnimation
+      animateIn="animate__fadeIn"
+      animateOut="animate__fadeOut"
+      animateOnce>
+      <InstitutesAndAreas />
+    </ScrollAnimation>
   </main>
 )
 

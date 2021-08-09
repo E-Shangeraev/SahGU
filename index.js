@@ -14,6 +14,7 @@ const {
   mailRouter,
   areasRouter,
   subjectRouter,
+  instituteRouter,
 } = require('./routes')
 
 // ==== Admin options ====
@@ -28,6 +29,7 @@ app.use(admin.options.rootPath, adminRouter)
 app.use('/api/mail', mailRouter)
 app.use('/api/areas', areasRouter)
 app.use('/api/subjects', subjectRouter)
+app.use('/api/institutes', instituteRouter)
 
 // ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {

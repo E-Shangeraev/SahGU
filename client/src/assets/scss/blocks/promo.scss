@@ -9,7 +9,8 @@
   &--bachelor {
     background-image: url('../../img/Bachelor/promo-1.jpg');
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
+    background-size: cover;
 
     * {
       color: #fff;
@@ -19,6 +20,15 @@
     }
     .promo__title b {
       background-color: $yellow;
+    }
+    .promo__container > div:nth-of-type(3) {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: -40%;
+        right: -20%;
+      }
     }
   }
   .wrapper {

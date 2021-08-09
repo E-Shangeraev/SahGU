@@ -67,7 +67,7 @@ const Areas = () => {
               которые были бы интересны вам!
             </p>
           </ScrollAnimation>
-          <div className="areas__filters">
+          <div className="filter">
             <Switch
               options={{
                 name: 'qualification',
@@ -106,14 +106,14 @@ const Areas = () => {
             ) : null}
           </div>
           {areasLoaded && type === 0 && (
-            <ul className="areas__list">
+            <ul className="filter__list">
               {areaItems.map(item => (
                 <Area key={uuidv4()} item={item} />
               ))}
             </ul>
           )}
           {areasLoaded && type === 1 && (
-            <ul className="areas__list">
+            <ul className="filter__list">
               {activeAreaItems.map(item => (
                 <Area key={uuidv4()} item={item} />
               ))}
