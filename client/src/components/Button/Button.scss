@@ -21,6 +21,10 @@
   &--purple {
     background-color: $purple;
   }
+  &--white {
+    background-color: #fff;
+    color: $purple;
+  }
   &--outlined {
     color: #000;
     border: 1px solid #000;

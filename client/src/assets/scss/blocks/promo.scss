@@ -3,8 +3,23 @@
   height: 100vh;
   z-index: 0;
 
-  &--blue {
+  &--two-diplomas {
     background-color: $blue;
+  }
+  &--bachelor {
+    background-image: url('../../img/Bachelor/promo-1.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    * {
+      color: #fff;
+    }
+    .promo__title {
+      color: #fff;
+    }
+    .promo__title b {
+      background-color: $yellow;
+    }
   }
   .wrapper {
     padding-top: 190px;

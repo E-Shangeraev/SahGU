@@ -13,6 +13,7 @@ const Button = ({ outlined, color, type, disabled, children, onClick }) => (
       'button--outlined': outlined,
       'button--yellow': color === 'yellow',
       'button--purple': color === 'purple',
+      'button--white': color === 'white',
     })}>
     {children}
   </button>

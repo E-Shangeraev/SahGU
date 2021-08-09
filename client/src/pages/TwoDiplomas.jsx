@@ -17,7 +17,7 @@ import feedback3 from '@assets/img/feedback-4.svg'
 
 const TwoDiplomas = () => (
   <main>
-    <section className="promo promo--blue">
+    <section className="promo promo--two-diplomas">
       <div className="wrapper">
         <div className="promo__container">
           <ScrollAnimation
