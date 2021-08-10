@@ -1,0 +1,18 @@
+@import '../../assets/scss/variables.scss';
+
+.steps__container {
+  display: flex;
+}
+.steps__title {
+  margin-right: 2em;
+
+  span {
+    color: $purple;
+  }
+}
+.steps__list {
+  padding: 65px;
+  flex-grow: 1;
+  border-radius: 24px;
+  background-color: $blue;
+}

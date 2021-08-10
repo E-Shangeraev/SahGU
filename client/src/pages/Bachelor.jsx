@@ -6,13 +6,14 @@ import { Link } from 'react-scroll'
 import { v4 as uuidv4 } from 'uuid'
 import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
+import Steps from '@components/Steps/Steps'
 import InstitutesAndAreas from '@components/InstitutesAndAreas/InstitutesAndAreas'
 import Slider from '@components/Slider/Slider'
 import Feedback from '@components/Feedback/Feedback'
 
-import graduates1 from '@assets/img/graduates-1.png'
-import graduates2 from '@assets/img/graduates-2.png'
-import graduates3 from '@assets/img/graduates-3.png'
+// import graduates1 from '@assets/img/graduates-1.png'
+// import graduates2 from '@assets/img/graduates-2.png'
+// import graduates3 from '@assets/img/graduates-3.png'
 import promo2 from '@assets/img/Bachelor/promo-2.png'
 import feedback1 from '@assets/img/feedback-1.svg'
 import feedback2 from '@assets/img/feedback-2.svg'
@@ -64,6 +65,13 @@ const Bachelor = () => (
         </div>
       </div>
     </section>
+
+    <ScrollAnimation
+      animateIn="animate__fadeIn"
+      animateOut="animate__fadeOut"
+      animateOnce>
+      <Steps qualification="бакалавриат" url="/api/steps/bachelor" />
+    </ScrollAnimation>
 
     <ScrollAnimation
       animateIn="animate__fadeIn"
