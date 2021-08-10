@@ -1,0 +1,38 @@
+.what-is-the-program__container {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-column-gap: 48px;
+}
+.what-is-the-program__title {
+  span {
+    display: block;
+    color: $purple;
+  }
+}
+.what-is-the-program__image {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.what-is-the-program__text {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  @include big-text;
+}
+
+@media (max-width: 1366px) {
+  .what-is-the-program__container {
+    grid-column-gap: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .what-is-the-program__container {
+    display: block;
+  }
+  .what-is-the-program__image {
+    margin-bottom: 20px;
+    width: 100%;
+    max-height: 300px;
+  }
+}

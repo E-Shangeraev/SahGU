@@ -14,6 +14,7 @@ import Contacts from '@components/Contacts/Contacts'
 import promo33 from '@assets/img/promo-33.png'
 import feedback2 from '@assets/img/feedback-2.svg'
 import feedback3 from '@assets/img/feedback-4.svg'
+import whatIsTheProgram from '@assets/img/what-is-the-program.jpg'
 
 const TwoDiplomas = () => (
   <main>
@@ -95,6 +96,43 @@ const TwoDiplomas = () => (
         <img src={promo33} alt="Фото студентки" />
       </ScrollAnimation>
     </section>
+
+    <ScrollAnimation
+      animateIn="animate__fadeIn"
+      animateOut="animate__fadeOut"
+      animateOnce>
+      <section className="what-is-the-program">
+        <div className="wrapper">
+          <div className="what-is-the-program__container">
+            <h2 className="title what-is-the-program__title">
+              Что такое программа
+              <span>«2 диплома»</span>
+            </h2>
+            <img
+              className="what-is-the-program__image"
+              src={whatIsTheProgram}
+              alt="2 диплома"
+            />
+            <p className="what-is-the-program__text">
+              Программа «Два диплома» — это совместный образовательный проект
+              СахГУ и российских университетов федерального значения.
+              <br />
+              <br />
+              Участники этой программы получают второй диплом о присвоении
+              квалификации в рамках полученного образования, помимо диплома
+              островного вуза. Все это согласовано с государственными
+              требованиями и стандартами.
+              <br />
+              <br />
+              Любой может получит возможность учиться в самых престижных вузах
+              страны. Нужно только выбрать дополнительный профиль от
+              вуза-партнера по своему учебному направлению. Единственное условие
+              — поступить в СахГУ на «бюджет».
+            </p>
+          </div>
+        </div>
+      </section>
+    </ScrollAnimation>
 
     <ScrollAnimation
       animateIn="animate__fadeIn"
