@@ -3,9 +3,14 @@ import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
 import { Transition } from 'react-transition-group'
 import classNames from 'classnames'
+import Modal from '@components/Modal/Modal'
+import AreaBlock from '@components/AreaBlock/AreaBlock'
+import instagramIcon from '@assets/img/icons/instagram.svg'
 import './Institute.scss'
 
-const Institute = ({ name, areas }) => {
+const year = new Date().getFullYear() - 1
+
+const Institute = ({ name, social, areas }) => {
   const [open, setOpen] = useState(false)
   const instituteRef = useRef()
   const instituteContainerRef = useRef()
@@ -37,8 +42,8 @@ const Institute = ({ name, areas }) => {
 
   useEffect(() => {
     if (open) {
-      instituteRef.current.style.minHeight = `
-      ${instituteRef.current.clientHeight}px`
+      instituteRef.current.style.height = `
+      ${instituteRef.current.scrollHeight}px`
     }
   }, [open])
 
@@ -67,12 +72,25 @@ const Institute = ({ name, areas }) => {
                   <span>{getWordEnding(getPaidCount(), 'платных мест')}</span>
                 </li>
               </ul>
+              {social && (
+                <a
+                  href={social}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="institute__social">
+                  <img src={instagramIcon} alt={social} />
+                </a>
+              )}
               <ul
                 className={classNames('institute__areas', {
                   active: open,
                 })}>
                 {areas.map(area => (
-                  <li key={uuidv4()}>{area.name}</li>
+                  <li key={uuidv4()}>
+                    <Modal btnText={area.name} btnColor="yellow">
+                      <AreaBlock item={area} year={year} />
+                    </Modal>
+                  </li>
                 ))}
               </ul>
               <button
@@ -95,10 +113,12 @@ const Institute = ({ name, areas }) => {
 
 Institute.propTypes = {
   name: PropTypes.string.isRequired,
+  social: PropTypes.string,
   areas: PropTypes.arrayOf(PropTypes.object),
 }
 
 Institute.defaultProps = {
+  social: null,
   areas: [],
 }
 

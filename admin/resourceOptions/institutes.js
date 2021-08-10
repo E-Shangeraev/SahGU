@@ -3,8 +3,8 @@ const { Institute } = require('../../models/Institute')
 
 /** @type {AdminBro.ResourceOtions} */
 const options = {
-  listProperties: ['name'],
-  editProperties: ['name', 'areas'],
+  listProperties: ['name', 'social'],
+  editProperties: ['name', 'social', 'areas'],
   navigation: {
     icon: 'Education',
   },

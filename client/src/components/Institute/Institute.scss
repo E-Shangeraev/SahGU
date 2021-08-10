@@ -3,7 +3,7 @@
 
 .institute {
   position: relative;
-  min-height: fit-content;
+  // min-height: fit-content;
 
   .institute__name,
   .institute__count {
@@ -37,6 +37,34 @@
   margin-top: 0;
   @include h4;
 }
+.institute__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 7px;
+  width: fit-content;
+  border-radius: 10px;
+  background: linear-gradient(
+      266.18deg,
+      #5834c1 1.9%,
+      #bb488a 45.85%,
+      #ea8054 73.61%,
+      #f8e862 98.04%
+    ),
+    #c4c4c4;
+  transition: ease 0.25s;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+  img {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+}
 .institute__count {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -69,6 +97,21 @@
     opacity: 1;
     max-height: 400px;
     z-index: 10;
+
+    .button {
+      pointer-events: visible;
+    }
+  }
+  .button {
+    display: block;
+    padding: 0;
+    background: transparent;
+    border: none;
+    text-align: left;
+    white-space: normal;
+    font-weight: normal;
+    color: #000;
+    pointer-events: none;
   }
 }
 .institute__button {

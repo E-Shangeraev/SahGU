@@ -61,8 +61,13 @@ const InstitutesAndAreas = () => {
         )}
         {institutesLoaded && type === 2 && (
           <ul className="filter__list">
-            {instituteItems.map(item => (
-              <Institute key={uuidv4()} name={item.name} areas={item.areas} />
+            {instituteItems.map(({ name, social, areas }) => (
+              <Institute
+                key={uuidv4()}
+                name={name}
+                social={social}
+                areas={areas}
+              />
             ))}
           </ul>
         )}

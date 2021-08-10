@@ -1,7 +1,6 @@
 import React from 'react'
 import { Parallax } from 'react-parallax'
 import ScrollAnimation from 'react-animate-on-scroll'
-import { Link } from 'react-scroll'
 import { v4 as uuidv4 } from 'uuid'
 
 import ScheduleCard from '@components/ScheduleCard/ScheduleCard'

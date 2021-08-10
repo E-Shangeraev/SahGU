@@ -84,6 +84,7 @@ const options = {
         Institutes: {
           properties: {
             name: 'Имя',
+            social: 'Ссылка на соцсеть',
             areas: 'Направления подготовки',
           },
         },

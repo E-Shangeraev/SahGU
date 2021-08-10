@@ -180,7 +180,7 @@
     display: inline-block;
     padding: 0 20px 5px 20px;
     border-radius: 10px;
-    background-color: $purple;
+    background-color: $yellow;
     font-size: 64px;
     line-height: 125%;
     font-weight: 500;
@@ -192,6 +192,8 @@ h1.promo__title--uppercase {
   text-transform: uppercase;
 }
 span.promo__title {
+  display: inline-block;
+  color: $yellow;
   line-height: 100%;
   white-space: nowrap;
   text-transform: lowercase;
