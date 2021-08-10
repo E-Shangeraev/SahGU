@@ -3,15 +3,19 @@ import React from 'react'
 import { Parallax } from 'react-parallax'
 import ScrollAnimation from 'react-animate-on-scroll'
 import { Link } from 'react-scroll'
+import { v4 as uuidv4 } from 'uuid'
 import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import InstitutesAndAreas from '@components/InstitutesAndAreas/InstitutesAndAreas'
 import Slider from '@components/Slider/Slider'
+import Feedback from '@components/Feedback/Feedback'
 
 import graduates1 from '@assets/img/graduates-1.png'
 import graduates2 from '@assets/img/graduates-2.png'
 import graduates3 from '@assets/img/graduates-3.png'
 import promo2 from '@assets/img/Bachelor/promo-2.png'
+import feedback1 from '@assets/img/feedback-1.svg'
+import feedback2 from '@assets/img/feedback-2.svg'
 
 const Bachelor = () => (
   <main>
@@ -113,6 +117,26 @@ const Bachelor = () => (
           </Parallax>
         </div>
       </section>
+    </ScrollAnimation>
+
+    <ScrollAnimation animateIn="animate__fadeIn" animateOut="animate__fadeOut">
+      <Parallax
+        className="feedback__parallax"
+        bgClassName="feedback__bg-1"
+        bgImage={feedback1}
+        strength={150}>
+        <Parallax
+          className="feedback__parallax"
+          bgClassName="feedback__bg-2"
+          bgImage={feedback2}
+          strength={200}>
+          <Feedback
+            formId={uuidv4()}
+            title="Не можете определиться?"
+            text="Оставьте свой номер и мы поможем вам с выбором!"
+          />
+        </Parallax>
+      </Parallax>
     </ScrollAnimation>
   </main>
 )
