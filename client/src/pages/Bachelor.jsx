@@ -1,11 +1,16 @@
 /* eslint-disable max-len */
 import React from 'react'
+import { Parallax } from 'react-parallax'
 import ScrollAnimation from 'react-animate-on-scroll'
 import { Link } from 'react-scroll'
 import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import InstitutesAndAreas from '@components/InstitutesAndAreas/InstitutesAndAreas'
+import Slider from '@components/Slider/Slider'
 
+import graduates1 from '@assets/img/graduates-1.png'
+import graduates2 from '@assets/img/graduates-2.png'
+import graduates3 from '@assets/img/graduates-3.png'
 import promo2 from '@assets/img/Bachelor/promo-2.png'
 
 const Bachelor = () => (
@@ -61,6 +66,53 @@ const Bachelor = () => (
       animateOut="animate__fadeOut"
       animateOnce>
       <InstitutesAndAreas />
+    </ScrollAnimation>
+
+    <ScrollAnimation
+      animateIn="animate__fadeIn"
+      animateOut="animate__fadeOut"
+      animateOnce>
+      <section className="graduates">
+        <div className="wrapper">
+          <Parallax
+            className="graduates__parallax"
+            bgClassName="graduates__bg graduates__bg-1"
+            bgImage={graduates1}
+            strength={50}>
+            <Parallax
+              className="graduates__parallax"
+              bgClassName="graduates__bg graduates__bg-2"
+              bgImage={graduates2}
+              strength={200}>
+              <Parallax
+                className="graduates__parallax"
+                bgClassName="graduates__bg graduates__bg-3"
+                bgImage={graduates3}
+                strength={100}>
+                <div className="graduates__container">
+                  <div>
+                    <h2 className="title graduates__title">
+                      Наши <span>выпускники</span>
+                    </h2>
+                    <p className="big-text">
+                      Выпускники СахГУ работают в компаниях нефтегазовой
+                      отрасли, банковских структурах, налоговых органах, на
+                      предприятиях и научно-исследовательских учреждениях, в
+                      государственных органах.
+                      <br />
+                      <br />
+                      Ежегодно проводимый мониторинг свидетельствует, что к
+                      концу года выпуска более 86% выпускников трудоустроены.
+                      Это один из лучших результатов в России.
+                    </p>
+                  </div>
+                  <Slider />
+                </div>
+              </Parallax>
+            </Parallax>
+          </Parallax>
+        </div>
+      </section>
     </ScrollAnimation>
   </main>
 )
