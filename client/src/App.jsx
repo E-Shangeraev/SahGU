@@ -6,6 +6,7 @@ import Main from '@pages/Main'
 import TwoDiplomas from '@pages/TwoDiplomas'
 import Contacts from '@pages/Contacts'
 import Bachelor from '@pages/Bachelor'
+import Comission from '@pages/Comission'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/two-diplomas" exact component={TwoDiplomas} />
           <Route path="/contacts" exact component={Contacts} />
           <Route path="/bachelor" exact component={Bachelor} />
+          <Route path="/comission" exact component={Comission} />
         </Switch>
       </BrowserRouter>
       <Footer />
