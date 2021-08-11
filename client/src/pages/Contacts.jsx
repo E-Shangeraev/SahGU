@@ -37,7 +37,9 @@ const Contacts = () => (
           <ul className="contacts-page__social-links">
             <li>
               <a
-                href="/"
+                href="https://vk.com/sakhgu"
+                target="_blank"
+                rel="noreferrer"
                 className="contacts-page__social contacts-page__social--vk">
                 <span>Группа ВКонтакте</span>
                 <img src={vkIcon} alt="Логотип ВКонтакте" />
@@ -45,7 +47,9 @@ const Contacts = () => (
             </li>
             <li>
               <a
-                href="/"
+                href="https://www.instagram.com/sakhgu/"
+                target="_blank"
+                rel="noreferrer"
                 className="contacts-page__social contacts-page__social--instagram">
                 <span>Страница Инстаграм</span>
                 <img src={instagramIcon} alt="Логотип Instagram" />
@@ -53,7 +57,9 @@ const Contacts = () => (
             </li>
             <li>
               <a
-                href="/"
+                href="https://www.tiktok.com/@sakhgu?lang=ru-RU"
+                target="_blank"
+                rel="noreferrer"
                 className="contacts-page__social contacts-page__social--tiktok">
                 <span>Аккаунт ТikTok</span>
                 <img src={tiktokIcon} alt="Логотип TikTok" />
@@ -61,7 +67,9 @@ const Contacts = () => (
             </li>
             <li>
               <a
-                href="/"
+                href="https://ok.ru/sakhgu"
+                target="_blank"
+                rel="noreferrer"
                 className="contacts-page__social contacts-page__social--ok">
                 <span>Группа Одноклассники</span>
                 <img src={okIcon} alt="Логотип Одноклассники" />
