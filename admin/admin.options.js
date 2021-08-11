@@ -7,6 +7,8 @@ const {
   Area,
   TwoDiplomas,
   Institute,
+  BachelorStepsOptions: BachelorSteps,
+  MagistracyStepsOptions: MagistracySteps,
 } = require('./resourceOptions')
 
 AdminBro.registerAdapter(AdminBroMongoose)
@@ -32,6 +34,8 @@ const options = {
         Areas: 'Направления подготовки',
         TwoDiplomas: 'Программа "Два диплома"',
         Institutes: 'Институты',
+        BachelorSteps: 'Бакалавриат',
+        MagistracySteps: 'Магистратура',
       },
       buttons: {
         filter: 'Фильтр',
@@ -88,10 +92,40 @@ const options = {
             areas: 'Направления подготовки',
           },
         },
+        BachelorSteps: {
+          properties: {
+            number: 'Порядковый номер',
+            title: 'Заголовок',
+            subtitle: 'Подзаголовок',
+            text: 'Текст',
+            links: 'Ссылки на файлы',
+            'links.name': 'Название ссылки',
+            'links.url': 'URL ссылки',
+          },
+        },
+        MagistracySteps: {
+          properties: {
+            number: 'Порядковый номер',
+            title: 'Заголовок',
+            subtitle: 'Подзаголовок',
+            text: 'Текст',
+            links: 'Ссылки на файлы',
+            'links.name': 'Название ссылки',
+            'links.url': 'URL ссылки',
+          },
+        },
       },
     },
   },
-  resources: [Admin, Subject, Area, TwoDiplomas, Institute],
+  resources: [
+    Admin,
+    Subject,
+    Area,
+    TwoDiplomas,
+    Institute,
+    BachelorSteps,
+    MagistracySteps,
+  ],
   branding: {
     companyName: 'СахГУ',
     logo: '',

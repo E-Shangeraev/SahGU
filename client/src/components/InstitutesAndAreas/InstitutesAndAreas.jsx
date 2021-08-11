@@ -32,7 +32,7 @@ const InstitutesAndAreas = () => {
   }, [])
 
   return (
-    <section className="institutes-and-areas">
+    <section className="institutes-and-areas" id={2}>
       <div className="wrapper">
         <h2 className="title institutes-and-areas__title">
           <span>Институты и направления</span>
