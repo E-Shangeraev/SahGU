@@ -80,7 +80,7 @@ const Bachelor = () => (
       <InstitutesAndAreas />
     </ScrollAnimation>
 
-    <ScrollAnimation
+    {/* <ScrollAnimation
       animateIn="animate__fadeIn"
       animateOut="animate__fadeOut"
       animateOnce>
@@ -106,7 +106,7 @@ const Bachelor = () => (
           </div>
         </div>
       </section>
-    </ScrollAnimation>
+    </ScrollAnimation> */}
 
     <ScrollAnimation animateIn="animate__fadeIn" animateOut="animate__fadeOut">
       <Parallax
