@@ -1,12 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
-import { v4 as uuidv4 } from 'uuid'
 import Step from '@components/Step/Step'
 import './Steps.scss'
 
 const Steps = React.memo(({ qualification, url }) => {
-  const [steps, setSteps] = useState()
+  const [steps, setSteps] = useState([])
   const [activeStep, setActiveStep] = useState()
 
   const handleClickStep = useCallback(number => {
@@ -28,15 +27,16 @@ const Steps = React.memo(({ qualification, url }) => {
             <span>на {qualification}?</span>
           </h2>
           <ul className="steps__list">
-            {steps &&
-              steps.map(item => (
-                <Step
-                  key={uuidv4()}
-                  item={item}
-                  onStepClick={handleClickStep}
-                  isActive={activeStep === item.number}
-                />
-              ))}
+            {steps.length
+              ? steps.map(item => (
+                  <Step
+                    key={item.number}
+                    item={item}
+                    onStepClick={handleClickStep}
+                    isActive={activeStep === item.number}
+                  />
+                ))
+              : null}
           </ul>
         </div>
       </div>

@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { v4 as uuidv4 } from 'uuid'
 import './Step.scss'
 
-const Step = React.memo(({ item, onStepClick, isActive }) => {
+const Step = ({ item, onStepClick, isActive }) => {
   const { number, title, subtitle, text, links } = item
 
   const collapsibleRef = useRef()
@@ -63,7 +63,7 @@ const Step = React.memo(({ item, onStepClick, isActive }) => {
       </div>
     </li>
   )
-})
+}
 
 Step.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
