@@ -85,9 +85,10 @@
 .institute__areas {
   list-style-type: disc;
   padding-left: 30px;
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
   max-height: 0;
   opacity: 0;
+  overflow: hidden;
   transition: linear 0.5s;
 
   li:not(:last-of-type) {
@@ -118,7 +119,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-top: auto;
+  margin-top: 30px;
   width: 100%;
   color: $yellow;
   text-align: left;
@@ -143,6 +144,27 @@
   &.active {
     &::after {
       transform: rotate(180deg);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .institute__name {
+    text-align: center;
+  }
+  .institute__count {
+    text-align: center;
+  }
+  .institute__social {
+    margin-bottom: 20px;
+  }
+  .institute__button {
+    width: fit-content;
+    font-size: 14px;
+
+    &::after {
+      width: 14px;
+      height: 14px;
     }
   }
 }

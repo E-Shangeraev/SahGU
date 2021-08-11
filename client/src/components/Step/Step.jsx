@@ -41,7 +41,8 @@ const Step = ({ item, onStepClick, isActive }) => {
                     key={uuidv4()}
                     href={link.url}
                     target="_blank"
-                    rel="noreferrer">
+                    rel="noreferrer"
+                    className="button button--outlined">
                     {link.name}
                   </a>
                 ))}
@@ -49,7 +50,9 @@ const Step = ({ item, onStepClick, isActive }) => {
             ) : null}
             {number === 1 && (
               <p className="step__links">
-                <a href="#2">Узнать больше</a>
+                <a href="#2" className="button button--outlined">
+                  Узнать больше
+                </a>
               </p>
             )}
           </div>

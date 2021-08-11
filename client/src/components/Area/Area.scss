@@ -44,3 +44,20 @@
     @include text;
   }
 }
+
+@media (max-width: 500px) {
+  .area {
+    .button {
+      width: 100%;
+    }
+    .bage {
+      align-self: center;
+    }
+  }
+  .area__name {
+    text-align: center;
+  }
+  .area__count {
+    text-align: center;
+  }
+}

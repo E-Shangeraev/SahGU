@@ -13,7 +13,45 @@
 }
 .steps__list {
   padding: 50px;
-  flex-grow: 1;
+  padding-left: 100px;
   border-radius: 24px;
   background-color: $blue;
+}
+
+@media (max-width: 1440px) {
+  .steps__list {
+    padding-left: 80px;
+  }
+}
+@media (max-width: 1200px) {
+  .steps__container {
+    flex-direction: column;
+  }
+  .steps__title {
+    br:first-child {
+      display: none;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .steps__list {
+    padding: 30px;
+    padding-left: 60px;
+  }
+}
+@media (max-width: 600px) {
+  .steps__list {
+    padding: 20px;
+    padding-left: 45px;
+  }
+}
+@media (max-width: 500px) {
+  .steps__title {
+    br:first-child {
+      display: block;
+    }
+  }
+  .steps__list {
+    padding-left: 35px;
+  }
 }
