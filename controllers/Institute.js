@@ -1,4 +1,5 @@
 const { Institute: InstituteModel } = require('../models/Institute')
+const { Area: AreaModel } = require('../models/Area')
 
 class Institute {
   getItems = async (req, res) => {
@@ -9,6 +10,7 @@ class Institute {
         match: {
           [`qualification.${qualification}`]: true,
         },
+        populate: [{ path: 'exams.main' }, { path: 'exams.alternative' }],
       })
       res.status(200).json(items)
     } catch (error) {
