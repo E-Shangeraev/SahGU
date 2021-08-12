@@ -12,8 +12,10 @@ const year = new Date().getFullYear() - 1
 
 const Institute = ({ name, social, areas }) => {
   const [open, setOpen] = useState(false)
+  const [instHeihgt, setInstHeight] = useState()
   const instituteRef = useRef()
   const instituteContainerRef = useRef()
+  const instituteAreaRef = useRef()
 
   const getPaidCount = () =>
     areas.reduce((acc, cur) => (cur.paid ? acc + cur.paid.count : acc + 0), 0)
@@ -41,9 +43,21 @@ const Institute = ({ name, social, areas }) => {
   }
 
   useEffect(() => {
-    if (open) {
-      instituteRef.current.style.height = `
-      ${instituteRef.current.scrollHeight}px`
+    if (areas.length) {
+      setInstHeight(instituteRef.current.clientHeight)
+
+      if (open) {
+        instituteRef.current.style.height = `
+        ${instituteRef.current.clientHeight}px`
+
+        instituteContainerRef.current.style.height = `
+        ${
+          instituteAreaRef.current.scrollHeight +
+          instituteRef.current.clientHeight
+        }px`
+      } else {
+        instituteContainerRef.current.style.height = ''
+      }
     }
   }, [open])
 
@@ -84,7 +98,8 @@ const Institute = ({ name, social, areas }) => {
               <ul
                 className={classNames('institute__areas', {
                   active: open,
-                })}>
+                })}
+                ref={instituteAreaRef}>
                 {areas.map(area => (
                   <li key={uuidv4()}>
                     <Modal btnText={area.name} btnColor="yellow">
