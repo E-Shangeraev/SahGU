@@ -6,6 +6,10 @@ import axios from 'axios'
 import arrowBackIcon from '@assets/img/icons/arrow-back.svg'
 import calendarIcon from '@assets/img/icons/calendar.svg'
 import newsImage from '@assets/img/news-2.jpg'
+import vkIcon from '@assets/img/icons/vk-2.svg'
+import instagramIcon from '@assets/img/icons/instagram.svg'
+import tiktokIcon from '@assets/img/icons/tiktok.svg'
+import okIcon from '@assets/img/icons/odnoklassniki.svg'
 
 const News = () => {
   const [article, setArticle] = useState(null)
@@ -54,16 +58,40 @@ const News = () => {
               <b>Еще больше новостей:</b>
               <ul className="article__socials">
                 <li>
-                  <a href="/">1</a>
+                  <a
+                    href="https://vk.com/sakhgu"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="article__social article__social--vk">
+                    <img src={vkIcon} alt="Логотип ВКонтакте" />
+                  </a>
                 </li>
                 <li>
-                  <a href="/">2</a>
+                  <a
+                    href="https://www.instagram.com/sakhgu/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="article__social article__social--instagram">
+                    <img src={instagramIcon} alt="Логотип Instagram" />
+                  </a>
                 </li>
                 <li>
-                  <a href="/">3</a>
+                  <a
+                    href="https://www.tiktok.com/@sakhgu?lang=ru-RU"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="article__social article__social--tiktok">
+                    <img src={tiktokIcon} alt="Логотип TikTok" />
+                  </a>
                 </li>
                 <li>
-                  <a href="/">4</a>
+                  <a
+                    href="https://ok.ru/sakhgu"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="article__social arrticle__social--ok">
+                    <img src={okIcon} alt="Логотип Одноклассники" />
+                  </a>
                 </li>
               </ul>
             </div>

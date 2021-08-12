@@ -15,6 +15,8 @@ import './NewsSlider.scss'
 
 const images = [newsBig, news2, news1]
 
+const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+
 const NewsSlider = () => {
   const [news, setNews] = useState([])
 
@@ -44,7 +46,11 @@ const NewsSlider = () => {
                     <img src={images[index]} alt="Приемная кампания 2021" />
                   </div>
                   <div className="news__bottom">
-                    <div className="bage">{item.date}</div>
+                    <div className="bage">
+                      {new Intl.DateTimeFormat('ru-RU', dateOptions).format(
+                        new Date(item.date),
+                      )}
+                    </div>
                     <span className="news__title">{item.title}</span>
                     <div className="text news__text">
                       <Markup content={item.previewText} />

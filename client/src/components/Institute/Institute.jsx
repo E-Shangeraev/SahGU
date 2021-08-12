@@ -48,7 +48,7 @@ const Institute = ({ name, social, areas }) => {
 
       if (open) {
         instituteRef.current.style.height = `
-        ${instituteRef.current.clientHeight}px`
+        ${instHeihgt}px`
 
         instituteContainerRef.current.style.height = `
         ${
