@@ -4,6 +4,7 @@ const areasRouter = require('./areas')
 const subjectRouter = require('./subjects')
 const instituteRouter = require('./institute')
 const stepsRouter = require('./steps')
+const newsRouter = require('./news')
 
 module.exports = {
   buildAdminRouter,
@@ -12,4 +13,5 @@ module.exports = {
   subjectRouter,
   instituteRouter,
   stepsRouter,
+  newsRouter,
 }

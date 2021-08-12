@@ -1,3 +1,6 @@
+@import '../../assets/scss/mixins.scss';
+@import '../../assets/scss/variables.scss';
+
 .news .title {
   margin-bottom: 0;
 }
@@ -24,7 +27,7 @@
       @include h3;
       color: #fff;
     }
-    .news__text {
+    .news__text p {
       color: #fff;
     }
     .news__bottom {
@@ -65,7 +68,7 @@
   @include h4;
   font-size: 22px;
 }
-.news__text {
+.news__text p {
   @include text;
 }
 .news__bottom {
@@ -98,7 +101,7 @@
       .news__title {
         color: #000;
       }
-      .news__text {
+      .news__text p {
         color: #000;
       }
       .news__bottom {
@@ -131,7 +134,7 @@
       font-size: 22px;
       color: #fff;
     }
-    .news__text {
+    .news__text p {
       color: #fff;
     }
     .news__bottom {

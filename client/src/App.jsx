@@ -7,6 +7,7 @@ import TwoDiplomas from '@pages/TwoDiplomas'
 import Contacts from '@pages/Contacts'
 import Bachelor from '@pages/Bachelor'
 import Comission from '@pages/Comission'
+import News from '@pages/News'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contacts" exact component={Contacts} />
           <Route path="/bachelor" exact component={Bachelor} />
           <Route path="/comission" exact component={Comission} />
+          <Route path="/news/:id" exact component={News} />
         </Switch>
       </BrowserRouter>
       <Footer />

@@ -1,0 +1,30 @@
+.news-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+.news-page__wrapper {
+  padding-top: 160px;
+  padding-right: 0;
+  padding-left: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+.news-page__title {
+  margin: 0;
+}
+.news-page__back {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  transition: ease 0.25s;
+
+  img {
+    margin-right: 15px;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+}

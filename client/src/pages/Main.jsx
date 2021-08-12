@@ -4,22 +4,18 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import { Link } from 'react-scroll'
 import { v4 as uuidv4 } from 'uuid'
 
-import Button from '@components/Button/Button'
 import Feedback from '@components/Feedback/Feedback'
 import { Gosuslugi, Mail, Personal, Post } from '@components/DocumentsBlock'
 import Slider from '@components/Slider/Slider'
 import Modal from '@components/Modal/Modal'
 // eslint-disable-next-line max-len
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
+import NewsSlider from '@components/NewsSlider/NewsSlider'
 import Areas from '@components/Areas/Areas'
 import Contacts from '@components/Contacts/Contacts'
 
 import promo1 from '@assets/img/promo-1.png'
 import promo2 from '@assets/img/promo-2.png'
-import arrowRight from '@assets/img/icons/arrow-right.svg'
-import newsBig from '@assets/img/news-big.jpg'
-import news1 from '@assets/img/news-1.jpg'
-import news2 from '@assets/img/news-2.jpg'
 import yourBeginning from '@assets/img/your-beginning.png'
 import features1 from '@assets/img/features-1.png'
 import features2 from '@assets/img/features-2.png'
@@ -108,86 +104,7 @@ const Main = () => (
       animateOut="animate__fadeOut"
       delay={500}
       animateOnce>
-      <section className="news">
-        <div className="wrapper">
-          <div className="news__top">
-            <h2 className="title">Новости</h2>
-            <Button outlined>
-              <span>Все новости</span>
-              <object data={arrowRight} type="image/svg+xml">
-                Ваш браузер не поддерживает SVG
-              </object>
-            </Button>
-          </div>
-          <ul className="news__container">
-            <li className="news__preview">
-              <a href="/">
-                <div className="news__image">
-                  <img src={newsBig} alt="Приемная кампания 2021" />
-                </div>
-                <div className="news__bottom">
-                  <div className="bage">21 июня, 2021</div>
-                  <span className="news__title">Приемная кампания 2021</span>
-                  <p className="text news__text">
-                    В Сахалинском Государствнном университете началась приёмная
-                    кампания.
-                  </p>
-                </div>
-              </a>
-            </li>
-            <li className="news__preview">
-              <a href="/">
-                <div className="news__image">
-                  <img src={news2} alt="Билет на скорый поезд" />
-                </div>
-                <div className="news__bottom">
-                  <div className="bage">19 июля, 2021</div>
-                  <span className="news__title">
-                    CахГУ – в топ-100 вузов России по успешности трудоустройства
-                    выпускников
-                  </span>
-                  <p className="text news__text">
-                    Сахалинский государственный университет занял 61 строчку
-                    рейтинга вузов по успешности трудоустройства выпускников,
-                    составленного HeadHunter – крупнейшей российской платформы
-                    онлайн-рекрутинга.
-                  </p>
-                </div>
-              </a>
-            </li>
-
-            <li className="news__preview">
-              <a href="/">
-                <div className="news__image">
-                  <img
-                    src={news1}
-                    // eslint-disable-next-line max-len
-                    alt="Вниманию абитуриентов очной формы обучения!"
-                  />
-                </div>
-                <div className="news__bottom">
-                  <div className="bage">27 июля, 2021</div>
-                  <span className="news__title">
-                    Вниманию абитуриентов очной формы обучения!
-                  </span>
-                  <p className="text news__text">
-                    В случае если после завершения зачисления (после 17 августа)
-                    остаются незаполненные места, СахГУ на основании конкурсных
-                    списков проводит дополнительное зачисление на указанные
-                    места в следующие сроки:
-                    <br />
-                    27 августа 2021 г. – срок завершение приема заявлений о
-                    согласии на зачисление на основные конкурсные места;
-                    <br />
-                    30 августа 2021 г. - издание приказов о зачислении лиц,
-                    поступающих на основные конкурсные места.
-                  </p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <NewsSlider />
     </ScrollAnimation>
 
     <ScrollAnimation

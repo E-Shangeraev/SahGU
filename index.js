@@ -16,6 +16,7 @@ const {
   subjectRouter,
   instituteRouter,
   stepsRouter,
+  newsRouter,
 } = require('./routes')
 
 // ==== Admin options ====
@@ -32,6 +33,7 @@ app.use('/api/areas', areasRouter)
 app.use('/api/subjects', subjectRouter)
 app.use('/api/institutes', instituteRouter)
 app.use('/api/steps', stepsRouter)
+app.use('/api/news', newsRouter)
 
 // ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {

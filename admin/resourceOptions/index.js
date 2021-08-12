@@ -4,6 +4,7 @@ const Area = require('./areas')
 const TwoDiplomas = require('./twoDiplomas')
 const Institute = require('./institutes')
 const { BachelorStepsOptions, MagistracyStepsOptions } = require('./steps')
+const News = require('./news')
 
 module.exports = {
   Admin,
@@ -13,4 +14,5 @@ module.exports = {
   Institute,
   BachelorStepsOptions,
   MagistracyStepsOptions,
+  News,
 }

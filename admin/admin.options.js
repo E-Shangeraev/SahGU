@@ -9,6 +9,7 @@ const {
   Institute,
   BachelorStepsOptions: BachelorSteps,
   MagistracyStepsOptions: MagistracySteps,
+  News,
 } = require('./resourceOptions')
 
 AdminBro.registerAdapter(AdminBroMongoose)
@@ -36,6 +37,7 @@ const options = {
         Institutes: 'Институты',
         BachelorSteps: 'Бакалавриат',
         MagistracySteps: 'Магистратура',
+        News: 'Новости',
       },
       buttons: {
         filter: 'Фильтр',
@@ -114,6 +116,15 @@ const options = {
             'links.url': 'URL ссылки',
           },
         },
+        News: {
+          properties: {
+            title: 'Заголовок',
+            previewText: 'Превью текст',
+            uploadedFile: 'Изображение',
+            text: 'Текст',
+            date: 'Дата публикации',
+          },
+        },
       },
     },
   },
@@ -125,6 +136,7 @@ const options = {
     Institute,
     BachelorSteps,
     MagistracySteps,
+    News,
   ],
   branding: {
     companyName: 'СахГУ',
