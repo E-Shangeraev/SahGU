@@ -30,12 +30,6 @@ const NewsSlider = () => {
       <div className="wrapper">
         <div className="news__top">
           <h2 className="title">Новости</h2>
-          <Button outlined>
-            <span>Все новости</span>
-            <object data={arrowRight} type="image/svg+xml">
-              Ваш браузер не поддерживает SVG
-            </object>
-          </Button>
         </div>
         {news.length ? (
           <ul className="news__container">
