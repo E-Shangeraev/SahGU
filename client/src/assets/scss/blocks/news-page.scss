@@ -19,6 +19,8 @@
   display: flex;
   align-items: center;
   margin: 25px 0;
+  font-size: 20px;
+  color: #9b9b9b;
   transition: ease 0.25s;
 
   img {
@@ -26,5 +28,23 @@
   }
   &:hover {
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 1440px) {
+  .news-page__back {
+    margin: 1.5em 0;
+    @include text;
+
+    img {
+      margin-right: 1em;
+      width: 1.5em;
+    }
+  }
+}
+@media (max-width: 1280px) {
+  .news-page__wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

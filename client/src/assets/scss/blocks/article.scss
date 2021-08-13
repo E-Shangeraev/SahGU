@@ -1,11 +1,9 @@
 .article {
   display: block;
-  // margin: 0 auto;
-  // max-width: 1000px;
-  // width: 100%;
 }
 .article__title {
   @include h3;
+  line-height: 150% !important;
   margin-top: 0;
 }
 .article__date {
@@ -15,6 +13,10 @@
 
   img {
     margin-right: 15px;
+  }
+  span {
+    @include text;
+    color: #9b9b9b;
   }
 }
 .article__photo {
@@ -27,6 +29,13 @@
 .article__container {
   padding-bottom: 45px;
   border-bottom: 2px solid $gray-1;
+}
+.article__text {
+  @include text;
+
+  p:not(:last-child) {
+    margin-bottom: 15px;
+  }
 }
 .article__more {
   padding: 40px 0;
@@ -66,5 +75,17 @@
   }
   &:hover {
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 500px) {
+  .article__more {
+    display: block;
+    padding: 15px 0;
+
+    b {
+      display: inline-block;
+      margin-bottom: 15px;
+    }
   }
 }
