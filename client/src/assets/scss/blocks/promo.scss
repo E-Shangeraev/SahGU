@@ -34,8 +34,15 @@
   }
   &--comission {
     background-color: $blue;
+    background-image: url('../../img/comission-promo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     height: auto;
 
+    .promo__title {
+      color: $yellow;
+    }
     .promo__container {
       grid-template-columns: max-content 1fr;
       grid-column-gap: 10%;
@@ -115,15 +122,20 @@
     height: 25px;
   }
   b {
+    color: #fff;
     font-weight: bold;
   }
+  span {
+    color: #fff;
+  }
   a {
-    color: $purple;
+    color: $yellow;
     text-decoration: underline;
+    height: fit-content;
     transition: ease 0.25s;
   }
   a:hover {
-    color: #000;
+    color: #fff;
   }
 }
 .promo__comission-image {

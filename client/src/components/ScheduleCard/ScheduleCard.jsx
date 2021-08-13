@@ -5,7 +5,7 @@ import manIcon from '@assets/img/icons/man.svg'
 import timeIcon from '@assets/img/icons/time.svg'
 import mapIcon from '@assets/img/icons/map.svg'
 import phoneIcon from '@assets/img/icons/phone.svg'
-import mailIcon from '@assets/img/icons/mail.png'
+import mailIcon from '@assets/img/icons/mail-2.svg'
 import './ScheduleCard.scss'
 
 const ScheduleCard = ({
