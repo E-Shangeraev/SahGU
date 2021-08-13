@@ -15,9 +15,9 @@ import promo2 from '@assets/img/BachelorAndMagistracy/promo-2.png'
 import feedback1 from '@assets/img/feedback-1.svg'
 import feedback2 from '@assets/img/feedback-2.svg'
 
-const Bachelor = () => (
+const Magistracy = () => (
   <main>
-    <section className="promo promo--bachelor">
+    <section className="promo promo--magistracy">
       <div className="wrapper">
         <div className="promo__container">
           <ScrollAnimation
@@ -27,7 +27,7 @@ const Bachelor = () => (
             <h1 className="promo__title">
               Поступи на
               <br />
-              <b>бакалавриат</b> в СахГУ
+              <b>магистратуру</b> в СахГУ
             </h1>
           </ScrollAnimation>
           <ScrollAnimation
@@ -67,14 +67,14 @@ const Bachelor = () => (
       animateIn="animate__fadeIn"
       animateOut="animate__fadeOut"
       animateOnce>
-      <Steps qualification="бакалавриат" url="/api/steps/bachelor" />
+      <Steps qualification="магистратуру" url="/api/steps/magistracy" />
     </ScrollAnimation>
 
     <ScrollAnimation
       animateIn="animate__fadeIn"
       animateOut="animate__fadeOut"
       animateOnce>
-      <InstitutesAndAreas qualificationIndex={0} />
+      <InstitutesAndAreas qualificationIndex={1} />
     </ScrollAnimation>
 
     <ScrollAnimation
@@ -127,4 +127,4 @@ const Bachelor = () => (
   </main>
 )
 
-export default Bachelor
+export default Magistracy

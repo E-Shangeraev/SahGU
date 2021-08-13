@@ -2,6 +2,7 @@
 import React, { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { v4 as uuidv4 } from 'uuid'
+import PropTypes from 'prop-types'
 import Switch from '@components/Switch/Switch'
 import Area from '@components/Area/Area'
 import Institute from '@components/Institute/Institute'
@@ -10,9 +11,10 @@ import { fetchAreas } from '@redux/actions/areas'
 import { fetchInstitutes } from '@redux/actions/institutes'
 import './InstitutesAndAreas.scss'
 
-const qualification = 0 // Бакалавриат
+// qualificationIndex = 0 — Бакалавриат
+// qualificationIndex = 1 — Магистратура
 
-const InstitutesAndAreas = () => {
+const InstitutesAndAreas = ({ qualificationIndex }) => {
   const dispatch = useDispatch()
   const { type } = useSelector(({ filter }) => filter)
   const { items: areaItems, isLoaded: areasLoaded } = useSelector(
@@ -27,8 +29,8 @@ const InstitutesAndAreas = () => {
   }, [])
 
   useEffect(async () => {
-    dispatch(fetchAreas(qualification))
-    dispatch(fetchInstitutes(qualification))
+    dispatch(fetchAreas(qualificationIndex))
+    dispatch(fetchInstitutes(qualificationIndex))
   }, [])
 
   return (
@@ -74,6 +76,10 @@ const InstitutesAndAreas = () => {
       </div>
     </section>
   )
+}
+
+InstitutesAndAreas.propTypes = {
+  qualificationIndex: PropTypes.number.isRequired,
 }
 
 export default InstitutesAndAreas

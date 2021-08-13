@@ -10,6 +10,14 @@ const options = {
   },
   properties: {
     mimeType: { isVisible: true },
+    areas: {
+      isVisible: {
+        show: true,
+        view: true,
+        edit: true,
+        filter: true,
+      },
+    },
   },
 }
 

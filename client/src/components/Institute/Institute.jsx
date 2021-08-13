@@ -43,7 +43,7 @@ const Institute = ({ name, social, areas }) => {
   }
 
   useEffect(() => {
-    if (areas.length) {
+    if (areas && areas.length) {
       setInstHeight(instituteRef.current.clientHeight)
 
       if (open) {
@@ -61,7 +61,7 @@ const Institute = ({ name, social, areas }) => {
     }
   }, [open])
 
-  if (areas.length) {
+  if (areas && areas.length) {
     return (
       <li
         className={classNames('institute', { active: open })}
