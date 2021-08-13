@@ -4,13 +4,14 @@
 .institute {
   position: relative;
   transition: linear 0.5s;
-  z-index: 100;
-  // height: auto;
-  // min-height: fit-content;
+  z-index: 10;
 
   .institute__name,
   .institute__count {
     margin-bottom: 20px;
+  }
+  &.active {
+    z-index: 100;
   }
 }
 .institute__container {

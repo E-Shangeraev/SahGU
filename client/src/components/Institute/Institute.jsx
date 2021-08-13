@@ -63,7 +63,9 @@ const Institute = ({ name, social, areas }) => {
 
   if (areas.length) {
     return (
-      <li className="institute" ref={instituteRef}>
+      <li
+        className={classNames('institute', { active: open })}
+        ref={instituteRef}>
         <Transition nodeRef={instituteContainerRef} in={open} timeout={500}>
           {state => (
             <div

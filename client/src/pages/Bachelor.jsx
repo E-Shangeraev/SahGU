@@ -11,10 +11,7 @@ import InstitutesAndAreas from '@components/InstitutesAndAreas/InstitutesAndArea
 import Slider from '@components/Slider/Slider'
 import Feedback from '@components/Feedback/Feedback'
 
-// import graduates1 from '@assets/img/graduates-1.png'
-// import graduates2 from '@assets/img/graduates-2.png'
-// import graduates3 from '@assets/img/graduates-3.png'
-import promo2 from '@assets/img/Bachelor/promo-2.png'
+import promo2 from '@assets/img/BachelorAndMagistracy/promo-2.png'
 import feedback1 from '@assets/img/feedback-1.svg'
 import feedback2 from '@assets/img/feedback-2.svg'
 
