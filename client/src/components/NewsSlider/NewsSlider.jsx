@@ -35,7 +35,8 @@ const NewsSlider = () => {
           <ul className="news__container">
             {news.map((item, index) => (
               <li key={uuidv4()} className="news__preview">
-                <Link to={`/news/${item._id}`}>
+                {/* <Link to={`/news/${item._id}`}> */}
+                <Link to="/">
                   <div className="news__image">
                     <img src={images[index]} alt="Приемная кампания 2021" />
                   </div>
