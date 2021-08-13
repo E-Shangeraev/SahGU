@@ -35,7 +35,7 @@ const Program = React.memo(() => {
       const headerHeight = 100
       window.scrollTo(
         0,
-        element.getBoundingClientRect().top + window.pageYOffset - headerHeight
+        element.getBoundingClientRect().top + window.pageYOffset - headerHeight,
       )
     }
   }
@@ -45,10 +45,12 @@ const Program = React.memo(() => {
   }, [])
 
   useEffect(() => {
-    const bachelorItems = areaItems.filter(item => item.qualification['0'])
-    setBachelors(bachelorItems)
-    const magistracyItems = areaItems.filter(item => item.qualification['1'])
-    setMagistracy(magistracyItems)
+    if (areaItems) {
+      const bachelorItems = areaItems.filter(item => item.qualification['0'])
+      setBachelors(bachelorItems)
+      const magistracyItems = areaItems.filter(item => item.qualification['1'])
+      setMagistracy(magistracyItems)
+    }
   }, [areaItems])
 
   return (
@@ -71,6 +73,7 @@ const Program = React.memo(() => {
               </button>
               <ul>
                 {areasLoaded &&
+                  bachelors &&
                   bachelors.map(item => (
                     <li key={uuidv4()}>
                       <button
@@ -98,6 +101,7 @@ const Program = React.memo(() => {
               </button>
               <ul>
                 {areasLoaded &&
+                  magistracy &&
                   magistracy.map(item => (
                     <li key={uuidv4()}>
                       <button

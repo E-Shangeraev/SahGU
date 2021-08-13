@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-// import { Link } from 'react-scroll'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Transition } from 'react-transition-group'
 import { v4 as uuidv4 } from 'uuid'
 import classNames from 'classnames'
@@ -9,7 +8,7 @@ import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './Header.scss'
 import logo from './logo.png'
 
-const Header = () => {
+const TemporaryHeader = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const btnMenuRef = useRef()
   const { pathname } = useLocation()
@@ -41,35 +40,39 @@ const Header = () => {
         <nav className="header__nav">
           <ul>
             <li>
-              <a href="#1" offset={200} onClick={() => setToggleMenu(false)}>
-                Про СахГУ
-              </a>
+              <Link to="/" onClick={() => setToggleMenu(false)}>
+                Главная
+              </Link>
             </li>
             <li>
-              <a href="#2" onClick={() => setToggleMenu(false)}>
-                Направления подготовки
-              </a>
+              <Link to="/two-diplomas" onClick={() => setToggleMenu(false)}>
+                Два диплома
+              </Link>
             </li>
             <li>
-              <a href="#4" onClick={() => setToggleMenu(false)}>
-                Уникальность СахГУ
-              </a>
+              <Link to="/bachelor" onClick={() => setToggleMenu(false)}>
+                Бакалаврам
+              </Link>
             </li>
             <li>
-              <a href="#5" onClick={() => setToggleMenu(false)}>
+              <Link to="/magistracy" onClick={() => setToggleMenu(false)}>
+                Магистрам
+              </Link>
+            </li>
+            <li>
+              <Link to="/comission" onClick={() => setToggleMenu(false)}>
+                Приемная комиссия
+              </Link>
+            </li>
+            <li>
+              <Link to="/contacts" onClick={() => setToggleMenu(false)}>
                 Контакты
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
         <a href="tel:8 (4242) 45−03−00" className="header__phone">
           8 (4242) 45−03−00
-        </a>
-        <a
-          href="#3"
-          className="button button--purple"
-          onClick={() => setToggleMenu(false)}>
-          Подать документы
         </a>
         <Modal btnText="Получить консультацию" btnColor="yellow">
           <ConsultationBlock
@@ -96,4 +99,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default TemporaryHeader
