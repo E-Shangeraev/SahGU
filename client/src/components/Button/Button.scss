@@ -42,6 +42,18 @@
   &--outlined:hover {
     opacity: 0.5;
   }
+  &--visually-impared {
+    flex-shrink: 0;
+    margin-right: 15px;
+    padding: 0 !important;
+    width: 47px !important;
+    height: 47px !important;
+    border-radius: 50%;
+
+    img {
+      display: block !important;
+    }
+  }
 }
 
 @media (max-width: 1366px) {

@@ -4,12 +4,20 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import './Button.scss'
 
-const Button = ({ outlined, color, type, disabled, children, onClick }) => (
+const Button = ({
+  outlined,
+  color,
+  type,
+  disabled,
+  children,
+  onClick,
+  className,
+}) => (
   <button
     type={type}
     onClick={onClick}
     disabled={disabled}
-    className={classNames('button', {
+    className={classNames('button', className, {
       'button--outlined': outlined,
       'button--yellow': color === 'yellow',
       'button--purple': color === 'purple',
@@ -27,6 +35,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   children: PropTypes.node,
   onClick: PropTypes.func,
+  className: PropTypes.string,
 }
 
 Button.defaultProps = {
@@ -36,6 +45,7 @@ Button.defaultProps = {
   disabled: false,
   children: null,
   onClick: () => {},
+  className: null,
 }
 
 export default Button

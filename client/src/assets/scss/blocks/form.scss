@@ -72,13 +72,16 @@
 }
 
 .visually-impared {
+  .form {
+    label,
+    label span {
+      font-size: 1rem !important;
+      line-height: 140% !important;
+    }
+  }
   .form__agreement {
     label {
       width: 100%;
-    }
-    label,
-    label span {
-      line-height: 140% !important;
     }
   }
 }

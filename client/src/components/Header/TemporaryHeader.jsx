@@ -9,6 +9,7 @@ import Button from '@components/Button/Button'
 import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './Header.scss'
+import eyeIcon from '@assets/img/icons/eye.svg'
 import logo from './logo.png'
 
 const TemporaryHeader = () => {
@@ -78,8 +79,11 @@ const TemporaryHeader = () => {
           8 (4242) 45−03−00
         </a>
 
-        <Button color="purple" onClick={toggleToVisuallyImpared}>
-          Версия
+        <Button
+          className="button--visually-impared"
+          color="purple"
+          onClick={toggleToVisuallyImpared}>
+          <img src={eyeIcon} alt="Версия сайта для слабовидящих" />
         </Button>
 
         <Modal btnText="Получить консультацию" btnColor="yellow">

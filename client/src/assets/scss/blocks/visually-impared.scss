@@ -34,6 +34,16 @@
       text-decoration: underline !important;
     }
   }
+  .button--visually-impared {
+    margin-right: 15px;
+    width: 57px !important;
+    height: 57px !important;
+    background-color: #000 !important;
+
+    img {
+      display: block !important;
+    }
+  }
   .header__nav ul {
     flex-wrap: wrap;
     justify-content: start;
@@ -56,6 +66,9 @@
   .subtitle {
     font-size: 2rem !important;
     line-height: 150% !important;
+  }
+  .text {
+    font-size: 1.2rem !important;
   }
   .button {
     color: #000;
