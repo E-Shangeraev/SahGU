@@ -1,7 +1,9 @@
 @import '../../assets/scss/variables.scss';
 
 .institutes-and-areas {
+  position: relative;
   background-color: $blue;
+  z-index: 100;
 }
 .institutes-and-areas__title {
   text-align: center;

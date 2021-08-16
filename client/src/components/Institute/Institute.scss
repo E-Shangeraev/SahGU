@@ -43,39 +43,11 @@
   margin-top: 0;
   @include h4;
 }
-.institute__social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-  padding: 7px;
-  width: fit-content;
-  border-radius: 10px;
-  background: linear-gradient(
-      266.18deg,
-      #5834c1 1.9%,
-      #bb488a 45.85%,
-      #ea8054 73.61%,
-      #f8e862 98.04%
-    ),
-    #c4c4c4;
-  transition: ease 0.25s;
-
-  &:hover {
-    filter: brightness(1.15);
-  }
-  img {
-    margin: auto;
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-  }
-}
 .institute__count {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-gap: 15px;
-  margin-bottom: auto;
+  margin: 20px 0;
 
   li span {
     display: block;
@@ -133,15 +105,24 @@
     pointer-events: none;
   }
 }
+.institute__container div {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .institute__button {
   position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-top: auto;
-  width: 100%;
+  padding: 0;
+  margin-right: 25px;
+  width: fit-content;
+  min-width: auto;
   color: $yellow;
   text-align: left;
-  font-size: 18px;
+  @include text;
   transition: ease 0.25s;
   cursor: pointer !important;
   z-index: 10;
@@ -165,6 +146,30 @@
     }
   }
 }
+.institute__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  width: fit-content;
+  transition: ease 0.25s;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+  span {
+    @include text;
+    color: $purple;
+    font-weight: bold;
+  }
+  img {
+    margin: auto;
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+}
 
 @media (max-width: 500px) {
   .institute__name {
@@ -173,12 +178,15 @@
   .institute__count {
     text-align: center;
   }
+  .institute__container div {
+    flex-direction: column-reverse;
+  }
   .institute__social {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .institute__button {
     width: fit-content;
-    font-size: 14px;
+    // font-size: 14px;
 
     &::after {
       width: 14px;

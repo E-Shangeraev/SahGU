@@ -5,7 +5,7 @@ import { Transition } from 'react-transition-group'
 import classNames from 'classnames'
 import Modal from '@components/Modal/Modal'
 import AreaBlock from '@components/AreaBlock/AreaBlock'
-import instagramIcon from '@assets/img/icons/instagram.svg'
+import instagramIcon from '@assets/img/icons/instagram-purple.svg'
 import './Institute.scss'
 
 const year = new Date().getFullYear() - 1
@@ -50,11 +50,14 @@ const Institute = ({ name, social, areas }) => {
         instituteRef.current.style.height = `
         ${instHeihgt}px`
 
-        instituteContainerRef.current.style.height = `
+        instituteContainerRef.current.style.height =
+          instituteAreaRef.current.scrollHeight < 400
+            ? `
         ${
           instituteAreaRef.current.scrollHeight +
           instituteRef.current.clientHeight
         }px`
+            : `${instituteRef.current.clientHeight + 400}px`
       } else {
         instituteContainerRef.current.style.height = ''
       }
@@ -88,15 +91,7 @@ const Institute = ({ name, social, areas }) => {
                   <span>{getWordEnding(getPaidCount(), 'платных мест')}</span>
                 </li>
               </ul>
-              {social && (
-                <a
-                  href={social}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="institute__social">
-                  <img src={instagramIcon} alt={social} />
-                </a>
-              )}
+
               <ul
                 className={classNames('institute__areas', {
                   active: open,
@@ -110,14 +105,26 @@ const Institute = ({ name, social, areas }) => {
                   </li>
                 ))}
               </ul>
-              <button
-                type="button"
-                className={classNames('institute__button', {
-                  active: open,
-                })}
-                onClick={handleButtonToggle}>
-                Направления подготовки
-              </button>
+              <div>
+                <button
+                  type="button"
+                  className={classNames('institute__button', {
+                    active: open,
+                  })}
+                  onClick={handleButtonToggle}>
+                  Направления
+                </button>
+                {social && (
+                  <a
+                    href={social}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="institute__social">
+                    <span>Instagram</span>
+                    <img src={instagramIcon} alt={social} />
+                  </a>
+                )}
+              </div>
             </div>
           )}
         </Transition>
