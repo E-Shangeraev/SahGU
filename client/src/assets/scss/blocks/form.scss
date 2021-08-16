@@ -70,3 +70,15 @@
     width: 100%;
   }
 }
+
+.visually-impared {
+  .form__agreement {
+    label {
+      width: 100%;
+    }
+    label,
+    label span {
+      line-height: 140% !important;
+    }
+  }
+}

@@ -72,3 +72,17 @@
     display: none;
   }
 }
+
+.visually-impared {
+  .graduates__container {
+    display: block;
+
+    & > div {
+      width: 100% !important;
+    }
+    & > div:first-child {
+      margin-right: 0px;
+      margin-bottom: 50px;
+    }
+  }
+}

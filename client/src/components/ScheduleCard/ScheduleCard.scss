@@ -96,3 +96,20 @@
     padding: 20px;
   }
 }
+
+.visually-impared {
+  .schedule-card__contacts {
+    p,
+    b,
+    a,
+    span {
+      line-height: 130% !important;
+    }
+  }
+  .schedule-card__institute {
+    line-height: 120% !important;
+  }
+  .schedule-card__institute {
+    font-size: 1.4rem !important;
+  }
+}

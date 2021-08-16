@@ -197,3 +197,14 @@
     }
   }
 }
+
+.visually-impared {
+  .news__image img {
+    display: block !important;
+  }
+  // .news__title,
+  // .news__text {
+  //   font-size: ;
+  //   line-height: 120% !important;
+  // }
+}

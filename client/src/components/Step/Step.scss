@@ -112,6 +112,19 @@
   }
 }
 
+.visually-impared {
+  .step__title {
+    font-size: 2rem !important;
+  }
+  .step__subtitle {
+    font-size: 1.5rem !important;
+    line-height: 120% !important;
+  }
+  .step__button {
+    color: #000;
+  }
+}
+
 @media (max-width: 1440px) {
   .step__number-border {
     font-size: 32px;
@@ -192,6 +205,15 @@
     &::after {
       width: 14px;
       height: 14px;
+    }
+  }
+  .visually-impared {
+    .step__title {
+      font-size: 1.5rem !important;
+    }
+    .step__subtitle {
+      font-size: 1rem !important;
+      line-height: 120% !important;
     }
   }
 }

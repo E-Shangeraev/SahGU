@@ -46,3 +46,9 @@
     }
   }
 }
+
+.visually-impared {
+  .parting-words__container {
+    grid-template-columns: 1fr;
+  }
+}

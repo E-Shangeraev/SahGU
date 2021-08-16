@@ -30,7 +30,7 @@ const Bachelor = () => (
               <h1 className="promo__title">
                 Поступи на
                 <br />
-                <b>бакалавриат</b> в СахГУ
+                <b>бакалавриат</b> в&nbsp;СахГУ
               </h1>
             </ScrollAnimation>
             <ScrollAnimation

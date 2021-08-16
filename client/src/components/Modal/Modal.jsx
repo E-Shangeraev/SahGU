@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import ReactDom from 'react-dom'
+import { useSelector } from 'react-redux'
 import { Transition } from 'react-transition-group'
 import PropTypes from 'prop-types'
 import Button from '@components/Button/Button'
@@ -9,6 +10,7 @@ const Modal = React.memo(
   ({ btnText, btnColor, children, containerClass, withButton, active }) => {
     const modalRef = useRef()
     const [open, setOpen] = useState(active)
+    const { on } = useSelector(({ visuallyImpared }) => visuallyImpared)
 
     const handleOutsideClick = useCallback(
       e => {
@@ -17,7 +19,7 @@ const Modal = React.memo(
           setOpen(false)
         }
       },
-      [open]
+      [open],
     )
 
     const handleClose = () => setOpen(false)
@@ -50,7 +52,9 @@ const Modal = React.memo(
             mountOnEnter
             unmountOnExit>
             {state => (
-              <div className="modal" ref={modalRef}>
+              <div
+                className={`modal ${on ? 'visually-impared' : ''}`}
+                ref={modalRef}>
                 <div
                   className={`modal__container ${
                     containerClass || 'modal__container--default'
@@ -66,11 +70,11 @@ const Modal = React.memo(
               </div>
             )}
           </Transition>,
-          document.getElementById('portal')
+          document.getElementById('portal'),
         )}
       </>
     )
-  }
+  },
 )
 
 Modal.propTypes = {

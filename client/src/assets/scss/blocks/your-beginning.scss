@@ -56,3 +56,14 @@
     width: 100%;
   }
 }
+
+.visually-impared .your-beginning__container {
+  display: block;
+
+  .big-text {
+    margin-bottom: 30px;
+  }
+  .button {
+    width: fit-content;
+  }
+}

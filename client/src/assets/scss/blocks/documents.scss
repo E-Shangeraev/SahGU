@@ -113,3 +113,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+.visually-impared {
+  .documents__ways {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .visually-impared {
+    .documents__ways {
+      grid-template-columns: 1fr;
+    }
+  }
+}

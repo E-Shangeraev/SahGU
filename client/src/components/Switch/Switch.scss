@@ -15,7 +15,7 @@
   display: none;
 }
 .switch__radio:checked + .switch__label {
-  color: #fff;
+  color: #fff !important;
   background-color: $purple;
 }
 .switch__label {
@@ -44,5 +44,18 @@
   .switch__label {
     width: 100%;
     white-space: normal;
+  }
+}
+
+.visually-impared {
+  .switch {
+    max-width: 1000px;
+    width: 100%;
+  }
+}
+@media (max-width: 1135px) {
+  .visually-impared {
+    .switch {
+    }
   }
 }

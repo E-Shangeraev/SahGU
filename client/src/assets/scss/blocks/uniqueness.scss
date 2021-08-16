@@ -64,3 +64,16 @@
     margin-bottom: 50px;
   }
 }
+
+.visually-impared {
+  .uniqueness__container {
+    display: block;
+
+    & > div {
+      width: 100%;
+    }
+  }
+  .uniqueness__column {
+    padding: 0;
+  }
+}

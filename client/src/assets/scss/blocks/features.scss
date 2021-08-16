@@ -182,3 +182,26 @@
     }
   }
 }
+
+.visually-impared {
+  .features__parallax-1 {
+    min-height: auto;
+  }
+  .features__parallax-2 {
+    display: none;
+  }
+  .features__list {
+    position: relative;
+    height: auto;
+
+    div:nth-of-type(n) {
+      position: relative;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+    }
+    div:not(:last-of-type) {
+      margin-bottom: 25px;
+    }
+  }
+}

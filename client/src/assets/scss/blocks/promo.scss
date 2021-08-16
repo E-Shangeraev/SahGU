@@ -544,3 +544,21 @@ span.promo__title {
     }
   }
 }
+
+.visually-impared {
+  .promo__text {
+    color: #000 !important;
+  }
+  .promo__contacts {
+    b,
+    p,
+    a,
+    span {
+      line-height: 130% !important;
+      color: #000 !important;
+    }
+  }
+  .promo__parallax {
+    display: none;
+  }
+}

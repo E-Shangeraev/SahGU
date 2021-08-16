@@ -1,5 +1,7 @@
 import React from 'react'
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import classNames from 'classnames'
 
 import Footer from '@components/Footer/Footer'
 import Main from '@pages/Main'
@@ -11,8 +13,10 @@ import Comission from '@pages/Comission'
 import News from '@pages/News'
 
 function App() {
+  const { on } = useSelector(({ visuallyImpared }) => visuallyImpared)
+
   return (
-    <div className="App">
+    <div className={classNames('App', { 'visually-impared': on })}>
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Main} />

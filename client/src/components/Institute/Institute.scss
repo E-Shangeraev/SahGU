@@ -186,3 +186,28 @@
     }
   }
 }
+
+.visually-impared {
+  .institute__container {
+    background-color: #fff;
+  }
+  .institute__name {
+    line-height: 120% !important;
+  }
+  .institute__count {
+    display: block;
+
+    li:not(:last-child) {
+      margin-bottom: 5%;
+    }
+    span {
+      line-height: 150% !important;
+    }
+  }
+  .institute__social img {
+    display: block;
+  }
+  .institute__button {
+    line-height: 120% !important;
+  }
+}

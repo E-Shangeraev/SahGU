@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
 import { Transition } from 'react-transition-group'
 import { v4 as uuidv4 } from 'uuid'
 import classNames from 'classnames'
+import setVisuallyImpared from '@redux/actions/visually-impared'
+import Button from '@components/Button/Button'
 import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './Header.scss'
@@ -12,8 +15,12 @@ const TemporaryHeader = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const btnMenuRef = useRef()
   const { pathname } = useLocation()
+  const { on } = useSelector(({ visuallyImpared }) => visuallyImpared)
+  const dispatch = useDispatch()
 
   const btnMenuClickHandler = () => setToggleMenu(!toggleMenu)
+
+  const toggleToVisuallyImpared = () => dispatch(setVisuallyImpared(!on))
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -28,11 +35,12 @@ const TemporaryHeader = () => {
       e.keyCode === 27 ? setToggleMenu(false) : null,
     )
   }, [])
+
   return (
     <header className={classNames('header', { 'header--overlay': toggleMenu })}>
-      <a className="header__logo" href="/">
+      <Link className="header__logo" to="/">
         <img src={logo} alt="Логотип СахГУ" />
-      </a>
+      </Link>
       <div
         className={classNames('header__menu', {
           'header__menu--opened': toggleMenu,
@@ -40,13 +48,8 @@ const TemporaryHeader = () => {
         <nav className="header__nav">
           <ul>
             <li>
-              <Link to="/" onClick={() => setToggleMenu(false)}>
-                Главная
-              </Link>
-            </li>
-            <li>
               <Link to="/two-diplomas" onClick={() => setToggleMenu(false)}>
-                Два диплома
+                Программа два диплома
               </Link>
             </li>
             <li>
@@ -74,6 +77,11 @@ const TemporaryHeader = () => {
         <a href="tel:8 (4242) 45−03−00" className="header__phone">
           8 (4242) 45−03−00
         </a>
+
+        <Button color="purple" onClick={toggleToVisuallyImpared}>
+          Версия
+        </Button>
+
         <Modal btnText="Получить консультацию" btnColor="yellow">
           <ConsultationBlock
             formId={uuidv4()}

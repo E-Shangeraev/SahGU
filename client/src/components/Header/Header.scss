@@ -58,14 +58,6 @@
   span {
     top: 50%;
   }
-  // &:active::after,
-  // &:active::before,
-  // &:active span,
-  // &:focus::after,
-  // &:focus::before,
-  // &:focus span {
-  //   background-color: $yellow;
-  // }
 }
 .header__logo {
   margin-right: 3%;
@@ -270,6 +262,10 @@
     .button {
       opacity: 1;
     }
+    .button {
+      margin-right: 0 !important;
+      min-width: fit-content;
+    }
   }
 }
 @media (max-width: 600px) {
@@ -289,5 +285,16 @@
 @media (max-width: 500px) {
   .header__logo {
     width: 120px;
+  }
+  .header__menu--opened {
+    .button {
+      width: 100%;
+    }
+  }
+}
+
+.visually-impared .header__menu-button {
+  span {
+    font-size: 0 !important;
   }
 }

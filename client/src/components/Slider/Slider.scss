@@ -35,10 +35,10 @@
   }
   button:first-of-type {
     margin-right: 20px;
-    background-image: url('../../assets/img/icons/arrow-left.svg');
+    background-image: url('../../assets/img/icons/arrow-left.svg') !important;
   }
   button:last-of-type {
-    background-image: url('../../assets/img/icons/arrow-right.svg');
+    background-image: url('../../assets/img/icons/arrow-right.svg') !important;
   }
 }
 .slide {
@@ -103,5 +103,19 @@
 @media (max-width: 768px) {
   .slide {
     padding: 20px;
+  }
+}
+
+.visually-impared {
+  .slider {
+    margin-bottom: 40px;
+  }
+  .slider__buttons {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 }

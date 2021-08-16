@@ -5,3 +5,10 @@
     color: rgb(219, 25, 25) !important;
   }
 }
+
+.visually-impared .error {
+  &,
+  span {
+    color: #fff !important;
+  }
+}

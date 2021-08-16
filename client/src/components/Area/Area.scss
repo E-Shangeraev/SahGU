@@ -61,3 +61,22 @@
     text-align: center;
   }
 }
+
+.visually-impared {
+  .area {
+    background-color: #fff;
+  }
+  .area__name {
+    line-height: 120% !important;
+  }
+  .area__count {
+    display: block;
+
+    li {
+      margin-bottom: 5%;
+    }
+    span {
+      line-height: 150% !important;
+    }
+  }
+}
