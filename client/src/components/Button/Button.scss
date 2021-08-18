@@ -48,12 +48,15 @@
     padding: 0 !important;
     width: 47px !important;
     height: 47px !important;
-    border-radius: 50%;
 
     img {
       display: block !important;
     }
   }
+}
+.visually-impared .button--visually-impared {
+  background-color: #fff !important;
+  border: none;
 }
 
 @media (max-width: 1366px) {
