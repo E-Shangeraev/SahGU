@@ -5,6 +5,7 @@ const StepsSchema = new Schema({
   title: { type: String, required: true },
   subtitle: { type: String, required: true },
   text: { type: String, required: true },
+  fileNames: [String],
   uploadedFile: JSON,
 })
 

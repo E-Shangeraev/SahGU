@@ -4,14 +4,21 @@ const features = require('../features')
 
 /** @type {AdminBro.ResourceOtions} */
 const options = {
-  listProperties: ['number', 'title', 'subtitle', 'text', 'uploadedFile'],
-  editProperties: ['number', 'title', 'subtitle', 'text', 'uploadedFile'],
+  listProperties: ['number', 'title', 'subtitle', 'text'],
+  editProperties: [
+    'number',
+    'title',
+    'subtitle',
+    'text',
+    'fileNames',
+    'uploadedFile',
+  ],
   parent: {
     name: 'Шаги поступления',
     icon: 'ChartStepper',
   },
   properties: {
-    mimeType: { isVisible: true },
+    mimeType: { isVisible: false },
   },
 }
 

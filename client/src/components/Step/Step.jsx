@@ -4,8 +4,10 @@ import classNames from 'classnames'
 import { v4 as uuidv4 } from 'uuid'
 import './Step.scss'
 
+const AWS_URL = 'https://sakhgu-images.s3.eu-central-1.amazonaws.com/'
+
 const Step = ({ item, onStepClick, isActive }) => {
-  const { number, title, subtitle, text, links } = item
+  const { number, title, subtitle, text, uploadedFile, fileNames } = item
 
   const collapsibleRef = useRef()
 
@@ -34,16 +36,18 @@ const Step = ({ item, onStepClick, isActive }) => {
           <h4 className="step__subtitle">{subtitle}</h4>
           <div className="step__collapsible" ref={collapsibleRef}>
             <p className="step__text">{text}</p>
-            {links.length ? (
+            {uploadedFile && uploadedFile.path.length ? (
               <p className="step__links">
-                {links.map(link => (
+                {uploadedFile.path.map((path, index) => (
                   <a
                     key={uuidv4()}
-                    href={link.url}
+                    href={`${AWS_URL}${path}`}
                     target="_blank"
                     rel="noreferrer"
                     className="button button--outlined">
-                    {link.name}
+                    {fileNames.length
+                      ? fileNames[index]
+                      : uploadedFile.filename[index]}
                   </a>
                 ))}
               </p>

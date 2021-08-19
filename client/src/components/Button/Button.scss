@@ -51,12 +51,17 @@
 
     img {
       display: block !important;
+      width: 33px;
     }
   }
 }
 .visually-impared .button--visually-impared {
   background-color: #fff !important;
   border: none;
+
+  img {
+    width: 43px;
+  }
 }
 
 @media (max-width: 1366px) {

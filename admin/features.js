@@ -12,12 +12,14 @@ const features = [
       aws: { region, bucket, secretAccessKey, accessKeyId, expires: 0 },
     },
     properties: {
+      filePath: 'uploadedFile.filePath',
       filename: 'uploadedFile.filename',
       file: 'uploadedFile',
+      filesToDelete: 'uploadedFile.filesToDelete',
       key: 'uploadedFile.path',
       bucket: 'uploadedFile.folder',
       size: 'uploadedFile.size',
-      mimeType: 'mimeType',
+      mimeType: 'uploadedFile.mime',
     },
     validation: {
       mimeTypes: ['image/png', 'image/jpg', 'image/jpeg', 'application/pdf'],

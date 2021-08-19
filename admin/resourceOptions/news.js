@@ -10,7 +10,7 @@ const options = {
     icon: 'Blog',
   },
   properties: {
-    mimeType: { isVisible: true },
+    mimeType: { isVisible: false },
     text: {
       type: 'richtext',
     },
