@@ -1,4 +1,4 @@
-const { NewsModel } = require('../models/News')
+const NewsModel = require('../models/News')
 
 class News {
   getItems = async (req, res) => {
