@@ -8,7 +8,6 @@ import ScheduleCard from '@components/ScheduleCard/ScheduleCard'
 import Feedback from '@components/Feedback/Feedback'
 import Contacts from '@components/Contacts/Contacts'
 
-// import promo5 from '@assets/img/promo-5.png'
 import promo5 from '@assets/img/feedback-3.svg'
 import manIcon from '@assets/img/icons/man-yellow.svg'
 import mapIcon from '@assets/img/icons/map-yellow.svg'
@@ -58,7 +57,8 @@ const Comission = () => (
                   <span>
                     693008, Сахалинская область,
                     <br />
-                    г. Южно-Сахалинск, Ленина 290, каб. 13
+                    г. Южно-Сахалинск, Ленина 290, <br />
+                    каб. 13
                   </span>
                 </li>
                 <li>

@@ -21,6 +21,7 @@
   }
   .subtitle {
     margin: 0;
+    padding: 0;
   }
 }
 .program__filter {
@@ -83,7 +84,7 @@
   }
   li {
     button {
-      padding: 20px 40px;
+      padding: 15px 20px;
       width: 90%;
       border-radius: 10px;
       text-align: left;
@@ -100,7 +101,7 @@
     }
   }
   & > div {
-    padding: 40px;
+    padding: 30px;
   }
   & > div:first-of-type {
     border-bottom: 1px solid #e0e0e0;

@@ -4,7 +4,8 @@
 .schedule-card {
   display: grid;
   grid-auto-rows: max-content auto;
-  padding: 50px;
+  padding: 40px;
+  padding-bottom: 0;
   background: $blue;
   border: 1px solid $gray-2;
   border-radius: 24px;
@@ -12,9 +13,6 @@
 .schedule-card__institute {
   margin-top: 0;
   margin-bottom: 30px;
-  // font-size: 26px;
-  // font-weight: bold;
-  // line-height: 150%;
   @include h4;
   color: $purple;
 }
@@ -22,7 +20,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: 1fr;
-  grid-row-gap: 1em;
+  grid-row-gap: 0.3em;
   justify-content: space-between;
 
   li {
@@ -62,6 +60,7 @@
 @media (max-width: 1366px) {
   .schedule-card {
     padding: 35px;
+    padding-bottom: 0;
   }
   .schedule-card__institute {
     width: 100%;
@@ -94,6 +93,7 @@
 @media (max-width: 500px) {
   .schedule-card {
     padding: 20px;
+    padding-bottom: 0;
   }
 }
 

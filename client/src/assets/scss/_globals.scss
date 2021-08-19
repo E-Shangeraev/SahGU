@@ -88,7 +88,7 @@ input:-webkit-autofill:active {
 }
 .title {
   margin: 0;
-  margin-bottom: 64px;
+  margin-bottom: 44px;
 
   &,
   & * {
@@ -106,7 +106,7 @@ input:-webkit-autofill:active {
   @include big-text;
 }
 .wrapper {
-  padding: 90px 108px;
+  padding: 50px 108px;
   height: 100%;
 }
 
@@ -120,7 +120,7 @@ input:-webkit-autofill:active {
     font-size: 16px;
   }
   .title {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
   .wrapper {
     padding: 80px 70px;
@@ -131,7 +131,7 @@ input:-webkit-autofill:active {
     font-size: 14px;
   }
   .title {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
   .wrapper {
     padding: 70px 60px;

@@ -1,3 +1,4 @@
+@import '../../assets/scss/mixins.scss';
 @import '../../assets/scss/variables.scss';
 
 .header {
@@ -105,6 +106,7 @@
     transform: translateX(0);
   }
   a {
+    @include text;
     white-space: nowrap;
   }
 }
