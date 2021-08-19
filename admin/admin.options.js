@@ -102,7 +102,7 @@ const options = {
             text: 'Текст',
             links: 'Ссылки на файлы',
             'links.name': 'Название ссылки',
-            'links.url': 'URL ссылки',
+            'links.uploadedFile': 'Файл',
           },
         },
         MagistracySteps: {
@@ -111,9 +111,7 @@ const options = {
             title: 'Заголовок',
             subtitle: 'Подзаголовок',
             text: 'Текст',
-            links: 'Ссылки на файлы',
-            'links.name': 'Название ссылки',
-            'links.url': 'URL ссылки',
+            uploadedFile: 'Файлы',
           },
         },
         News: {

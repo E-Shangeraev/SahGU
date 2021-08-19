@@ -1,7 +1,8 @@
 const AdminBro = require('admin-bro')
-const { NewsModel } = require('../../models/News')
+const NewsModel = require('../../models/News')
+const features = require('../features')
 
-/** @type {AdminBro.ResourceOtions} */
+/** @type {AdminBro.ResourceOptions} */
 const options = {
   listProperties: ['title', 'previewText', 'uploadedFile', 'text', 'date'],
   editProperties: ['title', 'previewText', 'uploadedFile', 'text', 'date'],
@@ -20,6 +21,7 @@ const options = {
 }
 
 module.exports = {
-  options,
   resource: NewsModel,
+  options,
+  features,
 }

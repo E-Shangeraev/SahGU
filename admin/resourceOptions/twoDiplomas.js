@@ -1,5 +1,6 @@
 const AdminBro = require('admin-bro')
 const { TwoDiplomas } = require('../../models/TwoDiplomas')
+const features = require('../features')
 
 /** @type {AdminBro.ResourceOtions} */
 const options = {
@@ -23,4 +24,5 @@ const options = {
 module.exports = {
   options,
   resource: TwoDiplomas,
+  features,
 }

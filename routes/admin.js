@@ -4,7 +4,7 @@ const express = require('express')
 const argon2 = require('argon2')
 const mongoose = require('mongoose')
 const session = require('express-session')
-const MongoStore = require('connect-mongo')
+const MongoStore = require('connect-mongo')(session)
 
 const { Admin } = require('../models/Admin')
 
@@ -31,8 +31,8 @@ const buildAdminRouter = admin => {
     {
       resave: false,
       saveUninitialized: true,
-      store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-    }
+      store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    },
   )
   return router
 }

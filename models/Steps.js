@@ -5,7 +5,7 @@ const StepsSchema = new Schema({
   title: { type: String, required: true },
   subtitle: { type: String, required: true },
   text: { type: String, required: true },
-  links: { type: [{ name: String, url: String }], required: false },
+  uploadedFile: JSON,
 })
 
 const BachelorSteps = new model('BachelorSteps', StepsSchema)
