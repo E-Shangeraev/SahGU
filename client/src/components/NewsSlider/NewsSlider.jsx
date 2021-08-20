@@ -4,17 +4,9 @@ import { Link } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
 import { Markup } from 'interweave'
-// import Button from '@components/Button/Button'
-
-// import arrowRight from '@assets/img/icons/arrow-rig ht.svg'
-import newsBig from '@assets/img/news-big.jpg'
-import news1 from '@assets/img/news-1.jpg'
-import news2 from '@assets/img/news-2.jpg'
-
 import './NewsSlider.scss'
 
-const images = [newsBig, news2, news1]
-
+const AWS_URL = 'https://sakhgu-images.s3.eu-central-1.amazonaws.com/'
 const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
 
 const NewsSlider = () => {
@@ -33,12 +25,16 @@ const NewsSlider = () => {
         </div>
         {news.length ? (
           <ul className="news__container">
-            {news.map((item, index) => (
+            {news.map(item => (
               <li key={uuidv4()} className="news__preview">
-                {/* <Link to={`/news/${item._id}`}> */}
-                <Link to="/">
+                <Link to={`/news/${item._id}`}>
                   <div className="news__image">
-                    <img src={images[index]} alt="Приемная кампания 2021" />
+                    {item.uploadedFile && (
+                      <img
+                        src={`${AWS_URL}${item.uploadedFile.path}`}
+                        alt={item.title}
+                      />
+                    )}
                   </div>
                   <div className="news__bottom">
                     <div className="bage">

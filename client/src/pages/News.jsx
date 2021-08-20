@@ -6,11 +6,12 @@ import axios from 'axios'
 import TemporaryHeader from '@components/Header/TemporaryHeader'
 import arrowBackIcon from '@assets/img/icons/arrow-back.svg'
 import calendarIcon from '@assets/img/icons/calendar.svg'
-import newsImage from '@assets/img/news-2.jpg'
 import vkIcon from '@assets/img/icons/vk-2.svg'
 import instagramIcon from '@assets/img/icons/instagram.svg'
 import tiktokIcon from '@assets/img/icons/tiktok.svg'
 import okIcon from '@assets/img/icons/odnoklassniki.svg'
+
+const AWS_URL = 'https://sakhgu-images.s3.eu-central-1.amazonaws.com/'
 
 const News = () => {
   const [article, setArticle] = useState(null)
@@ -51,11 +52,13 @@ const News = () => {
                   <img src={calendarIcon} alt="Иконка календаря" />
                   <span>{new Date(article.date).toLocaleDateString()}</span>
                 </time>
-                <img
-                  src={newsImage}
-                  alt={article.title}
-                  className="article__photo"
-                />
+                {article.uploadedFile && (
+                  <img
+                    className="article__photo"
+                    src={`${AWS_URL}${article.uploadedFile.path}`}
+                    alt={article.title}
+                  />
+                )}
                 <div className="article__text text">
                   <Markup content={article.text} />
                 </div>
