@@ -4,8 +4,19 @@
   overflow: hidden;
   z-index: 0;
 
+  .wrapper {
+    padding-top: 190px;
+    display: flex;
+    align-items: center;
+  }
+
   &--two-diplomas {
     background-color: $blue;
+
+    .wrapper {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
   &--bachelor,
   &--magistracy {
@@ -53,11 +64,6 @@
       grid-column: 2 / 3;
       grid-row: 1 / 2;
     }
-  }
-  .wrapper {
-    // padding-top: 190px;
-    display: flex;
-    align-items: center;
   }
 }
 .promo__container {
