@@ -37,6 +37,14 @@
   p:not(:last-child) {
     margin-bottom: 15px;
   }
+  ul {
+    margin: 1.5em 0;
+    padding-left: 1.5%;
+    list-style-type: disc;
+  }
+  strong {
+    font-weight: bold;
+  }
 }
 .article__more {
   padding: 40px 0;
