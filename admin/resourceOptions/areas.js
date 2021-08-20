@@ -1,7 +1,7 @@
-const AdminBro = require('admin-bro')
+const AdminJS = require('adminjs')
 const { Area } = require('../../models/Area')
 
-/** @type {AdminBro.ResourceOtions} */
+/** @type {AdminJS.ResourceOtions} */
 const options = {
   listProperties: ['code', 'name', 'twoDiplomas', 'budget', 'paid'],
   editProperties: [

@@ -1,8 +1,8 @@
-const AdminBro = require('admin-bro')
+const AdminJS = require('adminjs')
 const { BachelorSteps, MagistracySteps } = require('../../models/Steps')
 const features = require('../features')
 
-/** @type {AdminBro.ResourceOtions} */
+/** @type {AdminJS.ResourceOtions} */
 const options = {
   listProperties: ['number', 'title', 'subtitle', 'text'],
   editProperties: [

@@ -1,5 +1,5 @@
-const { default: AdminBro } = require('admin-bro')
-const AdminBroMongoose = require('@admin-bro/mongoose')
+const { default: AdminJS } = require('adminjs')
+const AdminJSMongoose = require('@adminjs/mongoose')
 
 const {
   Admin,
@@ -12,9 +12,9 @@ const {
   News,
 } = require('./resourceOptions')
 
-AdminBro.registerAdapter(AdminBroMongoose)
+AdminJS.registerAdapter(AdminJSMongoose)
 
-/** @type {import('admin-bro').AdminBroOptions} */
+/** @type {import('adminjs').AdminJSOptions} */
 const options = {
   locale: {
     language: 'rus',

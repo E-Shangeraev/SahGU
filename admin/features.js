@@ -1,4 +1,4 @@
-const uploadFeature = require('@admin-bro/upload')
+const uploadFeature = require('@adminjs/upload')
 require('dotenv').config()
 
 const region = process.env.AWS_REGION

@@ -1,8 +1,8 @@
-const AdminBro = require('admin-bro')
+const AdminJS = require('adminjs')
 const { TwoDiplomas } = require('../../models/TwoDiplomas')
 const features = require('../features')
 
-/** @type {AdminBro.ResourceOtions} */
+/** @type {AdminJS.ResourceOtions} */
 const options = {
   listProperties: ['name', 'description', 'uploadedFile'],
   editProperties: [

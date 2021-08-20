@@ -1,7 +1,7 @@
-const AdminBro = require('admin-bro')
+const AdminJS = require('adminjs')
 const { Subject } = require('../../models/Subject')
 
-/** @type {AdminBro.ResourceOtions} */
+/** @type {AdminJS.ResourceOtions} */
 const options = {
   listProperties: ['name'],
   editProperties: ['name'],
