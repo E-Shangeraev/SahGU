@@ -10,6 +10,10 @@ const {
   BachelorStepsOptions: BachelorSteps,
   MagistracyStepsOptions: MagistracySteps,
   News,
+  BachelorDocumentsOptions: BachelorDocuments,
+  MagistracyDocumentsOptions: MagistracyDocuments,
+  GraduateDocumentsOptions: GraduateDocuments,
+  SSEDocumentsOptions: SSEDocuments,
 } = require('./resourceOptions')
 
 AdminJS.registerAdapter(AdminJSMongoose)
@@ -38,6 +42,10 @@ const options = {
         BachelorSteps: 'Бакалавриат',
         MagistracySteps: 'Магистратура',
         News: 'Новости',
+        BachelorDocuments: 'Бакалавриат',
+        MagistracyDocuments: 'Магистратура',
+        GraduateDocuments: 'Аспирантура',
+        SSEDocuments: 'СПО',
       },
       buttons: {
         filter: 'Фильтр',
@@ -123,6 +131,34 @@ const options = {
             date: 'Дата публикации',
           },
         },
+        BachelorDocuments: {
+          properties: {
+            index: 'Номер',
+            title: 'Заголовок',
+            uploadedFile: 'Документы',
+          },
+        },
+        MagistracyDocuments: {
+          properties: {
+            index: 'Номер',
+            title: 'Заголовок',
+            uploadedFile: 'Документы',
+          },
+        },
+        GraduateDocuments: {
+          properties: {
+            index: 'Номер',
+            title: 'Заголовок',
+            uploadedFile: 'Документы',
+          },
+        },
+        SSEDocuments: {
+          properties: {
+            index: 'Номер',
+            title: 'Заголовок',
+            uploadedFile: 'Документы',
+          },
+        },
       },
     },
   },
@@ -135,6 +171,10 @@ const options = {
     BachelorSteps,
     MagistracySteps,
     News,
+    BachelorDocuments,
+    MagistracyDocuments,
+    GraduateDocuments,
+    SSEDocuments,
   ],
   branding: {
     companyName: 'СахГУ',

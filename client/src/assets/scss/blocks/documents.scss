@@ -109,8 +109,19 @@
   }
 }
 @media (max-width: 500px) {
+  .documents-way {
+    align-items: center;
+  }
+  .documents-way__name {
+    text-align: center;
+  }
   .documents__ways {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 440px) {
+  .documents-way .button {
+    width: 100%;
   }
 }
 

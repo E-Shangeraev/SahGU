@@ -5,6 +5,12 @@ const TwoDiplomas = require('./twoDiplomas')
 const Institute = require('./institutes')
 const { BachelorStepsOptions, MagistracyStepsOptions } = require('./steps')
 const News = require('./news')
+const {
+  BachelorDocumentsOptions,
+  MagistracyDocumentsOptions,
+  GraduateDocumentsOptions,
+  SSEDocumentsOptions,
+} = require('./documentsInModals')
 
 module.exports = {
   Admin,
@@ -15,4 +21,8 @@ module.exports = {
   BachelorStepsOptions,
   MagistracyStepsOptions,
   News,
+  BachelorDocumentsOptions,
+  MagistracyDocumentsOptions,
+  GraduateDocumentsOptions,
+  SSEDocumentsOptions,
 }

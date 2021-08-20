@@ -51,7 +51,7 @@ const TemporaryHeader = () => {
           <ul>
             <li>
               <Link to="/two-diplomas" onClick={() => setToggleMenu(false)}>
-                Программа два диплома
+                Программа Два Диплома
               </Link>
             </li>
             <li>

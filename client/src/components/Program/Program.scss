@@ -106,6 +106,17 @@
   & > div:first-of-type {
     border-bottom: 1px solid #e0e0e0;
   }
+
+  // ===== Временно
+
+  & > div:first-child {
+    border-bottom: none;
+  }
+  & > div:last-child {
+    display: none;
+  }
+
+  // ===============
 }
 .program__description {
   padding: 40px;

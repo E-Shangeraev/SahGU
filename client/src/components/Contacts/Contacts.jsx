@@ -31,8 +31,15 @@ const Contacts = ({ id }) => (
             <li>
               <img src={world} alt="Официальный сайт" />
               <div>
-                <a href="sakhgu.ru">sakhgu.ru</a>
-                <a href="sakhgu.ru/abitur/">sakhgu.ru/abitur/</a>
+                <a href="http://sakhgu.ru" target="_blank" rel="noreferrer">
+                  sakhgu.ru
+                </a>
+                <a
+                  href="http://sakhgu.ru/abitur/"
+                  target="_blank"
+                  rel="noreferrer">
+                  sakhgu.ru/abitur/
+                </a>
               </div>
             </li>
             <li>

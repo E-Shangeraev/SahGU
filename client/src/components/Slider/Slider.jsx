@@ -28,7 +28,7 @@ const Slider = () => {
     adaptiveHeight: true,
     fade: true,
     infinite: false,
-    swipe: false,
+    swipe: true,
   }
 
   return (

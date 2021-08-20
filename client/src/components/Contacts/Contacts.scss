@@ -65,6 +65,9 @@
   }
 }
 @media (max-width: 1200px) {
+  .contacts {
+    background-image: none;
+  }
   .contacts__container {
     display: block;
 

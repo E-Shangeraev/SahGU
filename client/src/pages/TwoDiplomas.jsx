@@ -30,7 +30,7 @@ const TwoDiplomas = () => (
               animateOnce>
               <h1 className="promo__title">
                 Поступи в СахГУ
-                <br />и получи <b>два диплома</b>
+                <br />и получи <b>Два Диплома</b>
                 <br />
                 одновременно
               </h1>
@@ -114,7 +114,7 @@ const TwoDiplomas = () => (
             <div className="what-is-the-program__container">
               <h2 className="title what-is-the-program__title">
                 Что такое программа
-                <span>«2 диплома»</span>
+                <span>«Два Диплома»</span>
               </h2>
               <img
                 className="what-is-the-program__image"
@@ -122,7 +122,7 @@ const TwoDiplomas = () => (
                 alt="2 диплома"
               />
               <p className="what-is-the-program__text">
-                Программа «Два диплома» — это совместный образовательный проект
+                Программа «Два Диплома» — это совместный образовательный проект
                 СахГУ и российских университетов федерального значения.
                 <br />
                 <br />

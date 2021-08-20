@@ -31,7 +31,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: 15px;
-  // margin-bottom: auto;
 
   li span {
     display: block;
@@ -45,6 +44,12 @@
   }
 }
 
+// @media (max-width: 550px) {
+//   .area__count {
+//     // grid-template-columns: 1fr;
+//     // text-align: center;
+//   }
+// }
 @media (max-width: 500px) {
   .area {
     .button {

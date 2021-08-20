@@ -28,8 +28,10 @@ const Modal = React.memo(
     useEffect(() => {
       if (open) {
         document.addEventListener('click', handleOutsideClick)
+        document.body.style.overflow = 'hidden'
       } else {
         document.removeEventListener('click', handleOutsideClick)
+        document.body.style.overflow = ''
       }
     }, [open])
 

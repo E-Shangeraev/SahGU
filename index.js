@@ -17,6 +17,7 @@ const {
   instituteRouter,
   stepsRouter,
   newsRouter,
+  documentsInModalsRouter,
 } = require('./routes')
 
 // ==== Admin options ====
@@ -25,6 +26,7 @@ const adminRouter = buildAdminRouter(admin)
 
 // ==== Middlewares ====
 app.use(express.json({ extended: true }))
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 // ==== API ====
 app.use(admin.options.rootPath, adminRouter)
@@ -34,6 +36,7 @@ app.use('/api/subjects', subjectRouter)
 app.use('/api/institutes', instituteRouter)
 app.use('/api/steps', stepsRouter)
 app.use('/api/news', newsRouter)
+app.use('/api/documents', documentsInModalsRouter)
 
 // ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {

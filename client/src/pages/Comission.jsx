@@ -7,6 +7,8 @@ import TemporaryHeader from '@components/Header/TemporaryHeader'
 import ScheduleCard from '@components/ScheduleCard/ScheduleCard'
 import Feedback from '@components/Feedback/Feedback'
 import Contacts from '@components/Contacts/Contacts'
+import Modal from '@components/Modal/Modal'
+import ComissionDocs from '@components/ComissionDocs/ComissionDocs'
 
 import promo5 from '@assets/img/feedback-3.svg'
 import manIcon from '@assets/img/icons/man-yellow.svg'
@@ -86,6 +88,20 @@ const Comission = () => (
             animateOnce>
             <img src={promo5} alt="Декоративный элемент" />
           </ScrollAnimation>
+        </div>
+      </section>
+
+      <section className="documents-in-modals">
+        <div className="wrapper">
+          <div className="documents-in-modals__container">
+            <ComissionDocs name="Бакалавриат" apiName="bachelor" />
+            <ComissionDocs name="Магистратура" apiName="magistracy" />
+            <ComissionDocs name="Аспирантура" apiName="graduate" />
+            <ComissionDocs
+              name="Среднее профессиональное образование"
+              apiName="sse"
+            />
+          </div>
         </div>
       </section>
 

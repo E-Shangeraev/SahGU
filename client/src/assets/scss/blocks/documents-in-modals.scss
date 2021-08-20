@@ -1,0 +1,19 @@
+.documents-in-modals {
+  .button {
+    padding: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: fit-content;
+    height: fit-content;
+    color: $purple;
+    text-align: left;
+    text-decoration: underline;
+    white-space: normal;
+    background-color: transparent;
+  }
+}
+.documents-in-modals__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}

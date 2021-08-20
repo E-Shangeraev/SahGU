@@ -1,0 +1,39 @@
+@import '../../assets/scss/mixins.scss';
+@import '../../assets/scss/variables.scss';
+
+.comission-docs {
+  padding: 2em;
+  border-radius: 18px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  background-color: $gray-3;
+}
+.comission-docs__section:not(:last-child) {
+  margin-bottom: 2em;
+}
+.comission-docs__subtitle {
+  @include big-text;
+}
+.comission-docs__list {
+  padding-left: 20px;
+  list-style-type: disc;
+
+  li {
+    @include text;
+  }
+  li:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 640px) {
+  .comission-docs {
+    border-radius: 12px;
+    max-width: 90vw;
+  }
+}

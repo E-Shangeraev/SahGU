@@ -32,7 +32,9 @@ const Area = ({ item }) => {
   return (
     <li className="area">
       {name && <span className="area__name">{name}</span>}
-      {twoDiplomas ? <span className="bage">Программа «2 диплома»</span> : null}
+      {twoDiplomas ? (
+        <span className="bage">Программа «Два Диплома»</span>
+      ) : null}
       <ul className="area__count">
         {budget && (
           <li key={uuidv4()}>
