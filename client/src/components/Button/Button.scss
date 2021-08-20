@@ -44,26 +44,36 @@
   }
   &--visually-impared {
     flex-shrink: 0;
-    margin-right: 15px;
+    margin: 0 5%;
     padding: 0 !important;
     width: 47px !important;
     height: 47px !important;
+    font-size: 0 !important;
 
-    img {
+    &::after {
+      content: url('../../assets/img/icons/eye-purple.svg');
       display: block !important;
       width: 33px;
     }
   }
 }
 .visually-impared .button--visually-impared {
+  position: relative;
   background-color: #fff !important;
   border: none;
+  font-size: 0 !important;
 
-  img {
+  &::after {
     width: 43px;
   }
 }
 
+@media (max-width: 1600px) {
+  .button--visually-impared {
+    margin-right: 0;
+    margin-left: 10%;
+  }
+}
 @media (max-width: 1366px) {
   .button {
     padding: 15px 30px;
