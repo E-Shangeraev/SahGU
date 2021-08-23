@@ -5,7 +5,7 @@
   z-index: 0;
 
   .wrapper {
-    padding-top: 190px;
+    // padding-top: 190px;
     display: flex;
     align-items: center;
   }
@@ -186,7 +186,7 @@
 .promo__title {
   display: block;
   margin-top: 0;
-  // margin-bottom: 64px;
+  margin-bottom: 64px;
   @include h2;
   color: $purple;
 
@@ -224,6 +224,13 @@ span.promo__title {
   .button:first-of-type {
     margin-right: 15px;
   }
+}
+.promo__picture {
+  position: absolute;
+  right: -10%;
+  top: -20%;
+  width: 70%;
+  z-index: -1;
 }
 .promo__parallax {
   display: flex;
@@ -324,6 +331,10 @@ span.promo__title {
       padding-top: 170px;
     }
   }
+  .promo__picture {
+    top: -15%;
+    width: 60%;
+  }
   .promo__two-diplomas {
     right: 60px;
   }
@@ -363,6 +374,10 @@ span.promo__title {
         grid-row: 2 / 3;
       }
     }
+  }
+  .promo__picture {
+    position: static;
+    width: 100%;
   }
   .promo__comission-image img {
     width: 30%;

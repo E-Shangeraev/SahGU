@@ -86,6 +86,7 @@ const Main = () => (
             </ScrollAnimation>
 
             <ScrollAnimation
+              className="promo__picture"
               animateIn="animate__fadeInUp"
               animateOut="animate__fadeOut"
               delay={1000}
