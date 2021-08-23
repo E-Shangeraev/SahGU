@@ -17,14 +17,21 @@ const Institute = ({ name, social, areas }) => {
   const instituteContainerRef = useRef()
   const instituteAreaRef = useRef()
 
-  const getPaidCount = () =>
-    areas.reduce((acc, cur) => (cur.paid ? acc + cur.paid.count : acc + 0), 0)
+  const getPaidCount = () => {
+    const result = areas.reduce(
+      (acc, cur) => (cur.paid ? acc + cur.paid.count : acc + 0),
+      0,
+    )
+    return result === 0 ? '—' : result
+  }
 
-  const getBudgetCount = () =>
-    areas.reduce(
+  const getBudgetCount = () => {
+    const result = areas.reduce(
       (acc, cur) => (cur.budget ? acc + cur.budget.count : acc + 0),
       0,
     )
+    return result === 0 ? '—' : result
+  }
 
   const handleButtonToggle = () => setOpen(!open)
 

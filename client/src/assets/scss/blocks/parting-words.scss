@@ -5,7 +5,7 @@
 
   img {
     grid-column: 1 / 2;
-    grid-row: 1 / 4;
+    grid-row: 2 / 4;
     height: 100%;
     object-fit: cover;
   }
@@ -13,6 +13,13 @@
     margin: 0;
     font-size: 16px;
     line-height: 150%;
+  }
+  h2,
+  p {
+    grid-column: 2 / 3;
+  }
+  .title {
+    margin-bottom: 0;
   }
 }
 .parting-words__title {
@@ -25,14 +32,13 @@
 
   & + small {
     display: block;
-    // margin-bottom: 25px;
     @include text;
   }
 }
 
 @media (max-width: 1440px) {
   .parting-words__container img {
-    height: 50%;
+    height: 70%;
   }
 }
 @media (max-width: 1024px) {
@@ -43,6 +49,10 @@
       grid-row: 2 / 3;
       width: 100%;
       height: auto;
+    }
+    h2,
+    p {
+      grid-column: 1 / 2;
     }
   }
 }
