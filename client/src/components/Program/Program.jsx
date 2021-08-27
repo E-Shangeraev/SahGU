@@ -22,6 +22,7 @@ const Program = React.memo(() => {
   const [magistracy, setMagistracy] = useState()
   const [activeQualification, setActiveQualification] = useState(0)
   const programDescriptionRef = useRef()
+  const areaList = useRef()
 
   const onSelectQualification = e => {
     setActiveQualification(+e.target.value)
@@ -71,11 +72,11 @@ const Program = React.memo(() => {
                 onClick={onSelectQualification}>
                 Бакалавриат
               </button>
-              <ul>
+              <ul ref={areaList}>
                 {areasLoaded &&
                   bachelors &&
                   bachelors.map(item => (
-                    <li key={uuidv4()}>
+                    <li key={item._id}>
                       <button
                         type="button"
                         id={item._id}
@@ -103,7 +104,7 @@ const Program = React.memo(() => {
                 {areasLoaded &&
                   magistracy &&
                   magistracy.map(item => (
-                    <li key={uuidv4()}>
+                    <li key={item._id}>
                       <button
                         type="button"
                         id={item._id}
