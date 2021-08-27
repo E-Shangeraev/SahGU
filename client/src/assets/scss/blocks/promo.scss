@@ -251,12 +251,12 @@ span.promo__title {
 @media (max-width: 1600px) {
   .promo__two-diplomas {
     right: 90px;
+
+    img {
+      width: 50%;
+      right: 190px;
+    }
   }
-  // h1.promo__title,
-  // span.promo__title,
-  // .promo__title b {
-  //   font-size: 50px;
-  // }
 }
 @media (max-width: 1440px) {
   .promo {
@@ -275,15 +275,9 @@ span.promo__title {
   }
   .promo__two-diplomas {
     img {
-      width: 50%;
-      right: 70px;
+      right: 160px;
     }
   }
-  // h1.promo__title,
-  // span.promo__title,
-  // .promo__title b {
-  //   font-size: 46px;
-  // }
 }
 @media (max-width: 1366px) {
   .promo {
@@ -296,9 +290,6 @@ span.promo__title {
           right: -15%;
         }
       }
-    }
-    .wrapper {
-      // padding-top: 195px;
     }
   }
   .promo__two-diplomas {
@@ -313,6 +304,12 @@ span.promo__title {
   span.promo__title,
   .promo__title b {
     font-size: 42px;
+  }
+}
+@media (max-width: 1280px) {
+  .promo__two-diplomas img {
+    right: 60px;
+    width: 40%;
   }
 }
 @media (max-width: 1200px) {

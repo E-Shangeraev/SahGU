@@ -24,7 +24,7 @@ const Steps = React.memo(({ qualification, url }) => {
           <h2 className="title steps__title">
             Шаги: <br />
             как поступить <br />
-            <span>на {qualification}?</span>
+            <span>{qualification}?</span>
           </h2>
           <ul className="steps__list">
             {steps.length

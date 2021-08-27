@@ -118,7 +118,6 @@ const Comission = () => (
           <div className="schedule__container">
             <ScheduleCard
               institute="Сахалинский государственный университет"
-              secretary="Чусовитина Марина Юрьевна"
               time={[
                 'Пн-Пт 9.00 – 17.00',
                 'Перерыв 13.00 – 14.00',
@@ -129,11 +128,11 @@ const Comission = () => (
               phone={[
                 {
                   number: '8 (4242) 45-03-00',
-                  conditions: ' (WhatsApp)',
+                  conditions: '',
                 },
                 {
                   number: '8-962-115-57-47',
-                  conditions: ' (только sms)',
+                  conditions: ' (WhatsApp, только для сообщений)',
                 },
               ]}
               email="pk@sakhgu.ru"
@@ -148,7 +147,6 @@ const Comission = () => (
             <ScheduleCard
               institute="Южно-Сахалинский педагогический
             колледж СахГУ (ЮСПК СахГУ)"
-              secretary="Коваль Наталья Сергеевна"
               time={[
                 'Пн-Пт 9.00 – 17.00',
                 'Сб 10.00 – 13.00',
@@ -167,7 +165,6 @@ const Comission = () => (
             <ScheduleCard
               institute="Политехнический колледж СахГУ
             (ПТК СахГУ)"
-              secretary="Лаврик Марина Витальевна"
               time={[
                 'Пн-Пт 9.00 – 17.00',
                 'Перерыв 13.00 – 14.00',
@@ -190,7 +187,6 @@ const Comission = () => (
             <ScheduleCard
               institute="Александровск-Сахалинский колледж
             (филиал) СахГУ (АСК(ф) СахГУ)"
-              secretary="Меркулова Ирина Александровна"
               time={[
                 'Пн-Чт 8.00 – 15.45',
                 'Перерыв 12.00 – 12.30',

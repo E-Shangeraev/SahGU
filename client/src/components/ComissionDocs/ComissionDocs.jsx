@@ -33,7 +33,7 @@ const ComissionDocs = ({ name, apiName }) => {
                   <a href={`${AWS_URL}${file}`}>
                     {file
                       .split('/')[1]
-                      .replace(/\.(docx|doc|pdf|txt|xls|xlsx)/, '')
+                      .replace(/\.(docx|doc|pdf|txt|xls|xlsx)/gi, '')
                       .replace(/-/g, ' ')}
                   </a>
                 </li>

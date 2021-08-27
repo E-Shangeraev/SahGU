@@ -8,24 +8,10 @@ import phoneIcon from '@assets/img/icons/phone.svg'
 import mailIcon from '@assets/img/icons/mail-2.svg'
 import './ScheduleCard.scss'
 
-const ScheduleCard = ({
-  institute,
-  secretary,
-  time,
-  address,
-  phone,
-  email,
-}) => (
+const ScheduleCard = ({ institute, time, address, phone, email }) => (
   <div className="schedule-card">
     <h4 className="schedule-card__institute">{institute}</h4>
     <ul className="schedule-card__contacts">
-      <li>
-        <p>
-          <img src={manIcon} alt="Иконка секретаря" />
-          <b>Секретарь:</b>
-        </p>
-        <span>{secretary}</span>
-      </li>
       <li>
         <p>
           <img src={timeIcon} alt="Иконка часов" />
@@ -71,7 +57,6 @@ const ScheduleCard = ({
 
 ScheduleCard.propTypes = {
   institute: PropTypes.string.isRequired,
-  secretary: PropTypes.string.isRequired,
   time: PropTypes.arrayOf(PropTypes.string).isRequired,
   address: PropTypes.string.isRequired,
   phone: PropTypes.arrayOf(PropTypes.object).isRequired,

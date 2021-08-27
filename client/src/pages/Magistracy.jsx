@@ -10,9 +10,14 @@ import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import Steps from '@components/Steps/Steps'
 import InstitutesAndAreas from '@components/InstitutesAndAreas/InstitutesAndAreas'
 import Slider from '@components/Slider/Slider'
+import { Gosuslugi, Mail, Personal, Post } from '@components/DocumentsBlock'
 import Feedback from '@components/Feedback/Feedback'
 
 import promo2 from '@assets/img/BachelorAndMagistracy/promo-2.png'
+import gosuslugi from '@assets/img/icons/gosusllugi.png'
+import post from '@assets/img/icons/post.png'
+import handshake from '@assets/img/icons/handshake.png'
+import mail from '@assets/img/icons/mail.png'
 import feedback1 from '@assets/img/feedback-1.svg'
 import feedback2 from '@assets/img/feedback-2.svg'
 
@@ -28,7 +33,7 @@ const Magistracy = () => (
               animateOut="animate__fadeOut"
               animateOnce>
               <h1 className="promo__title">
-                Поступи на
+                Поступи в
                 <br />
                 <b>магистратуру</b> в СахГУ
               </h1>
@@ -70,7 +75,7 @@ const Magistracy = () => (
         animateIn="animate__fadeIn"
         animateOut="animate__fadeOut"
         animateOnce>
-        <Steps qualification="магистратуру" url="/api/steps/magistracy" />
+        <Steps qualification="в магистратуру" url="/api/steps/magistracy" />
       </ScrollAnimation>
 
       <ScrollAnimation
@@ -108,6 +113,58 @@ const Magistracy = () => (
           </div>
         </section>
       </ScrollAnimation>
+
+      <section className="documents">
+        <div className="wrapper">
+          <h2 className="title document__title">
+            Способы <span>подачи</span> документов
+          </h2>
+          <ul className="documents__ways">
+            <li className="documents-way">
+              <img src={gosuslugi} alt="Через  личный кабинет на Госуслугах" />
+              <span className="documents-way__name">
+                Через личный кабинет на Госуслугах
+              </span>
+              <Modal
+                btnText="Подробнее"
+                btnColor="purple"
+                containerClass="documents__modal documents__modal--gosuslugi">
+                <Gosuslugi />
+              </Modal>
+            </li>
+            <li className="documents-way">
+              <img src={post} alt="Почтой России" />
+              <span className="documents-way__name">Почтой России</span>
+              <Modal
+                btnText="Подробнее"
+                btnColor="purple"
+                containerClass="documents__modal documents__modal--post">
+                <Post />
+              </Modal>
+            </li>
+            <li className="documents-way">
+              <img src={handshake} alt="Лично" />
+              <span className="documents-way__name">Лично</span>
+              <Modal
+                btnText="Подробнее"
+                btnColor="purple"
+                containerClass="documents__modal documents__modal--personal">
+                <Personal />
+              </Modal>
+            </li>
+            <li className="documents-way">
+              <img src={mail} alt="По электронной почте" />
+              <span className="documents-way__name">По электронной почте</span>
+              <Modal
+                btnText="Подробнее"
+                btnColor="purple"
+                containerClass="documents__modal documents__modal--mail">
+                <Mail />
+              </Modal>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       <ScrollAnimation
         animateIn="animate__fadeIn"

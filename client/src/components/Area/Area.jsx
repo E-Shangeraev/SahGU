@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import PropTypes from 'prop-types'
 import Modal from '@components/Modal/Modal'
@@ -33,7 +34,9 @@ const Area = ({ item }) => {
     <li className="area">
       {name && <span className="area__name">{name}</span>}
       {twoDiplomas ? (
-        <span className="bage">Программа «Два Диплома»</span>
+        <Link to="/two-diplomas" target="_blank" className="bage">
+          Программа «Два Диплома»
+        </Link>
       ) : null}
       <ul className="area__count">
         {budget && (

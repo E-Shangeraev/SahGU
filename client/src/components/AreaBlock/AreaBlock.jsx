@@ -2,6 +2,7 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './AreaBlock.scss'
@@ -24,7 +25,11 @@ const AreaBlock = React.memo(({ item, year }) => {
   return (
     <div className="area-block">
       {name && <h3 className="area__name">{name}</h3>}
-      {twoDiplomas && <span className="bage">Программа «2 диплома»</span>}
+      {twoDiplomas && (
+        <Link to="/two-diplomas" target="_blank" className="bage">
+          Программа «2 диплома»
+        </Link>
+      )}
       {twoDiplomasDesc && (
         <p className="text area-block__text">{twoDiplomasDesc}</p>
       )}
