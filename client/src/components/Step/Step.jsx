@@ -50,6 +50,11 @@ const Step = ({ item, onStepClick, isActive }) => {
                       : uploadedFile.filename[index]}
                   </a>
                 ))}
+                {number === 3 && (
+                  <a href="#4" className="button button--outlined">
+                    Подать документы
+                  </a>
+                )}
               </p>
             ) : null}
             {number === 1 && (

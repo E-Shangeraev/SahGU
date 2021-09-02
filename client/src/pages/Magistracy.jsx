@@ -114,7 +114,7 @@ const Magistracy = () => (
         </section>
       </ScrollAnimation>
 
-      <section className="documents">
+      <section className="documents" id="4">
         <div className="wrapper">
           <h2 className="title document__title">
             Способы <span>подачи</span> документов
