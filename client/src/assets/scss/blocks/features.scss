@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  overflow: visible !important;
+  overflow: hidden !important;
 
   .react-parallax-content {
     width: 100%;
@@ -10,7 +10,7 @@
 }
 .features__parallax-2 {
   height: 100%;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 .features__bg-2 {
   width: 70% !important;

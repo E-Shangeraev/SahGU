@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: #fff;
 }
 .filter__list {
   display: grid;
@@ -11,7 +10,6 @@
   grid-gap: 48px;
   margin-top: 30px;
   width: 100%;
-  background: #fff;
 }
 @media (max-width: 1440px) {
   .filter__list {
