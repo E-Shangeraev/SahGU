@@ -4,6 +4,7 @@ const StepsSchema = new Schema({
   number: { type: Number, required: true, unique: true },
   title: { type: String, required: true },
   subtitle: { type: String, required: true },
+  uploadedImage: JSON,
   text: { type: String, required: true },
   fileNames: [String],
   uploadedFile: JSON,

@@ -2,12 +2,21 @@ import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { v4 as uuidv4 } from 'uuid'
+import program from '@assets/img/program.jpg'
 import './Step.scss'
 
 const AWS_URL = 'https://sakhgu-images.s3.eu-central-1.amazonaws.com/'
 
 const Step = ({ item, onStepClick, isActive }) => {
-  const { number, title, subtitle, text, uploadedFile, fileNames } = item
+  const {
+    number,
+    title,
+    subtitle,
+    uploadedImage,
+    text,
+    uploadedFile,
+    fileNames,
+  } = item
 
   const collapsibleRef = useRef()
 
@@ -35,6 +44,13 @@ const Step = ({ item, onStepClick, isActive }) => {
           <h3 className="step__title">{title}</h3>
           <h4 className="step__subtitle">{subtitle}</h4>
           <div className="step__collapsible" ref={collapsibleRef}>
+            {uploadedImage && uploadedImage.path && (
+              <img
+                className="step__image"
+                src={`${AWS_URL}${uploadedImage.path}`}
+                alt="Фотография с занятия"
+              />
+            )}
             <p className="step__text">{text}</p>
             {uploadedFile && uploadedFile.path.length ? (
               <p className="step__links">

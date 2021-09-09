@@ -49,6 +49,12 @@
   font-size: 22px;
   line-height: 120%;
 }
+.step__image {
+  margin: 1em 0;
+  min-height: 150px;
+  object-fit: cover;
+  border-radius: 16px;
+}
 .step__collapsible {
   max-height: 0;
   overflow: hidden;
@@ -230,5 +236,10 @@
   }
   .step__links a {
     padding: 10px;
+  }
+  .step__image {
+    margin: 0.5em 0;
+    min-height: 100px;
+    border-radius: 6px;
   }
 }

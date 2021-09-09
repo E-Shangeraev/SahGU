@@ -4,11 +4,12 @@ const features = require('../features')
 
 /** @type {AdminJS.ResourceOtions} */
 const options = {
-  listProperties: ['number', 'title', 'subtitle', 'text'],
+  listProperties: ['number', 'title', 'uploadedImage', 'subtitle', 'text'],
   editProperties: [
     'number',
     'title',
     'subtitle',
+    'uploadedImage',
     'text',
     'fileNames',
     'uploadedFile',
