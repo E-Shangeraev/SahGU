@@ -1,7 +1,7 @@
 const { ContactsMain: ContactsMainModel } = require('../models/ContactsMain')
 
 class ContactsMainСontroller {
-  getItems = async (req, res) => {
+  getOne = async (req, res) => {
     try {
       const items = await ContactsMainModel.findOne()
       res.status(200).json(items)

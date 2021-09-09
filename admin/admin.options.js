@@ -16,6 +16,7 @@ const {
   SSEDocumentsOptions: SSEDocuments,
   ContactsMain,
   Contacts,
+  ContactsSecretary,
 } = require('./resourceOptions')
 
 AdminJS.registerAdapter(AdminJSMongoose)
@@ -50,6 +51,7 @@ const options = {
         SSEDocuments: 'СПО',
         ContactsMain: 'Главная',
         Contacts: 'Контакты',
+        ContactsSecretary: 'Ответственный секретарь',
       },
       buttons: {
         filter: 'Фильтр',
@@ -182,6 +184,14 @@ const options = {
             email: 'Эл.почта',
           },
         },
+        ContactsSecretary: {
+          properties: {
+            name: 'Имя',
+            address: 'Адрес',
+            phone: 'Номер телефона',
+            email: 'Эл.почта',
+          },
+        },
       },
     },
   },
@@ -200,6 +210,7 @@ const options = {
     SSEDocuments,
     ContactsMain,
     Contacts,
+    ContactsSecretary,
   ],
   branding: {
     companyName: 'СахГУ',
