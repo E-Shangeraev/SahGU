@@ -19,7 +19,7 @@ const Institute = ({ name, social, areas }) => {
 
   const getPaidCount = () => {
     const result = areas.reduce(
-      (acc, cur) => (cur.paid ? acc + cur.paid.count : acc + 0),
+      (acc, cur) => (cur.paid ? acc + (cur.paid.count || 0) : acc + 0),
       0,
     )
     return result === 0 ? '—' : result
@@ -27,7 +27,7 @@ const Institute = ({ name, social, areas }) => {
 
   const getBudgetCount = () => {
     const result = areas.reduce(
-      (acc, cur) => (cur.budget ? acc + cur.budget.count : acc + 0),
+      (acc, cur) => (cur.budget ? acc + (cur.budget.count || 0) : acc + 0),
       0,
     )
     return result === 0 ? '—' : result
@@ -37,7 +37,7 @@ const Institute = ({ name, social, areas }) => {
 
   const getWordEnding = (num, word) => {
     const str = num.toString()
-    if (str.match(/[11-20]$/g)) {
+    if (str.match(/1[0-9]$/g)) {
       return word
     }
     if (str.match(/1$/g)) {

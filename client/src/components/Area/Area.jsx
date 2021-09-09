@@ -14,7 +14,7 @@ const Area = ({ item }) => {
   const getWordEnding = (num, word) => {
     if (num) {
       const str = num.toString()
-      if (str.match(/[11-20]$/g)) {
+      if (str.match(/1[0-9]$/g)) {
         return word
       }
       if (str.match(/1$/g)) {
