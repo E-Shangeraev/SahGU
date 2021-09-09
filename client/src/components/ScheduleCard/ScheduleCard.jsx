@@ -37,8 +37,8 @@ const ScheduleCard = ({ institute, time, address, phone, email }) => (
           {phone.length
             ? phone.map(item => (
                 <p key={uuidv4()}>
-                  <a href={`tel:${item.number}`}>{item.number}</a>
-                  {item.conditions && <span>{item.conditions}</span>}
+                  <a href={`tel:${item.phone}`}>{item.phone}</a>{' '}
+                  {item.text && <span>({item.text})</span>}
                 </p>
               ))
             : null}

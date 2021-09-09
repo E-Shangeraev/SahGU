@@ -16,6 +16,15 @@ class ContactsDocsСontroller {
       throw new Error(error.message)
     }
   }
+  getItems = async (req, res) => {
+    try {
+      const items = await this.model.find().sort({ index: 1 })
+      res.status(200).json(items)
+    } catch (error) {
+      res.status(500).json(error.message)
+      throw new Error(error.message)
+    }
+  }
 }
 
 const ContactsHE = new ContactsDocsСontroller(ContactsHEModel)

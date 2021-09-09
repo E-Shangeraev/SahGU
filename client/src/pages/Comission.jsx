@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Parallax } from 'react-parallax'
 import ScrollAnimation from 'react-animate-on-scroll'
 import { v4 as uuidv4 } from 'uuid'
@@ -17,228 +17,175 @@ import comission from '@assets/img/comission.jpg'
 import feedback1 from '@assets/img/feedback-1.svg'
 import feedback2 from '@assets/img/feedback-2.svg'
 
-const Comission = () => (
-  <main>
-    <section className="promo promo--comission">
-      <div className="wrapper">
-        <div className="promo__container">
-          <ScrollAnimation
-            animateIn="animate__fadeIn"
-            animateOut="animate__fadeOut"
-            animateOnce>
-            <h1 className="promo__title">
-              Приемная
-              <br />
-              комиссия СахГУ
-            </h1>
-          </ScrollAnimation>
+const Comission = () => {
+  const [contactsSecretary, setContactsSecretary] = useState(null)
+  const [contactsHE, setContactsHE] = useState(null)
+  const [contactsME, setContactsME] = useState([])
 
+  useEffect(async () => {
+    await fetch('/api/contacts/secretary')
+      .then(response => response.json())
+      .then(data => setContactsSecretary(data))
+    await fetch('/api/contacts/higher-education')
+      .then(response => response.json())
+      .then(data => setContactsHE(data))
+    await fetch('/api/contacts/middle-education')
+      .then(response => response.json())
+      .then(data => setContactsME(data))
+  }, [])
+
+  return (
+    <main>
+      <section className="promo promo--comission">
+        <div className="wrapper">
+          <div className="promo__container">
+            <ScrollAnimation
+              animateIn="animate__fadeIn"
+              animateOut="animate__fadeOut"
+              animateOnce>
+              <h1 className="promo__title">
+                Приемная
+                <br />
+                комиссия СахГУ
+              </h1>
+            </ScrollAnimation>
+
+            <ScrollAnimation
+              className="promo__contacts"
+              animateIn="animate__fadeInUp"
+              animateOut="animate__fadeOut"
+              delay={1000}
+              animateOnce>
+              {contactsSecretary && (
+                <ul>
+                  <li>
+                    <p>
+                      <img src={manIcon} alt="" />
+                      <b>Ответственный секретарь:</b>
+                    </p>
+                    <span>{contactsSecretary.name}</span>
+                  </li>
+                  <li>
+                    <p>
+                      <img src={mapIcon} alt="" />
+                      <b>Адрес:</b>
+                    </p>
+                    <span>{contactsSecretary.address}</span>
+                  </li>
+                  <li>
+                    <p>
+                      <img src={phoneIcon} alt="" />
+                      <b>Рабочий телефон:</b>
+                    </p>
+                    <a href={`tel:${contactsSecretary.phone}`}>
+                      {contactsSecretary.phone}
+                    </a>
+                  </li>
+                  <li>
+                    <p>
+                      <img src={mailIcon} alt="" />
+                      <b>E‑mail:</b>
+                    </p>
+                    <a href={`mailto:${contactsSecretary.email}`}>
+                      {contactsSecretary.email}
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </ScrollAnimation>
+          </div>
           <ScrollAnimation
-            className="promo__contacts"
+            className="promo__comission-image"
             animateIn="animate__fadeInUp"
             animateOut="animate__fadeOut"
             delay={1000}
             animateOnce>
-            <ul>
-              <li>
-                <p>
-                  <img src={manIcon} alt="" />
-                  <b>Ответственный секретарь:</b>
-                </p>
-                <span>Багдасарян Александр Сергеевич</span>
-              </li>
-              <li>
-                <p>
-                  <img src={mapIcon} alt="" />
-                  <b>Адрес:</b>
-                </p>
-                <span>
-                  693008, Сахалинская область,
-                  <br />
-                  г. Южно-Сахалинск, Ленина 290, <br />
-                  каб. 13
-                </span>
-              </li>
-              <li>
-                <p>
-                  <img src={phoneIcon} alt="" />
-                  <b>Рабочий телефон:</b>
-                </p>
-                <a href="tel:8 (4242) 45−03−00">8 (4242) 45−03−00</a>
-              </li>
-              <li>
-                <p>
-                  <img src={mailIcon} alt="" />
-                  <b>E‑mail:</b>
-                </p>
-                <a href="mailto:pk@sakhgu.ru">pk@sakhgu.ru</a>
-              </li>
-            </ul>
+            <img src={promo5} alt="Декоративный элемент" />
           </ScrollAnimation>
         </div>
-        <ScrollAnimation
-          className="promo__comission-image"
-          animateIn="animate__fadeInUp"
-          animateOut="animate__fadeOut"
-          delay={1000}
-          animateOnce>
-          <img src={promo5} alt="Декоративный элемент" />
-        </ScrollAnimation>
-      </div>
-    </section>
+      </section>
 
-    <section className="documents-in-modals">
-      <div className="wrapper">
-        <div className="documents-in-modals__container">
-          <ComissionDocs name="Бакалавриат" apiName="bachelor" />
-          <ComissionDocs name="Магистратура" apiName="magistracy" />
-          <ComissionDocs name="Аспирантура" apiName="graduate" />
-          <ComissionDocs
-            name="Среднее профессиональное образование"
-            apiName="sse"
-          />
+      <section className="documents-in-modals">
+        <div className="wrapper">
+          <div className="documents-in-modals__container">
+            <ComissionDocs name="Бакалавриат" apiName="bachelor" />
+            <ComissionDocs name="Магистратура" apiName="magistracy" />
+            <ComissionDocs name="Аспирантура" apiName="graduate" />
+            <ComissionDocs
+              name="Среднее профессиональное образование"
+              apiName="sse"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="schedule">
-      <div className="wrapper">
-        <h2 className="title schedule__title">
-          График работы
-          <br />
-          <span>приемной комиссии</span>
-        </h2>
-        <h3 className="subtitle schedule__subtitle">
-          Прием документов на программы высшего образования:
-        </h3>
-        <div className="schedule__container">
-          <ScheduleCard
-            institute="Сахалинский государственный университет"
-            time={[
-              'Пн-Пт 9.00 – 17.00',
-              'Перерыв 13.00 – 14.00',
-              'Сб 9.00 – 13.00',
-            ]}
-            address="693008, г. Южно-Сахалинск,
-            ул. Ленина, 290 (главный корпус)"
-            phone={[
-              {
-                number: '8 (4242) 45-03-00',
-                conditions: '',
-              },
-              {
-                number: '8-962-115-57-47',
-                conditions: ' (WhatsApp, только для сообщений)',
-              },
-            ]}
-            email="pk@sakhgu.ru"
-          />
-          <img src={comission} alt="Пользователь за ноутбуком" />
+      <section className="schedule">
+        <div className="wrapper">
+          <h2 className="title schedule__title">
+            График работы
+            <br />
+            <span>приемной комиссии</span>
+          </h2>
+          <h3 className="subtitle schedule__subtitle">
+            Прием документов на программы высшего образования:
+          </h3>
+          <div className="schedule__container">
+            {contactsHE && (
+              <ScheduleCard
+                institute={contactsHE.organization}
+                time={contactsHE.workTime}
+                address={contactsHE.address}
+                phone={contactsHE.phone}
+                email={contactsHE.email}
+              />
+            )}
+            <img src={comission} alt="Пользователь за ноутбуком" />
+          </div>
+          <h3 className="subtitle schedule__subtitle">
+            Прием документов на программы среднего профессионального
+            образования:
+          </h3>
+          <div className="schedule__container">
+            {contactsME.length > 0 &&
+              contactsME.map(item => (
+                <ScheduleCard
+                  key={uuidv4()}
+                  institute={item.organization}
+                  time={item.workTime}
+                  address={item.address}
+                  phone={item.phone}
+                  email={item.email}
+                />
+              ))}
+          </div>
         </div>
-        <h3 className="subtitle schedule__subtitle">
-          Прием документов на программы среднего профессионального образования:
-        </h3>
-        <div className="schedule__container">
-          <ScheduleCard
-            institute="Южно-Сахалинский педагогический
-            колледж СахГУ (ЮСПК СахГУ)"
-            time={[
-              'Пн-Пт 9.00 – 17.00',
-              'Сб 10.00 – 13.00',
-              'Перерыв 13.00 – 14.00',
-            ]}
-            address="693008, г. Южно-Сахалинск,
-            ул. Ленина, 284"
-            phone={[
-              {
-                number: '(4242) 45-03-40',
-                conditions: '',
-              },
-            ]}
-            email="pk_uspk@sakhgu.ru"
-          />
-          <ScheduleCard
-            institute="Политехнический колледж СахГУ
-            (ПТК СахГУ)"
-            time={[
-              'Пн-Пт 9.00 – 17.00',
-              'Перерыв 13.00 – 14.00',
-              'Сб 9.00 – 13.00',
-            ]}
-            address="693010, г. Южно-Сахалинск,
-            ул. Горького, 26"
-            phone={[
-              {
-                number: '(4242) 46-22-24',
-                conditions: '',
-              },
-              {
-                number: '8-914-743-22-06',
-                conditions: '',
-              },
-            ]}
-            email="pk_ptk@sakhgu.ru"
-          />
-          <ScheduleCard
-            institute="Александровск-Сахалинский колледж
-            (филиал) СахГУ (АСК(ф) СахГУ)"
-            time={[
-              'Пн-Чт 8.00 – 15.45',
-              'Перерыв 12.00 – 12.30',
-              'Пт 8.00 – 15.30',
-            ]}
-            address="694420, г. Александровск-Сахалинский, ул. Советская, 58"
-            phone={[
-              {
-                number: '(42434) 4-34-20',
-                conditions: '',
-              },
-            ]}
-            email="ask-f-sakhgu@mail.ru"
-          />
-          <ScheduleCard
-            institute="Охинский филиал СахГУ (ОФ СахГУ)"
-            secretary="Хамидулина Галина Фёдоровна"
-            time={['Пн-Чт 8.45 – 17.00', 'Пт  8.45 – 16.45']}
-            address="694490, г. Оха, ул. Победы, 6"
-            phone={[
-              {
-                number: '(42437) 3-44-98',
-                conditions: '',
-              },
-              {
-                number: '(42437) 4-56-97',
-                conditions: ' (факс)',
-              },
-            ]}
-            email="ask-f-sakhgu@mail.ru"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <ScrollAnimation animateIn="animate__fadeIn" animateOut="animate__fadeOut">
-      <Parallax
-        className="feedback__parallax"
-        bgClassName="feedback__bg-1"
-        bgImage={feedback1}
-        strength={150}>
+      <ScrollAnimation
+        animateIn="animate__fadeIn"
+        animateOut="animate__fadeOut">
         <Parallax
           className="feedback__parallax"
-          bgClassName="feedback__bg-2"
-          bgImage={feedback2}
-          strength={200}>
-          <Feedback
-            formId={uuidv4()}
-            title="Не можете определиться?"
-            text="Оставьте свой номер и мы поможем вам с выбором!"
-          />
+          bgClassName="feedback__bg-1"
+          bgImage={feedback1}
+          strength={150}>
+          <Parallax
+            className="feedback__parallax"
+            bgClassName="feedback__bg-2"
+            bgImage={feedback2}
+            strength={200}>
+            <Feedback
+              formId={uuidv4()}
+              title="Не можете определиться?"
+              text="Оставьте свой номер и мы поможем вам с выбором!"
+            />
+          </Parallax>
         </Parallax>
-      </Parallax>
-    </ScrollAnimation>
+      </ScrollAnimation>
 
-    <Contacts id={5} />
-  </main>
-)
+      <Contacts id={5} />
+    </main>
+  )
+}
 
 export default Comission
