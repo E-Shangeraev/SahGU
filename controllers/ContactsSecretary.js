@@ -5,8 +5,8 @@ const {
 class ContactsSecretaryСontroller {
   getOne = async (req, res) => {
     try {
-      const items = await ContactsSecretaryModel.findOne()
-      res.status(200).json(items)
+      const item = await ContactsSecretaryModel.findOne()
+      res.status(200).json(item)
     } catch (error) {
       res.status(500).json(error.message)
       throw new Error(error.message)

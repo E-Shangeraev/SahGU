@@ -14,6 +14,7 @@ const {
 const ContactsMain = require('./contactsMain')
 const Contacts = require('./contacts')
 const ContactsSecretary = require('./contactsSecretary')
+const { ContactsHE, ContactsME } = require('./contactsDocs')
 
 module.exports = {
   Admin,
@@ -31,4 +32,6 @@ module.exports = {
   ContactsMain,
   Contacts,
   ContactsSecretary,
+  ContactsHE,
+  ContactsME,
 }
