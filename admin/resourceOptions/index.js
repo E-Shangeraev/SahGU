@@ -12,6 +12,7 @@ const {
   SSEDocumentsOptions,
 } = require('./documentsInModals')
 const ContactsMain = require('./contactsMain')
+const Contacts = require('./contacts')
 
 module.exports = {
   Admin,
@@ -27,4 +28,5 @@ module.exports = {
   GraduateDocumentsOptions,
   SSEDocumentsOptions,
   ContactsMain,
+  Contacts,
 }
