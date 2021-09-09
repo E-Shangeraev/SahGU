@@ -18,6 +18,7 @@ const {
   stepsRouter,
   newsRouter,
   documentsInModalsRouter,
+  contactsRouter,
 } = require('./routes')
 
 // ==== Admin options ====
@@ -37,6 +38,7 @@ app.use('/api/institutes', instituteRouter)
 app.use('/api/steps', stepsRouter)
 app.use('/api/news', newsRouter)
 app.use('/api/documents', documentsInModalsRouter)
+app.use('/api/contacts', contactsRouter)
 
 // ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {

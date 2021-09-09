@@ -14,6 +14,7 @@ const {
   MagistracyDocumentsOptions: MagistracyDocuments,
   GraduateDocumentsOptions: GraduateDocuments,
   SSEDocumentsOptions: SSEDocuments,
+  ContactsMain,
 } = require('./resourceOptions')
 
 AdminJS.registerAdapter(AdminJSMongoose)
@@ -46,6 +47,7 @@ const options = {
         MagistracyDocuments: 'Магистратура',
         GraduateDocuments: 'Аспирантура',
         SSEDocuments: 'СПО',
+        ContactsMain: 'Главная',
       },
       buttons: {
         filter: 'Фильтр',
@@ -161,6 +163,14 @@ const options = {
             uploadedFile: 'Документы',
           },
         },
+        ContactsMain: {
+          properties: {
+            phone: 'Номер телефона',
+            email: 'Эл.почта',
+            sites: 'Сайты',
+            address: 'Адрес',
+          },
+        },
       },
     },
   },
@@ -177,6 +187,7 @@ const options = {
     MagistracyDocuments,
     GraduateDocuments,
     SSEDocuments,
+    ContactsMain,
   ],
   branding: {
     companyName: 'СахГУ',
