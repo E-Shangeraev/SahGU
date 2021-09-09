@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import classNames from 'classnames'
 
+import Header from '@components/Header/Header'
 import Footer from '@components/Footer/Footer'
 import Main from '@pages/Main'
 import TwoDiplomas from '@pages/TwoDiplomas'
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className={classNames('App', { 'visually-impared': on })}>
       <BrowserRouter>
+        <Header />
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/two-diplomas" exact component={TwoDiplomas} />
@@ -27,8 +29,8 @@ function App() {
           <Route path="/comission" exact component={Comission} />
           <Route path="/news/:id" exact component={News} />
         </Switch>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   )
 }

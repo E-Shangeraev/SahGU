@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { v4 as uuidv4 } from 'uuid'
-import program from '@assets/img/program.jpg'
 import './Step.scss'
 
 const AWS_URL = 'https://sakhgu-images.s3.eu-central-1.amazonaws.com/'

@@ -3,6 +3,7 @@ import React from 'react'
 import logoFooter from '@assets/img/logo-footer.png'
 import instagram from '@assets/img/icons/instagram.svg'
 import vk from '@assets/img/icons/vk.svg'
+import tiktok from '@assets/img/icons/tiktok-2.svg'
 import './Footer.scss'
 
 const Footer = () => (
@@ -13,19 +14,19 @@ const Footer = () => (
         <nav className="footer__nav">
           <ul>
             <li>
-              <a href="#1">Про СахГУ</a>
+              <a href="/#1">Про СахГУ</a>
             </li>
             <li>
-              <a href="#2">Направления подготовки</a>
+              <a href="/#2">Направления подготовки</a>
             </li>
             <li>
-              <a href="#3">Подать документы</a>
+              <a href="/#3">Подать документы</a>
             </li>
             <li>
-              <a href="#4">Уникальность СахГУ</a>
+              <a href="/#4">Уникальность СахГУ</a>
             </li>
             <li>
-              <a href="#5">Контакты</a>
+              <a href="/#5">Контакты</a>
             </li>
           </ul>
           <div className="footer__socials">
@@ -37,6 +38,12 @@ const Footer = () => (
             </a>
             <a href="https://vk.com/sakhgu" target="_blank" rel="noreferrer">
               <img src={vk} alt="vk" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@sakhgu?lang=ru-RU"
+              target="_blank"
+              rel="noreferrer">
+              <img src={tiktok} alt="tiktok" />
             </a>
           </div>
         </nav>

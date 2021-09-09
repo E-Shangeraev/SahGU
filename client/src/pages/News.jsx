@@ -3,7 +3,6 @@ import { useParams } from 'react-router'
 import { useLocation } from 'react-router-dom'
 import { Markup } from 'interweave'
 import axios from 'axios'
-import TemporaryHeader from '@components/Header/TemporaryHeader'
 import arrowBackIcon from '@assets/img/icons/arrow-back.svg'
 import calendarIcon from '@assets/img/icons/calendar.svg'
 import vkIcon from '@assets/img/icons/vk-2.svg'
@@ -32,83 +31,77 @@ const News = () => {
   }, [])
 
   return (
-    <>
-      <TemporaryHeader />
-      <main className="news-page">
-        <div className="news-page__wrapper wrapper">
-          <h1 className="title news-page__title">Новости</h1>
-          <button
-            type="button"
-            className="news-page__back"
-            onClick={handleBack}>
-            <img src={arrowBackIcon} alt="Стрелка назад" />
-            Назад
-          </button>
-          {article && (
-            <article className="news-page__article article">
-              <div className="article__container">
-                <h2 className="article__title">{article.title}</h2>
-                <time className="article__date">
-                  <img src={calendarIcon} alt="Иконка календаря" />
-                  <span>{new Date(article.date).toLocaleDateString()}</span>
-                </time>
-                {article.uploadedFile && (
-                  <img
-                    className="article__photo"
-                    src={`${AWS_URL}${article.uploadedFile.path}`}
-                    alt={article.title}
-                  />
-                )}
-                <div className="article__text text">
-                  <Markup content={article.text} />
-                </div>
+    <main className="news-page">
+      <div className="news-page__wrapper wrapper">
+        <h1 className="title news-page__title">Новости</h1>
+        <button type="button" className="news-page__back" onClick={handleBack}>
+          <img src={arrowBackIcon} alt="Стрелка назад" />
+          Назад
+        </button>
+        {article && (
+          <article className="news-page__article article">
+            <div className="article__container">
+              <h2 className="article__title">{article.title}</h2>
+              <time className="article__date">
+                <img src={calendarIcon} alt="Иконка календаря" />
+                <span>{new Date(article.date).toLocaleDateString()}</span>
+              </time>
+              {article.uploadedFile && (
+                <img
+                  className="article__photo"
+                  src={`${AWS_URL}${article.uploadedFile.path}`}
+                  alt={article.title}
+                />
+              )}
+              <div className="article__text text">
+                <Markup content={article.text} />
               </div>
-              <div className="article__more">
-                <b>Еще больше новостей:</b>
-                <ul className="article__socials">
-                  <li>
-                    <a
-                      href="https://vk.com/sakhgu"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="article__social article__social--vk">
-                      <img src={vkIcon} alt="Логотип ВКонтакте" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.instagram.com/sakhgu/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="article__social article__social--instagram">
-                      <img src={instagramIcon} alt="Логотип Instagram" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.tiktok.com/@sakhgu?lang=ru-RU"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="article__social article__social--tiktok">
-                      <img src={tiktokIcon} alt="Логотип TikTok" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://ok.ru/sakhgu"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="article__social arrticle__social--ok">
-                      <img src={okIcon} alt="Логотип Одноклассники" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </article>
-          )}
-        </div>
-      </main>
-    </>
+            </div>
+            <div className="article__more">
+              <b>Еще больше новостей:</b>
+              <ul className="article__socials">
+                <li>
+                  <a
+                    href="https://vk.com/sakhgu"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="article__social article__social--vk">
+                    <img src={vkIcon} alt="Логотип ВКонтакте" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/sakhgu/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="article__social article__social--instagram">
+                    <img src={instagramIcon} alt="Логотип Instagram" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@sakhgu?lang=ru-RU"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="article__social article__social--tiktok">
+                    <img src={tiktokIcon} alt="Логотип TikTok" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://ok.ru/sakhgu"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="article__social arrticle__social--ok">
+                    <img src={okIcon} alt="Логотип Одноклассники" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </article>
+        )}
+      </div>
+    </main>
   )
 }
 

@@ -4,7 +4,6 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import { Link } from 'react-scroll'
 import { v4 as uuidv4 } from 'uuid'
 
-import Header from '@components/Header/Header'
 import Feedback from '@components/Feedback/Feedback'
 import { Gosuslugi, Mail, Personal, Post } from '@components/DocumentsBlock'
 import Slider from '@components/Slider/Slider'
@@ -36,480 +35,470 @@ import graduates3 from '@assets/img/graduates-3.png'
 import partingWords from '@assets/img/parting-words.png'
 
 const Main = () => (
-  <>
-    <Header />
-    <main>
-      <section className="promo">
-        <div className="wrapper">
-          <div className="promo__container">
-            <ScrollAnimation
-              animateIn="animate__fadeIn"
-              animateOut="animate__fadeOut"
-              animateOnce>
-              <h1 className="promo__title promo__title--uppercase">
-                Сахалинский
-                <br />
-                Государственный
-                <br />
-                Университет
-                <ScrollAnimation
-                  animateIn="animate__fadeInUp"
-                  animateOut="animate__fadeOut"
-                  delay={1000}
-                  animateOnce>
-                  <span className="promo__title">— лучшее начало пути</span>
-                </ScrollAnimation>
-              </h1>
-            </ScrollAnimation>
+  <main>
+    <section className="promo">
+      <div className="wrapper">
+        <div className="promo__container">
+          <ScrollAnimation
+            animateIn="animate__fadeIn"
+            animateOut="animate__fadeOut"
+            animateOnce>
+            <h1 className="promo__title promo__title--uppercase">
+              Сахалинский
+              <br />
+              Государственный
+              <br />
+              Университет
+              <ScrollAnimation
+                animateIn="animate__fadeInUp"
+                animateOut="animate__fadeOut"
+                delay={1000}
+                animateOnce>
+                <span className="promo__title">— лучшее начало пути</span>
+              </ScrollAnimation>
+            </h1>
+          </ScrollAnimation>
 
-            <ScrollAnimation
-              animateIn="animate__fadeInUp"
-              animateOut="animate__fadeOut"
-              delay={1000}
-              animateOnce>
-              <p className="text promo__text">
-                Оставьте заявку и получите консультацию о направлениях
-                подготовки, проходных баллах и других вопросах про поступление
-              </p>
-              <div className="promo__buttons">
-                <Modal btnText="Получить консультацию" btnColor="purple">
-                  <ConsultationBlock
-                    title="Получить консультацию"
-                    text="Оставьте свои контактные данные
-                        и мы свяжемся с вами в ближайшее время"
-                  />
-                </Modal>
-                <Link smooth to="2" className="button button--outlined">
-                  Узнать больше
-                </Link>
-              </div>
-            </ScrollAnimation>
-
-            <ScrollAnimation
-              className="promo__picture"
-              animateIn="animate__fadeInUp"
-              animateOut="animate__fadeOut"
-              delay={1000}
-              animateOnce>
-              <Parallax
-                className="promo__parallax"
-                bgClassName="promo__bg"
-                bgImage={promo2}
-                strength={200}>
-                <img src={promo1} alt="Фото студентов" />
-              </Parallax>
-            </ScrollAnimation>
-          </div>
-        </div>
-      </section>
-
-      <ScrollAnimation
-        animateIn="animate__fadeIn"
-        animateOut="animate__fadeOut"
-        delay={500}
-        animateOnce>
-        <NewsSlider />
-      </ScrollAnimation>
-
-      <ScrollAnimation
-        animateIn="animate__fadeIn"
-        animateOut="animate__fadeOut"
-        delay={500}
-        animateOnce>
-        <section className="your-beginning">
-          <div className="wrapper">
-            <div className="your-beginning__container">
-              <img
-                className="your-beginning__image"
-                src={yourBeginning}
-                alt="Твоё начало пути"
-              />
-              <h2 className="title your-beginning__title">
-                Твоё <span>начало</span> пути
-              </h2>
-              <p className="big-text">
-                Многолетний опыт и сложившиеся традиции позволяют университету
-                выпускать высококлассных специалистов, которым открыты дороги во
-                все перспективные направления деятельности.
-                <br />
-                <br />
-                Сегодня Сахалинский государственный университет является
-                современным образовательным, научным и мультикультурным центром,
-                что делает востребованными выпускников СахГУ не только в России,
-                но и в странах АТР.
-              </p>
-              <Modal btnText="Хочу здесь учиться" btnColor="purple">
+          <ScrollAnimation
+            animateIn="animate__fadeInUp"
+            animateOut="animate__fadeOut"
+            delay={1000}
+            animateOnce>
+            <p className="text promo__text">
+              Оставьте заявку и получите консультацию о направлениях подготовки,
+              проходных баллах и других вопросах про поступление
+            </p>
+            <div className="promo__buttons">
+              <Modal btnText="Получить консультацию" btnColor="purple">
                 <ConsultationBlock
-                  title="Заявка на обучение"
-                  text="Оставьте свои контактные данные и мы подскажем
-                    вам что нужно для того, чтобы поступить в СахГУ"
+                  title="Получить консультацию"
+                  text="Оставьте свои контактные данные
+                        и мы свяжемся с вами в ближайшее время"
                 />
               </Modal>
+              <Link smooth to="2" className="button button--outlined">
+                Узнать больше
+              </Link>
             </div>
-          </div>
-        </section>
-      </ScrollAnimation>
+          </ScrollAnimation>
 
-      <ScrollAnimation
-        animateIn="animate__fadeInUp"
-        animateOut="animate__fadeOut"
-        animateOnce>
-        <section className="features" id="1">
-          <div className="wrapper">
+          <ScrollAnimation
+            className="promo__picture"
+            animateIn="animate__fadeInUp"
+            animateOut="animate__fadeOut"
+            delay={1000}
+            animateOnce>
             <Parallax
-              className="features__parallax-1"
-              bgClassName="features__bg"
-              bgImage={features2}
-              strength={100}>
-              <Parallax
-                className="features__parallax-2"
-                bgClassName="features__bg-2"
-                bgImage={features1}
-                strength={200}
-              />
-              <div className="features__list">
-                <ScrollAnimation
-                  animateIn="animate__fadeInUp"
-                  animateOut="animate__fadeOutDown"
-                  animateOnce>
-                  Университет дает возможность получить образование по
-                  естественно-научным, педагогическим, социальным, гуманитарным,
-                  экономическим, инженерно-техническим направлениям.
-                </ScrollAnimation>
-                <ScrollAnimation
-                  animateIn="animate__fadeInUp"
-                  animateOut="animate__fadeOutDown"
-                  animateOnce>
-                  70 лет является ведущим ВУЗом островного региона.
-                </ScrollAnimation>
-                <ScrollAnimation
-                  animateIn="animate__fadeInUp"
-                  animateOut="animate__fadeOutDown"
-                  animateOnce>
-                  Модель студенческого самоуправления и воспитательной работы
-                  СахГУ признана лучшей на Дальнем Востоке!
-                </ScrollAnimation>
-              </div>
+              className="promo__parallax"
+              bgClassName="promo__bg"
+              bgImage={promo2}
+              strength={200}>
+              <img src={promo1} alt="Фото студентов" />
             </Parallax>
-          </div>
-        </section>
-      </ScrollAnimation>
+          </ScrollAnimation>
+        </div>
+      </div>
+    </section>
 
-      <Areas />
+    <ScrollAnimation
+      animateIn="animate__fadeIn"
+      animateOut="animate__fadeOut"
+      delay={500}
+      animateOnce>
+      <NewsSlider />
+    </ScrollAnimation>
 
-      <ScrollAnimation
-        animateIn="animate__fadeIn"
-        animateOut="animate__fadeOut">
-        <Parallax
-          className="feedback__parallax"
-          bgClassName="feedback__bg-1"
-          bgImage={feedback1}
-          strength={150}>
-          <Parallax
-            className="feedback__parallax"
-            bgClassName="feedback__bg-2"
-            bgImage={feedback2}
-            strength={200}>
-            <Feedback
-              formId={uuidv4()}
-              title="Не можете определиться?"
-              text="Оставьте свой номер и мы поможем вам с выбором!"
-            />
-          </Parallax>
-        </Parallax>
-      </ScrollAnimation>
-
-      <section className="documents" id="3">
+    <ScrollAnimation
+      animateIn="animate__fadeIn"
+      animateOut="animate__fadeOut"
+      delay={500}
+      animateOnce>
+      <section className="your-beginning">
         <div className="wrapper">
-          <h2 className="title document__title">
-            Способы <span>подачи</span> документов
-          </h2>
-          <ul className="documents__ways">
-            <li className="documents-way">
-              <img src={gosuslugi} alt="Через  личный кабинет на Госуслугах" />
-              <span className="documents-way__name">
-                Через личный кабинет на Госуслугах
-              </span>
-              <Modal
-                btnText="Подробнее"
-                btnColor="purple"
-                containerClass="documents__modal documents__modal--gosuslugi">
-                <Gosuslugi />
-              </Modal>
-            </li>
-            <li className="documents-way">
-              <img src={post} alt="Почтой России" />
-              <span className="documents-way__name">Почтой России</span>
-              <Modal
-                btnText="Подробнее"
-                btnColor="purple"
-                containerClass="documents__modal documents__modal--post">
-                <Post />
-              </Modal>
-            </li>
-            <li className="documents-way">
-              <img src={handshake} alt="Лично" />
-              <span className="documents-way__name">Лично</span>
-              <Modal
-                btnText="Подробнее"
-                btnColor="purple"
-                containerClass="documents__modal documents__modal--personal">
-                <Personal />
-              </Modal>
-            </li>
-            <li className="documents-way">
-              <img src={mail} alt="По электронной почте" />
-              <span className="documents-way__name">По электронной почте</span>
-              <Modal
-                btnText="Подробнее"
-                btnColor="purple"
-                containerClass="documents__modal documents__modal--mail">
-                <Mail />
-              </Modal>
-            </li>
-          </ul>
+          <div className="your-beginning__container">
+            <img
+              className="your-beginning__image"
+              src={yourBeginning}
+              alt="Твоё начало пути"
+            />
+            <h2 className="title your-beginning__title">
+              Твоё <span>начало</span> пути
+            </h2>
+            <p className="big-text">
+              Многолетний опыт и сложившиеся традиции позволяют университету
+              выпускать высококлассных специалистов, которым открыты дороги во
+              все перспективные направления деятельности.
+              <br />
+              <br />
+              Сегодня Сахалинский государственный университет является
+              современным образовательным, научным и мультикультурным центром,
+              что делает востребованными выпускников СахГУ не только в России,
+              но и в странах АТР.
+            </p>
+            <Modal btnText="Хочу здесь учиться" btnColor="purple">
+              <ConsultationBlock
+                title="Заявка на обучение"
+                text="Оставьте свои контактные данные и мы подскажем
+                    вам что нужно для того, чтобы поступить в СахГУ"
+              />
+            </Modal>
+          </div>
         </div>
       </section>
+    </ScrollAnimation>
 
-      <ScrollAnimation
-        animateIn="animate__fadeIn"
-        animateOut="animate__fadeOut"
-        animateOnce
-        delay={500}>
-        <section className="uniqueness" id="4">
-          <div className="wrapper">
-            <div className="uniqueness__column">
-              <h2 className="title uniqueness__title">
-                <span>Уникальность</span> СахГУ
-              </h2>
-              <img
-                className="uniqueness__big-image"
-                src={uniqueness1}
-                alt="Фото студентов"
-              />
-              <div className="uniqueness__container">
-                <div>
-                  <h3 className="subtitle">Stud Life</h3>
-                  <p className="text uniqueness__text">
-                    Университет — это точка для развития и притяжения островной
-                    молодежи.
-                    <br />
-                    <br />
-                    Здесь, на Сахалине, создана мощная система студенческого
-                    самоуправления и волонтерского движения. Любой студент
-                    университета, который готов предложить проект, может быть
-                    уверен в том, что он найдет поддержку, а также у него
-                    появится возможность реализовать свою идею.
-                    <br />
-                    <br />
-                    СахГУ — это не только учеба, студенты университета могут
-                    попробовать свои силы в спорте, творчестве,
-                    социально-значимых проектах, проявить свои лидерские и
-                    организаторские способности. С этой целью в университете
-                    создано множество секций, кружков и объединений.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="subtitle">
-                    Большая стипендия — это возможно!
-                  </h3>
-                  <p className="text uniqueness__text">
-                    Для студента важно обеспечить себя во время учебы в
-                    университете.
-                    <br />
-                    <br />
-                    СахГУ дает такую возможность своим студентам, поэтому
-                    средний размер стипендии <b>превышает в&nbsp;5 раз</b>{' '}
-                    стипендии в&nbsp;Москве и&nbsp;Санкт-Петербурге.
-                    <br />
-                    <br />
-                    Государственная повышенная стипендия, которую получают
-                    студенты СахГУ за активное участие в жизни вуза, высокую
-                    успеваемость, достижения в научной, общественной, спортивной
-                    или культурно-творческой деятельности достигает
-                    <b> 20&nbsp;000&nbsp;₽</b> в месяц.
-                    <br />
-                    <br />
-                    Помимо этого, студенты могут получать социальные, именные и
-                    другие стипендии.
-                  </p>
-                </div>
-              </div>
+    <ScrollAnimation
+      animateIn="animate__fadeInUp"
+      animateOut="animate__fadeOut"
+      animateOnce>
+      <section className="features" id="1">
+        <div className="wrapper">
+          <Parallax
+            className="features__parallax-1"
+            bgClassName="features__bg"
+            bgImage={features2}
+            strength={100}>
+            <Parallax
+              className="features__parallax-2"
+              bgClassName="features__bg-2"
+              bgImage={features1}
+              strength={200}
+            />
+            <div className="features__list">
+              <ScrollAnimation
+                animateIn="animate__fadeInUp"
+                animateOut="animate__fadeOutDown"
+                animateOnce>
+                Университет дает возможность получить образование по
+                естественно-научным, педагогическим, социальным, гуманитарным,
+                экономическим, инженерно-техническим направлениям.
+              </ScrollAnimation>
+              <ScrollAnimation
+                animateIn="animate__fadeInUp"
+                animateOut="animate__fadeOutDown"
+                animateOnce>
+                70 лет является ведущим ВУЗом островного региона.
+              </ScrollAnimation>
+              <ScrollAnimation
+                animateIn="animate__fadeInUp"
+                animateOut="animate__fadeOutDown"
+                animateOnce>
+                Модель студенческого самоуправления и воспитательной работы
+                СахГУ признана лучшей на Дальнем Востоке!
+              </ScrollAnimation>
             </div>
+          </Parallax>
+        </div>
+      </section>
+    </ScrollAnimation>
+
+    <Areas />
+
+    <ScrollAnimation animateIn="animate__fadeIn" animateOut="animate__fadeOut">
+      <Parallax
+        className="feedback__parallax"
+        bgClassName="feedback__bg-1"
+        bgImage={feedback1}
+        strength={150}>
+        <Parallax
+          className="feedback__parallax"
+          bgClassName="feedback__bg-2"
+          bgImage={feedback2}
+          strength={200}>
+          <Feedback
+            formId={uuidv4()}
+            title="Не можете определиться?"
+            text="Оставьте свой номер и мы поможем вам с выбором!"
+          />
+        </Parallax>
+      </Parallax>
+    </ScrollAnimation>
+
+    <section className="documents" id="3">
+      <div className="wrapper">
+        <h2 className="title document__title">
+          Способы <span>подачи</span> документов
+        </h2>
+        <ul className="documents__ways">
+          <li className="documents-way">
+            <img src={gosuslugi} alt="Через  личный кабинет на Госуслугах" />
+            <span className="documents-way__name">
+              Через личный кабинет на Госуслугах
+            </span>
+            <Modal
+              btnText="Подробнее"
+              btnColor="purple"
+              containerClass="documents__modal documents__modal--gosuslugi">
+              <Gosuslugi />
+            </Modal>
+          </li>
+          <li className="documents-way">
+            <img src={post} alt="Почтой России" />
+            <span className="documents-way__name">Почтой России</span>
+            <Modal
+              btnText="Подробнее"
+              btnColor="purple"
+              containerClass="documents__modal documents__modal--post">
+              <Post />
+            </Modal>
+          </li>
+          <li className="documents-way">
+            <img src={handshake} alt="Лично" />
+            <span className="documents-way__name">Лично</span>
+            <Modal
+              btnText="Подробнее"
+              btnColor="purple"
+              containerClass="documents__modal documents__modal--personal">
+              <Personal />
+            </Modal>
+          </li>
+          <li className="documents-way">
+            <img src={mail} alt="По электронной почте" />
+            <span className="documents-way__name">По электронной почте</span>
+            <Modal
+              btnText="Подробнее"
+              btnColor="purple"
+              containerClass="documents__modal documents__modal--mail">
+              <Mail />
+            </Modal>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <ScrollAnimation
+      animateIn="animate__fadeIn"
+      animateOut="animate__fadeOut"
+      animateOnce
+      delay={500}>
+      <section className="uniqueness" id="4">
+        <div className="wrapper">
+          <div className="uniqueness__column">
+            <h2 className="title uniqueness__title">
+              <span>Уникальность</span> СахГУ
+            </h2>
+            <img
+              className="uniqueness__big-image"
+              src={uniqueness1}
+              alt="Фото студентов"
+            />
             <div className="uniqueness__container">
               <div>
-                <img src={uniqueness2} alt="Фото студентов" />
-                <h3 className="subtitle">
-                  Международные
-                  <br /> программы по обмену
-                </h3>
+                <h3 className="subtitle">Stud Life</h3>
                 <p className="text uniqueness__text">
-                  Более 25 лет развиваются отношения СахГУ с университетами
-                  Японии, Южной Кореи, Китая. Каждый семестр выделяются лучшие
-                  студенты для участия в программах по обмену. У каждого
-                  студента есть шанс получить опыт в ведущих вузах мира:
-                  Харбинский педагогический университет (Harbin Normal
-                  University, Китайская народная республика), Университет Донсо
-                  (Dongseo University, Республика Корея), Пусанский университет
-                  иностранных языков (Busan University of Foreign
-                  Studies,Республика Корея), Международный университет Саппоро
-                  (Sapporo International University, Япония), Университет
-                  Хоккайдо (Hokkaido University, Япония) и многие другие.
+                  Университет — это точка для развития и притяжения островной
+                  молодежи.
+                  <br />
+                  <br />
+                  Здесь, на Сахалине, создана мощная система студенческого
+                  самоуправления и волонтерского движения. Любой студент
+                  университета, который готов предложить проект, может быть
+                  уверен в том, что он найдет поддержку, а также у него появится
+                  возможность реализовать свою идею.
+                  <br />
+                  <br />
+                  СахГУ — это не только учеба, студенты университета могут
+                  попробовать свои силы в спорте, творчестве, социально-значимых
+                  проектах, проявить свои лидерские и организаторские
+                  способности. С этой целью в университете создано множество
+                  секций, кружков и объединений.
                 </p>
               </div>
               <div>
-                <img src={uniqueness3} alt="Фото студентов" />
-                <h3 className="subtitle">Два диплома</h3>
+                <h3 className="subtitle">Большая стипендия — это возможно!</h3>
                 <p className="text uniqueness__text">
-                  Программа «Два диплома» — это совместный образовательный
-                  проект СахГУ и крупных российских вузов.
+                  Для студента важно обеспечить себя во время учебы в
+                  университете.
                   <br />
                   <br />
-                  Студенты, участвующие в программе, помимо диплома островного
-                  вуза получают второй диплом, который дает возможность
-                  заниматься дополнительной деятельностью в рамках полученного
-                  образования.
+                  СахГУ дает такую возможность своим студентам, поэтому средний
+                  размер стипендии <b>превышает в&nbsp;5 раз</b> стипендии
+                  в&nbsp;Москве и&nbsp;Санкт-Петербурге.
                   <br />
                   <br />
-                  Программа реализуется согласно государственным требованиям и
-                  стандартам.
+                  Государственная повышенная стипендия, которую получают
+                  студенты СахГУ за активное участие в жизни вуза, высокую
+                  успеваемость, достижения в научной, общественной, спортивной
+                  или культурно-творческой деятельности достигает
+                  <b> 20&nbsp;000&nbsp;₽</b> в месяц.
                   <br />
                   <br />
-                  Для участия необходимо поступить в СахГУ на бюджетную основу и
-                  выбрать один из предложенных профилей вуза-партнера.
+                  Помимо этого, студенты могут получать социальные, именные и
+                  другие стипендии.
                 </p>
               </div>
             </div>
           </div>
-        </section>
-      </ScrollAnimation>
-
-      <ScrollAnimation
-        animateIn="animate__fadeIn"
-        animateOut="animate__fadeOut"
-        animateOnce>
-        <section className="graduates">
-          <div className="wrapper">
-            <Parallax
-              className="graduates__parallax"
-              bgClassName="graduates__bg graduates__bg-1"
-              bgImage={graduates1}
-              strength={50}>
-              <Parallax
-                className="graduates__parallax"
-                bgClassName="graduates__bg graduates__bg-2"
-                bgImage={graduates2}
-                strength={200}>
-                <Parallax
-                  className="graduates__parallax"
-                  bgClassName="graduates__bg graduates__bg-3"
-                  bgImage={graduates3}
-                  strength={100}>
-                  <div className="graduates__container">
-                    <div>
-                      <h2 className="title graduates__title">
-                        Наши <span>выпускники</span>
-                      </h2>
-                      <p className="big-text">
-                        Выпускники СахГУ работают в компаниях нефтегазовой
-                        отрасли, банковских структурах, налоговых органах, на
-                        предприятиях и научно-исследовательских учреждениях, в
-                        государственных органах.
-                        <br />
-                        <br />
-                        Ежегодно проводимый мониторинг свидетельствует, что к
-                        концу года выпуска более 86% выпускников трудоустроены.
-                        Это один из лучших результатов в России.
-                      </p>
-                    </div>
-                    <Slider />
-                  </div>
-                </Parallax>
-              </Parallax>
-            </Parallax>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      <section className="parting-words">
-        <div className="wrapper">
-          <div className="parting-words__container">
-            <img src={partingWords} alt="Мария Ганченкова — ио ректора СахГУ" />
-            <h2 className="title parting-words__title">
-              <span>Слова</span> напутствия
-            </h2>
-            <p>
-              <span className="parting-words__name">Мария Ганченкова</span>
-              <small>ио ректора СахГУ</small>
-            </p>
-            <blockquote>
-              Дорогие абитуриенты!
-              <br />
-              <br />
-              Перед вами стоит важный выбор профессионального пути во взрослой
-              жизни. Это решение позволит вам стать успешными и счастливыми.
-              <br />
-              <br />
-              Наш университет – это место, где каждый имеет возможность
-              реализовать свой личностный, научный и творческий потенциал. Это
-              место, где традиционные для классического университета
-              гуманитарные и естественно-научные направления и специальности
-              дополняются техническим образованием, востребованным на российском
-              рынке труда. Мы ведем активную работу по обмену студентами и
-              преподавателями с зарубежными вузами, а также даем возможность
-              получения дипломов двух вузов.
-              <br />
-              <br />
-              Мы делаем всё, чтобы университетское образование стало прочным
-              фундаментом профессиональных возможностей выпускников. Мы
-              заинтересованы в том, чтобы каждый выпускник обладал высоким
-              интеллектом и яркой индивидуальностью.
-              <br />
-              <br />
-              Важнейшим показателем вуза является качество подготовки его
-              выпускников. Среди наших выпускников – ученые, спортсмены,
-              руководители крупных предприятий региона.
-              <br />
-              <br />
-              Сахалинский государственный университет открывает перед вами сотни
-              дорог. Каким бы ни был выбор вашей будущей профессии, университет
-              даст вам не только образование, но и верных друзей, надежных
-              наставников, будущих деловых партнеров, наполнит смыслом и яркими
-              красками студенческие годы.
-              <br />
-              <br />
-              Мы ждем вас в стенах нашего университета.
-            </blockquote>
+          <div className="uniqueness__container">
+            <div>
+              <img src={uniqueness2} alt="Фото студентов" />
+              <h3 className="subtitle">
+                Международные
+                <br /> программы по обмену
+              </h3>
+              <p className="text uniqueness__text">
+                Более 25 лет развиваются отношения СахГУ с университетами
+                Японии, Южной Кореи, Китая. Каждый семестр выделяются лучшие
+                студенты для участия в программах по обмену. У каждого студента
+                есть шанс получить опыт в ведущих вузах мира: Харбинский
+                педагогический университет (Harbin Normal University, Китайская
+                народная республика), Университет Донсо (Dongseo University,
+                Республика Корея), Пусанский университет иностранных языков
+                (Busan University of Foreign Studies,Республика Корея),
+                Международный университет Саппоро (Sapporo International
+                University, Япония), Университет Хоккайдо (Hokkaido University,
+                Япония) и многие другие.
+              </p>
+            </div>
+            <div>
+              <img src={uniqueness3} alt="Фото студентов" />
+              <h3 className="subtitle">Два диплома</h3>
+              <p className="text uniqueness__text">
+                Программа «Два диплома» — это совместный образовательный проект
+                СахГУ и крупных российских вузов.
+                <br />
+                <br />
+                Студенты, участвующие в программе, помимо диплома островного
+                вуза получают второй диплом, который дает возможность заниматься
+                дополнительной деятельностью в рамках полученного образования.
+                <br />
+                <br />
+                Программа реализуется согласно государственным требованиям и
+                стандартам.
+                <br />
+                <br />
+                Для участия необходимо поступить в СахГУ на бюджетную основу и
+                выбрать один из предложенных профилей вуза-партнера.
+              </p>
+            </div>
           </div>
         </div>
       </section>
+    </ScrollAnimation>
 
-      <ScrollAnimation
-        animateIn="animate__fadeIn"
-        animateOut="animate__fadeOut">
+    <ScrollAnimation
+      animateIn="animate__fadeIn"
+      animateOut="animate__fadeOut"
+      animateOnce>
+      <section className="graduates">
+        <div className="wrapper">
+          <Parallax
+            className="graduates__parallax"
+            bgClassName="graduates__bg graduates__bg-1"
+            bgImage={graduates1}
+            strength={50}>
+            <Parallax
+              className="graduates__parallax"
+              bgClassName="graduates__bg graduates__bg-2"
+              bgImage={graduates2}
+              strength={200}>
+              <Parallax
+                className="graduates__parallax"
+                bgClassName="graduates__bg graduates__bg-3"
+                bgImage={graduates3}
+                strength={100}>
+                <div className="graduates__container">
+                  <div>
+                    <h2 className="title graduates__title">
+                      Наши <span>выпускники</span>
+                    </h2>
+                    <p className="big-text">
+                      Выпускники СахГУ работают в компаниях нефтегазовой
+                      отрасли, банковских структурах, налоговых органах, на
+                      предприятиях и научно-исследовательских учреждениях, в
+                      государственных органах.
+                      <br />
+                      <br />
+                      Ежегодно проводимый мониторинг свидетельствует, что к
+                      концу года выпуска более 86% выпускников трудоустроены.
+                      Это один из лучших результатов в России.
+                    </p>
+                  </div>
+                  <Slider />
+                </div>
+              </Parallax>
+            </Parallax>
+          </Parallax>
+        </div>
+      </section>
+    </ScrollAnimation>
+
+    <section className="parting-words">
+      <div className="wrapper">
+        <div className="parting-words__container">
+          <img src={partingWords} alt="Мария Ганченкова — ио ректора СахГУ" />
+          <h2 className="title parting-words__title">
+            <span>Слова</span> напутствия
+          </h2>
+          <p>
+            <span className="parting-words__name">Мария Ганченкова</span>
+            <small>ио ректора СахГУ</small>
+          </p>
+          <blockquote>
+            Дорогие абитуриенты!
+            <br />
+            <br />
+            Перед вами стоит важный выбор профессионального пути во взрослой
+            жизни. Это решение позволит вам стать успешными и счастливыми.
+            <br />
+            <br />
+            Наш университет – это место, где каждый имеет возможность
+            реализовать свой личностный, научный и творческий потенциал. Это
+            место, где традиционные для классического университета гуманитарные
+            и естественно-научные направления и специальности дополняются
+            техническим образованием, востребованным на российском рынке труда.
+            Мы ведем активную работу по обмену студентами и преподавателями с
+            зарубежными вузами, а также даем возможность получения дипломов двух
+            вузов.
+            <br />
+            <br />
+            Мы делаем всё, чтобы университетское образование стало прочным
+            фундаментом профессиональных возможностей выпускников. Мы
+            заинтересованы в том, чтобы каждый выпускник обладал высоким
+            интеллектом и яркой индивидуальностью.
+            <br />
+            <br />
+            Важнейшим показателем вуза является качество подготовки его
+            выпускников. Среди наших выпускников – ученые, спортсмены,
+            руководители крупных предприятий региона.
+            <br />
+            <br />
+            Сахалинский государственный университет открывает перед вами сотни
+            дорог. Каким бы ни был выбор вашей будущей профессии, университет
+            даст вам не только образование, но и верных друзей, надежных
+            наставников, будущих деловых партнеров, наполнит смыслом и яркими
+            красками студенческие годы.
+            <br />
+            <br />
+            Мы ждем вас в стенах нашего университета.
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <ScrollAnimation animateIn="animate__fadeIn" animateOut="animate__fadeOut">
+      <Parallax
+        className="feedback__parallax"
+        bgClassName="feedback__bg-3 "
+        bgImage={feedback3}
+        strength={150}>
         <Parallax
           className="feedback__parallax"
-          bgClassName="feedback__bg-3 "
-          bgImage={feedback3}
-          strength={150}>
-          <Parallax
-            className="feedback__parallax"
-            bgClassName="feedback__bg-4"
-            bgImage={feedback2}
-            strength={200}>
-            <Feedback
-              formId={uuidv4()}
-              title="Остались вопросы?"
-              text="Оставьте свой номер и мы проконсультируем
+          bgClassName="feedback__bg-4"
+          bgImage={feedback2}
+          strength={200}>
+          <Feedback
+            formId={uuidv4()}
+            title="Остались вопросы?"
+            text="Оставьте свой номер и мы проконсультируем
                 вас по любым вопросам, связанным с&nbsp;поступлением"
-            />
-          </Parallax>
+          />
         </Parallax>
-      </ScrollAnimation>
+      </Parallax>
+    </ScrollAnimation>
 
-      <Contacts id={5} />
-    </main>
-  </>
+    <Contacts id={5} />
+  </main>
 )
 
 export default Main

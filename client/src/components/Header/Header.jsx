@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
-// import { Link } from 'react-scroll'
-import { useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useLocation } from 'react-router-dom'
 import { Transition } from 'react-transition-group'
 import { v4 as uuidv4 } from 'uuid'
 import classNames from 'classnames'
+import setVisuallyImpared from '@redux/actions/visually-impared'
+import Button from '@components/Button/Button'
 import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './Header.scss'
@@ -13,8 +15,12 @@ const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const btnMenuRef = useRef()
   const { pathname } = useLocation()
+  const { on } = useSelector(({ visuallyImpared }) => visuallyImpared)
+  const dispatch = useDispatch()
 
   const btnMenuClickHandler = () => setToggleMenu(!toggleMenu)
+
+  const toggleToVisuallyImpared = () => dispatch(setVisuallyImpared(!on))
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -29,11 +35,12 @@ const Header = () => {
       e.keyCode === 27 ? setToggleMenu(false) : null,
     )
   }, [])
+
   return (
     <header className={classNames('header', { 'header--overlay': toggleMenu })}>
-      <a className="header__logo" href="/">
+      <Link className="header__logo" to="/">
         <img src={logo} alt="Логотип СахГУ" />
-      </a>
+      </Link>
       <div
         className={classNames('header__menu', {
           'header__menu--opened': toggleMenu,
@@ -41,36 +48,43 @@ const Header = () => {
         <nav className="header__nav">
           <ul>
             <li>
-              <a href="#1" offset={200} onClick={() => setToggleMenu(false)}>
-                Про СахГУ
-              </a>
+              <Link to="/two-diplomas" onClick={() => setToggleMenu(false)}>
+                Программа Два Диплома
+              </Link>
             </li>
             <li>
-              <a href="#2" onClick={() => setToggleMenu(false)}>
-                Направления подготовки
-              </a>
+              <Link to="/bachelor" onClick={() => setToggleMenu(false)}>
+                Бакалаврам
+              </Link>
             </li>
             <li>
-              <a href="#4" onClick={() => setToggleMenu(false)}>
-                Уникальность СахГУ
-              </a>
+              <Link to="/magistracy" onClick={() => setToggleMenu(false)}>
+                Магистрам
+              </Link>
             </li>
             <li>
-              <a href="#5" onClick={() => setToggleMenu(false)}>
+              <Link to="/comission" onClick={() => setToggleMenu(false)}>
+                Приемная комиссия
+              </Link>
+            </li>
+            <li>
+              <Link to="/contacts" onClick={() => setToggleMenu(false)}>
                 Контакты
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
         <a href="tel:8 (4242) 45−03−00" className="header__phone">
           8 (4242) 45−03−00
         </a>
-        <a
-          href="#3"
-          className="button button--purple"
-          onClick={() => setToggleMenu(false)}>
-          Подать документы
-        </a>
+
+        <Button
+          className="button--visually-impared"
+          color="white"
+          onClick={toggleToVisuallyImpared}>
+          Версия для слабовидящих
+        </Button>
+
         <Modal btnText="Получить консультацию" btnColor="yellow">
           <ConsultationBlock
             formId={uuidv4()}
