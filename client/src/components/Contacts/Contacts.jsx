@@ -43,7 +43,11 @@ const Contacts = ({ id }) => {
                   <div>
                     {contacts.sites.length > 0 &&
                       contacts.sites.map(site => (
-                        <a href={site} target="_blank" rel="noreferrer">
+                        <a
+                          key={site}
+                          href={site}
+                          target="_blank"
+                          rel="noreferrer">
                           {site}
                         </a>
                       ))}
