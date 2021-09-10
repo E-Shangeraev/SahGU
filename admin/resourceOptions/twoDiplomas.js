@@ -12,6 +12,7 @@ const options = {
     'features',
     'uploadedFile',
     'more',
+    'published',
   ],
   navigation: {
     icon: 'Certificate',

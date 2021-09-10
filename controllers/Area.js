@@ -12,11 +12,13 @@ class Area {
 
       if (qualification) {
         items = await this.model
-          .find({ [`qualification.${qualification}`]: true })
+          .find({
+            [`qualification.${qualification}`]: true,
+          })
           .populate('exams.main')
           .populate('exams.alternative')
       } else {
-        items = await this.model.find()
+        items = await this.model.find({ published: true })
       }
 
       res.status(200).json(items)

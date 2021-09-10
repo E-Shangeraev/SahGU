@@ -1,6 +1,7 @@
 const { model, Schema } = require('mongoose')
 
 const TwoDiplomasSchema = new Schema({
+  published: { type: Boolean, default: true },
   qualification: {
     type: new Schema({
       0: Boolean,

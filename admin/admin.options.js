@@ -103,6 +103,9 @@ const options = {
             features: 'Преимущества',
             uploadedFile: 'Фото',
             more: 'Подробное описание',
+            published: 'Опубликовано',
+            'published.yes': 'Да',
+            'published.no': 'Нет',
           },
         },
         Institutes: {
