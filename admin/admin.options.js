@@ -70,7 +70,7 @@ const options = {
         Areas: {
           properties: {
             qualification: 'Квалификация',
-            'qualification.0': 'Бакалавр/Специалитет',
+            'qualification.0': 'Бакалавр/Специалист',
             'qualification.1': 'Магистр',
             code: 'Код специальности',
             name: 'Название',
@@ -100,7 +100,7 @@ const options = {
             'qualification.1': 'Магистр',
             name: 'Название',
             description: 'Описание',
-            features: 'Преимущества',
+            features: 'О дипломах',
             uploadedFile: 'Фото',
             more: 'Подробное описание',
             published: 'Опубликовано',
@@ -148,28 +148,28 @@ const options = {
         },
         BachelorDocuments: {
           properties: {
-            index: 'Номер',
+            index: 'Порядковый номер',
             title: 'Заголовок',
             uploadedFile: 'Документы',
           },
         },
         MagistracyDocuments: {
           properties: {
-            index: 'Номер',
+            index: 'Порядковый номер',
             title: 'Заголовок',
             uploadedFile: 'Документы',
           },
         },
         GraduateDocuments: {
           properties: {
-            index: 'Номер',
+            index: 'Порядковый номер',
             title: 'Заголовок',
             uploadedFile: 'Документы',
           },
         },
         SSEDocuments: {
           properties: {
-            index: 'Номер',
+            index: 'Порядковый номер',
             title: 'Заголовок',
             uploadedFile: 'Документы',
           },
