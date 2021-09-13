@@ -7,6 +7,7 @@ const stepsRouter = require('./steps')
 const newsRouter = require('./news')
 const documentsInModalsRouter = require('./documents-in-modals')
 const contactsRouter = require('./contacts')
+const yourStartRouter = require('./your-start')
 
 module.exports = {
   buildAdminRouter,
@@ -18,4 +19,5 @@ module.exports = {
   newsRouter,
   documentsInModalsRouter,
   contactsRouter,
+  yourStartRouter,
 }

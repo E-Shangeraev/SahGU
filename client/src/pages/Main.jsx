@@ -11,12 +11,12 @@ import Modal from '@components/Modal/Modal'
 // eslint-disable-next-line max-len
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import NewsSlider from '@components/NewsSlider/NewsSlider'
+import YourBeginning from '@components/YourBeginning/YourBeginning'
 import Areas from '@components/Areas/Areas'
 import Contacts from '@components/Contacts/Contacts'
 
 import promo1 from '@assets/img/promo-1.png'
 import promo2 from '@assets/img/promo-2.png'
-import yourBeginning from '@assets/img/your-beginning.png'
 import features1 from '@assets/img/features-1.png'
 import features2 from '@assets/img/features-2.png'
 import feedback1 from '@assets/img/feedback-1.svg'
@@ -113,38 +113,7 @@ const Main = () => (
       animateOut="animate__fadeOut"
       delay={500}
       animateOnce>
-      <section className="your-beginning">
-        <div className="wrapper">
-          <div className="your-beginning__container">
-            <img
-              className="your-beginning__image"
-              src={yourBeginning}
-              alt="Твоё начало пути"
-            />
-            <h2 className="title your-beginning__title">
-              Твоё <span>начало</span> пути
-            </h2>
-            <p className="big-text">
-              Многолетний опыт и сложившиеся традиции позволяют университету
-              выпускать высококлассных специалистов, которым открыты дороги во
-              все перспективные направления деятельности.
-              <br />
-              <br />
-              Сегодня Сахалинский государственный университет является
-              современным образовательным, научным и мультикультурным центром,
-              что делает востребованными выпускников СахГУ не только в России,
-              но и в странах АТР.
-            </p>
-            <Modal btnText="Хочу здесь учиться" btnColor="purple">
-              <ConsultationBlock
-                title="Заявка на обучение"
-                text="Оставьте свои контактные данные и мы подскажем
-                    вам что нужно для того, чтобы поступить в СахГУ"
-              />
-            </Modal>
-          </div>
-        </div>
-      </section>
+      <YourBeginning />
     </ScrollAnimation>
 
     <ScrollAnimation
