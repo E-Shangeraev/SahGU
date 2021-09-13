@@ -20,6 +20,7 @@ const {
   documentsInModalsRouter,
   contactsRouter,
   yourStartRouter,
+  uniquenessRouter,
 } = require('./routes')
 
 // ==== Admin options ====
@@ -41,6 +42,7 @@ app.use('/api/news', newsRouter)
 app.use('/api/documents', documentsInModalsRouter)
 app.use('/api/contacts', contactsRouter)
 app.use('/api/your-start', yourStartRouter)
+app.use('/api/uniqueness', uniquenessRouter)
 
 // ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {

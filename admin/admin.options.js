@@ -20,6 +20,7 @@ const {
   ContactsHE,
   ContactsME,
   YourStart,
+  Uniqueness,
 } = require('./resourceOptions')
 
 AdminJS.registerAdapter(AdminJSMongoose)
@@ -58,6 +59,7 @@ const options = {
         ContactsHE: 'Прием документов (ВО)',
         ContactsME: 'Прием документов (СПО)',
         YourStart: 'Твое начало пути',
+        Uniqueness: 'Уникальность СахГУ',
       },
       buttons: {
         filter: 'Фильтр',
@@ -230,6 +232,13 @@ const options = {
             text: 'Текст',
           },
         },
+        Uniqueness: {
+          properties: {
+            index: 'Порядковый номер',
+            title: 'Заголовок',
+            text: 'Текст',
+          },
+        },
       },
     },
   },
@@ -252,6 +261,7 @@ const options = {
     ContactsHE,
     ContactsME,
     YourStart,
+    Uniqueness,
   ],
   branding: {
     companyName: 'СахГУ',

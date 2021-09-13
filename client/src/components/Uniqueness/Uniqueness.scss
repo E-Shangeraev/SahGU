@@ -1,3 +1,5 @@
+@import '../../assets/scss/variables.scss';
+
 .uniqueness__big-image {
   position: relative;
   width: 100%;
@@ -27,7 +29,8 @@
   padding: 0 70px;
 }
 .uniqueness__text {
-  b {
+  b,
+  strong {
     font-weight: bold;
   }
 }

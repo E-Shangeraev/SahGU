@@ -13,6 +13,7 @@ import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import NewsSlider from '@components/NewsSlider/NewsSlider'
 import YourBeginning from '@components/YourBeginning/YourBeginning'
 import Areas from '@components/Areas/Areas'
+import Uniqueness from '@components/Uniqueness/Uniqueness'
 import Contacts from '@components/Contacts/Contacts'
 
 import promo1 from '@assets/img/promo-1.png'
@@ -26,9 +27,6 @@ import gosuslugi from '@assets/img/icons/gosusllugi.png'
 import post from '@assets/img/icons/post.png'
 import handshake from '@assets/img/icons/handshake.png'
 import mail from '@assets/img/icons/mail.png'
-import uniqueness1 from '@assets/img/uniqueness-1.png'
-import uniqueness2 from '@assets/img/uniqueness-2.png'
-import uniqueness3 from '@assets/img/uniqueness-3.png'
 import graduates1 from '@assets/img/graduates-1.png'
 import graduates2 from '@assets/img/graduates-2.png'
 import graduates3 from '@assets/img/graduates-3.png'
@@ -240,109 +238,7 @@ const Main = () => (
       animateOut="animate__fadeOut"
       animateOnce
       delay={500}>
-      <section className="uniqueness" id="4">
-        <div className="wrapper">
-          <div className="uniqueness__column">
-            <h2 className="title uniqueness__title">
-              <span>Уникальность</span> СахГУ
-            </h2>
-            <img
-              className="uniqueness__big-image"
-              src={uniqueness1}
-              alt="Фото студентов"
-            />
-            <div className="uniqueness__container">
-              <div>
-                <h3 className="subtitle">Stud Life</h3>
-                <p className="text uniqueness__text">
-                  Университет — это точка для развития и притяжения островной
-                  молодежи.
-                  <br />
-                  <br />
-                  Здесь, на Сахалине, создана мощная система студенческого
-                  самоуправления и волонтерского движения. Любой студент
-                  университета, который готов предложить проект, может быть
-                  уверен в том, что он найдет поддержку, а также у него появится
-                  возможность реализовать свою идею.
-                  <br />
-                  <br />
-                  СахГУ — это не только учеба, студенты университета могут
-                  попробовать свои силы в спорте, творчестве, социально-значимых
-                  проектах, проявить свои лидерские и организаторские
-                  способности. С этой целью в университете создано множество
-                  секций, кружков и объединений.
-                </p>
-              </div>
-              <div>
-                <h3 className="subtitle">Большая стипендия — это возможно!</h3>
-                <p className="text uniqueness__text">
-                  Для студента важно обеспечить себя во время учебы в
-                  университете.
-                  <br />
-                  <br />
-                  СахГУ дает такую возможность своим студентам, поэтому средний
-                  размер стипендии <b>превышает в&nbsp;5 раз</b> стипендии
-                  в&nbsp;Москве и&nbsp;Санкт-Петербурге.
-                  <br />
-                  <br />
-                  Государственная повышенная стипендия, которую получают
-                  студенты СахГУ за активное участие в жизни вуза, высокую
-                  успеваемость, достижения в научной, общественной, спортивной
-                  или культурно-творческой деятельности достигает
-                  <b> 20&nbsp;000&nbsp;₽</b> в месяц.
-                  <br />
-                  <br />
-                  Помимо этого, студенты могут получать социальные, именные и
-                  другие стипендии.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="uniqueness__container">
-            <div>
-              <img src={uniqueness2} alt="Фото студентов" />
-              <h3 className="subtitle">
-                Международные
-                <br /> программы по обмену
-              </h3>
-              <p className="text uniqueness__text">
-                Более 25 лет развиваются отношения СахГУ с университетами
-                Японии, Южной Кореи, Китая. Каждый семестр выделяются лучшие
-                студенты для участия в программах по обмену. У каждого студента
-                есть шанс получить опыт в ведущих вузах мира: Харбинский
-                педагогический университет (Harbin Normal University, Китайская
-                народная республика), Университет Донсо (Dongseo University,
-                Республика Корея), Пусанский университет иностранных языков
-                (Busan University of Foreign Studies,Республика Корея),
-                Международный университет Саппоро (Sapporo International
-                University, Япония), Университет Хоккайдо (Hokkaido University,
-                Япония) и многие другие.
-              </p>
-            </div>
-            <div>
-              <img src={uniqueness3} alt="Фото студентов" />
-              <h3 className="subtitle">Два диплома</h3>
-              <p className="text uniqueness__text">
-                Программа «Два диплома» — это совместный образовательный проект
-                СахГУ и крупных российских вузов.
-                <br />
-                <br />
-                Студенты, участвующие в программе, помимо диплома островного
-                вуза получают второй диплом, который дает возможность заниматься
-                дополнительной деятельностью в рамках полученного образования.
-                <br />
-                <br />
-                Программа реализуется согласно государственным требованиям и
-                стандартам.
-                <br />
-                <br />
-                Для участия необходимо поступить в СахГУ на бюджетную основу и
-                выбрать один из предложенных профилей вуза-партнера.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Uniqueness />
     </ScrollAnimation>
 
     <ScrollAnimation

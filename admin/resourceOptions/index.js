@@ -16,6 +16,7 @@ const Contacts = require('./contacts')
 const ContactsSecretary = require('./contactsSecretary')
 const { ContactsHE, ContactsME } = require('./contactsDocs')
 const YourStart = require('./yourStart')
+const Uniqueness = require('./uniqueness')
 
 module.exports = {
   Admin,
@@ -36,4 +37,5 @@ module.exports = {
   ContactsHE,
   ContactsME,
   YourStart,
+  Uniqueness,
 }
