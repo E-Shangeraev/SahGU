@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
+import { Markup } from 'interweave'
 import Modal from '@components/Modal/Modal'
-import yourBeginning from '@assets/img/your-beginning.png'
 // eslint-disable-next-line max-len
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
+
+import yourBeginning from '@assets/img/your-beginning.png'
+
 import './YourBeginning.scss'
 
 const YourBeginning = () => {
-  const [text, setText] = useState(null)
+  const [content, setContent] = useState(null)
 
   useEffect(() => {
     fetch('/api/your-start')
       .then(response => response.json())
-      .then(data => setText(data))
+      .then(data => setContent(data))
   }, [])
 
   return (
@@ -26,18 +29,10 @@ const YourBeginning = () => {
           <h2 className="title your-beginning__title">
             Твоё <span>начало</span> пути
           </h2>
-          {text && (
-            <p className="big-text">
-              Многолетний опыт и сложившиеся традиции позволяют университету
-              выпускать высококлассных специалистов, которым открыты дороги во
-              все перспективные направления деятельности.
-              <br />
-              <br />
-              Сегодня Сахалинский государственный университет является
-              современным образовательным, научным и мультикультурным центром,
-              что делает востребованными выпускников СахГУ не только в России,
-              но и в странах АТР.
-            </p>
+          {content && (
+            <div className="big-text">
+              <Markup content={content.text} />
+            </div>
           )}
           <Modal btnText="Хочу здесь учиться" btnColor="purple">
             <ConsultationBlock

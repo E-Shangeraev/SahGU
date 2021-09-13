@@ -48,7 +48,7 @@
   height: 100%;
   box-sizing: border-box;
 
-  blockquote {
+  .slide__text {
     margin: 0;
     @include text;
     white-space: normal;

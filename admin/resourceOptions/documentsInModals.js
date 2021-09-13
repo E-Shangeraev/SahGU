@@ -50,7 +50,7 @@ const options = {
   editProperties: ['index', 'title', 'uploadedFile'],
   parent: {
     name: 'Документы',
-    icon: 'Education',
+    icon: 'Task',
   },
   properties: {
     mimeType: { isVisible: true },
