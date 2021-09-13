@@ -10,6 +10,7 @@ const contactsRouter = require('./contacts')
 const yourStartRouter = require('./your-start')
 const uniquenessRouter = require('./uniqueness')
 const reviewsRouter = require('./reviews')
+const rectorRouter = require('./rector')
 
 module.exports = {
   buildAdminRouter,
@@ -24,4 +25,5 @@ module.exports = {
   yourStartRouter,
   uniquenessRouter,
   reviewsRouter,
+  rectorRouter,
 }

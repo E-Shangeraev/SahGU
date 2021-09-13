@@ -22,6 +22,7 @@ const {
   YourStart,
   Uniqueness,
   Reviews,
+  Rector,
 } = require('./resourceOptions')
 
 AdminJS.registerAdapter(AdminJSMongoose)
@@ -62,6 +63,7 @@ const options = {
         YourStart: 'Твое начало пути',
         Uniqueness: 'Уникальность СахГУ',
         Reviews: 'Отзывы выпускников',
+        Rector: 'Слова напутствия',
       },
       buttons: {
         filter: 'Фильтр',
@@ -250,6 +252,14 @@ const options = {
             text: 'Текст',
           },
         },
+        Rector: {
+          properties: {
+            uploadedFile: 'Фото',
+            name: 'Имя',
+            post: 'Должность',
+            text: 'Текст',
+          },
+        },
       },
     },
   },
@@ -274,6 +284,7 @@ const options = {
     YourStart,
     Uniqueness,
     Reviews,
+    Rector,
   ],
   branding: {
     companyName: 'СахГУ',

@@ -5,12 +5,6 @@ import { Markup } from 'interweave'
 import Button from '@components/Button/Button'
 import './Slider.scss'
 
-import image1 from '@assets/img/Slider/1.jpg'
-import image2 from '@assets/img/Slider/2.jpg'
-import image3 from '@assets/img/Slider/3.jpg'
-import image4 from '@assets/img/Slider/4.jpg'
-import image5 from '@assets/img/Slider/5.jpg'
-
 const AWS_URL = 'https://sakhgu-images.s3.eu-central-1.amazonaws.com/'
 
 const Slider = () => {
@@ -48,7 +42,7 @@ const Slider = () => {
         <SlickSlider {...settings} ref={sliderRef}>
           {slides.length > 0 &&
             slides.map(item => (
-              <div className="slide">
+              <div className="slide" key={item.name}>
                 <div className="slide__top">
                   <img
                     src={`${AWS_URL}${item.uploadedFile.path}`}

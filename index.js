@@ -22,6 +22,7 @@ const {
   yourStartRouter,
   uniquenessRouter,
   reviewsRouter,
+  rectorRouter,
 } = require('./routes')
 
 // ==== Admin options ====
@@ -45,6 +46,7 @@ app.use('/api/contacts', contactsRouter)
 app.use('/api/your-start', yourStartRouter)
 app.use('/api/uniqueness', uniquenessRouter)
 app.use('/api/reviews', reviewsRouter)
+app.use('/api/rector', rectorRouter)
 
 // ==== App Start On Production ====
 if (process.env.NODE_ENV === 'production') {
