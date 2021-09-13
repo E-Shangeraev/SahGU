@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
-import manIcon from '@assets/img/icons/man.svg'
 import timeIcon from '@assets/img/icons/time.svg'
 import mapIcon from '@assets/img/icons/map.svg'
 import phoneIcon from '@assets/img/icons/phone.svg'
