@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid'
 import Feedback from '@components/Feedback/Feedback'
 import { Gosuslugi, Mail, Personal, Post } from '@components/DocumentsBlock'
 import Slider from '@components/Slider/Slider'
+import HashLink from '@components/HashLink'
 import Modal from '@components/Modal/Modal'
 // eslint-disable-next-line max-len
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
@@ -15,6 +16,7 @@ import YourBeginning from '@components/YourBeginning/YourBeginning'
 import Areas from '@components/Areas/Areas'
 import Uniqueness from '@components/Uniqueness/Uniqueness'
 import Contacts from '@components/Contacts/Contacts'
+import PartingWords from '@components/PartingWords/PartingWords'
 
 import promo1 from '@assets/img/promo-1.png'
 import promo2 from '@assets/img/promo-2.png'
@@ -30,7 +32,6 @@ import mail from '@assets/img/icons/mail.png'
 import graduates1 from '@assets/img/graduates-1.png'
 import graduates2 from '@assets/img/graduates-2.png'
 import graduates3 from '@assets/img/graduates-3.png'
-import PartingWords from '../components/PartingWords/PartingWords'
 
 const Main = () => (
   <main>
@@ -94,6 +95,28 @@ const Main = () => (
               <img src={promo1} alt="Фото студентов" />
             </Parallax>
           </ScrollAnimation>
+        </div>
+      </div>
+    </section>
+
+    <section className="anchors">
+      <div className="wrapper">
+        <div className="anchors__container">
+          <HashLink className="anchors__item" to="#1">
+            Про СахГУ
+          </HashLink>
+          <HashLink className="anchors__item" to="#2">
+            Направления подготовки
+          </HashLink>
+          <HashLink className="anchors__item" to="#documents">
+            Подать документы
+          </HashLink>
+          <HashLink className="anchors__item" to="#4">
+            Уникальность СахГУ
+          </HashLink>
+          <HashLink className="anchors__item" to="#5">
+            Контакты
+          </HashLink>
         </div>
       </div>
     </section>

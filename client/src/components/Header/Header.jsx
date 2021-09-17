@@ -1,22 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom'
-import { NavHashLink } from 'react-router-hash-link'
 import { Transition } from 'react-transition-group'
 import { v4 as uuidv4 } from 'uuid'
 import classNames from 'classnames'
 import setVisuallyImpared from '@redux/actions/visually-impared'
 import Button from '@components/Button/Button'
+import HashLink from '@components/HashLink'
 import Modal from '@components/Modal/Modal'
 import ConsultationBlock from '@components/ConsultationBlock/ConsultationBlock'
 import './Header.scss'
 import logo from './logo.png'
-
-const scrollWithOffset = el => {
-  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset
-  const yOffset = -80
-  window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
-}
 
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -81,36 +75,35 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <a href="tel:8 (4242) 45−03−00" className="header__phone">
-          8 (4242) 45−03−00
-        </a>
+        <div>
+          <a href="tel:8 (4242) 45−03−00" className="header__phone">
+            8 (4242) 45−03−00
+          </a>
 
-        <Button
-          className="button--visually-impared"
-          color="white"
-          onClick={toggleToVisuallyImpared}>
-          Версия для слабовидящих
-        </Button>
+          <Button
+            className="button--visually-impared"
+            color="white"
+            onClick={toggleToVisuallyImpared}>
+            Версия для слабовидящих
+          </Button>
 
-        {pathname === '/' ||
-        pathname === '/bachelor' ||
-        pathname === '/magistracy' ? (
-          <NavHashLink
-            className="button button--purple"
-            to="#documents"
-            scroll={el => scrollWithOffset(el)}>
-            Способы подачи документов
-          </NavHashLink>
-        ) : (
-          <Modal btnText="Получить консультацию" btnColor="yellow">
-            <ConsultationBlock
-              formId={uuidv4()}
-              title="Получить консультацию"
-              text="Оставьте свои контактные данные
+          {pathname === '/' ||
+          pathname === '/bachelor' ||
+          pathname === '/magistracy' ? (
+            <HashLink className="button button--yellow" to="#documents">
+              Подать документы
+            </HashLink>
+          ) : (
+            <Modal btnText="Получить консультацию" btnColor="yellow">
+              <ConsultationBlock
+                formId={uuidv4()}
+                title="Получить консультацию"
+                text="Оставьте свои контактные данные
             и мы свяжемся с вами в ближайшее время"
-            />
-          </Modal>
-        )}
+              />
+            </Modal>
+          )}
+        </div>
       </div>
 
       <Transition nodeRef={btnMenuRef} in={toggleMenu} timeout={500}>

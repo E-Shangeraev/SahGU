@@ -1,0 +1,38 @@
+.anchors {
+  background-color: #f8f8fc;
+}
+.anchors__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.anchors__item {
+  display: block;
+  @include big-text;
+  font-weight: bold;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: fit-content;
+  height: fit-content;
+  color: $purple;
+  text-align: left;
+  text-decoration: underline;
+  white-space: normal;
+  background-color: transparent;
+  white-space: nowrap;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .anchors__container {
+    display: block !important;
+  }
+  .anchors__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
