@@ -181,7 +181,7 @@ const Main = () => (
       </Parallax>
     </ScrollAnimation>
 
-    <section className="documents" id="3">
+    <section className="documents" id="documents">
       <div className="wrapper">
         <h2 className="title document__title">
           Способы <span>подачи</span> документов

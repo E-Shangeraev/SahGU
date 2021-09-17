@@ -23,9 +23,6 @@
     margin: 0 1%;
     font-size: 14px;
   }
-  a.button {
-    // margin-right: 2%;
-  }
 }
 .header__menu {
   display: flex;
@@ -67,7 +64,6 @@
 .header__phone {
   margin-left: 5%;
   margin-right: 1%;
-  // margin: 0 5%;
   font-size: 16px;
   font-weight: bold;
   color: $purple;
@@ -119,6 +115,7 @@
     padding: 7px 40px;
   }
   .header__menu {
+    a.button,
     button.button {
       display: none;
     }

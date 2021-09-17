@@ -110,7 +110,7 @@ const Bachelor = () => (
       </section>
     </ScrollAnimation>
 
-    <section className="documents" id="4">
+    <section className="documents" id="documents">
       <div className="wrapper">
         <h2 className="title document__title">
           Способы <span>подачи</span> документов
