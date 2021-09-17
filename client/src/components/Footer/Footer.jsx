@@ -1,5 +1,4 @@
 import React from 'react'
-// import { Link } from 'react-scroll'
 import { Link } from 'react-router-dom'
 import logoFooter from '@assets/img/logo-footer.png'
 import instagram from '@assets/img/icons/instagram.svg'
@@ -15,16 +14,16 @@ const Footer = () => (
         <nav className="footer__nav">
           <ul>
             <li>
-              <Link to="/#1">Про СахГУ</Link>
+              <Link to="/two-diplomas">Программа Два Диплома</Link>
             </li>
             <li>
-              <Link to="/#2">Направления подготовки</Link>
+              <Link to="/bachelor">Бакалаврам</Link>
             </li>
             <li>
-              <Link to="/#3">Подать документы</Link>
+              <Link to="/magistracy">Магистрам</Link>
             </li>
             <li>
-              <Link to="/#4">Уникальность СахГУ</Link>
+              <Link to="/comission">Приемная комиссия</Link>
             </li>
             <li>
               <Link to="/contacts">Контакты</Link>
