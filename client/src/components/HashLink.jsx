@@ -8,11 +8,12 @@ const scrollWithOffset = el => {
   window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
 }
 
-const HashLink = ({ to, children, className }) => (
+const HashLink = ({ to, children, className, onClick }) => (
   <NavHashLink
     className={className}
     to={to}
-    scroll={el => scrollWithOffset(el)}>
+    scroll={el => scrollWithOffset(el)}
+    onClick={onClick}>
     {children}
   </NavHashLink>
 )
@@ -21,10 +22,12 @@ HashLink.propTypes = {
   to: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  onClick: PropTypes.func,
 }
 
 HashLink.defaultProps = {
   className: null,
+  onClick: null,
 }
 
 export default HashLink

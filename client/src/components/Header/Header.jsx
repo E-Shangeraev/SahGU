@@ -90,7 +90,10 @@ const Header = () => {
           {pathname === '/' ||
           pathname === '/bachelor' ||
           pathname === '/magistracy' ? (
-            <HashLink className="button button--yellow" to="#documents">
+            <HashLink
+              className="button button--yellow"
+              to="#documents"
+              onClick={() => setToggleMenu(false)}>
               Подать документы
             </HashLink>
           ) : (

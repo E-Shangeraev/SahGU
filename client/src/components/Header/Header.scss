@@ -121,11 +121,6 @@
   .header {
     padding: 7px 40px;
   }
-  .header__menu {
-    button.button {
-      display: none;
-    }
-  }
   .button--visually-impared {
     display: flex !important;
     justify-content: center;
@@ -146,8 +141,11 @@
   }
 }
 @media (max-width: 1280px) {
-  .header__menu a.button {
-    display: none;
+  .header__menu {
+    button.button,
+    a.button {
+      display: none;
+    }
   }
 }
 @media (max-width: 1200px) {
@@ -222,8 +220,8 @@
       margin-bottom: 20px;
     }
     button.button {
-      margin-bottom: 20px;
       display: block;
+      margin-bottom: 20px;
     }
     .button--visually-impared {
       width: 100% !important;

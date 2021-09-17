@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import Step from '@components/Step/Step'
 import feedback1 from '@assets/img/feedback-1.svg'
-import feedback2 from '@assets/img/feedback-2.svg'
 import feedback3 from '@assets/img/feedback-4.svg'
 import './Steps.scss'
 
