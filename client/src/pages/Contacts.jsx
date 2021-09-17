@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState, useEffect } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import mapIcon from '@assets/img/icons/map.svg'
 import vkIcon from '@assets/img/icons/vk-2.svg'
 import instagramIcon from '@assets/img/icons/instagram.svg'
@@ -94,7 +95,7 @@ const Contacts = () => {
             <ul className="contacts-page__cards">
               {contacts.length > 0 &&
                 contacts.map(contact => (
-                  <li>
+                  <li key={uuidv4()}>
                     <h4>{contact.title}:</h4>
                     <address>
                       Адрес: {contact.address},
