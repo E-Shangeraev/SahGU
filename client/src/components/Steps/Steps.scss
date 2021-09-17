@@ -17,6 +17,27 @@
   border-radius: 24px;
   background-color: $blue;
 }
+.step__picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  z-index: -1;
+}
+.step__parallax {
+  overflow: visible !important;
+}
+.step__bg-1 {
+  top: 10% !important;
+  left: 10% !important;
+  width: auto !important;
+}
+.step__bg-2 {
+  top: 80% !important;
+  left: 25% !important;
+  width: auto !important;
+  z-index: 2 !important;
+}
 
 @media (max-width: 1440px) {
   .steps__list {
@@ -31,6 +52,14 @@
     br:first-child {
       display: none;
     }
+  }
+}
+@media (max-width: 800px) {
+  .step__picture {
+    width: 100%;
+  }
+  .step__bg-1 {
+    width: 20% !important;
   }
 }
 @media (max-width: 768px) {
