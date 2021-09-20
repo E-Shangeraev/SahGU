@@ -63,12 +63,26 @@
     margin-right: 20px;
   }
 }
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .footer__policy {
   @include text;
   color: #fff;
   transition: ease 0.25s;
 
   &:hover {
+    color: $yellow;
+  }
+}
+.footer__made-by {
+  font-size: 14px;
+  span {
+    color: #fff;
+  }
+  a {
     color: $yellow;
   }
 }
@@ -121,6 +135,16 @@
     li:not(:last-of-type) {
       margin-bottom: 15px;
     }
+  }
+  .footer__bottom {
+    display: block;
+  }
+  .footer__policy {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  .footer__made-by {
+    font-size: 12px;
   }
 }
 @media (max-width: 500px) {

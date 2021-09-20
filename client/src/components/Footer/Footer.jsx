@@ -47,12 +47,20 @@ const Footer = () => (
             </a>
           </div>
         </nav>
-        <a
-          className="footer__policy"
-          href="/Politika_v_otnoshenii_obrabotki_personalnykh_dannykh.pdf"
-          target="_blank">
-          Согласие на обработку персональных данных
-        </a>
+        <div className="footer__bottom">
+          <a
+            className="footer__policy"
+            href="/Politika_v_otnoshenii_obrabotki_personalnykh_dannykh.pdf"
+            target="_blank">
+            Согласие на обработку персональных данных
+          </a>
+          <p className="footer__made-by">
+            <span>©2021 Разработано компанией </span>
+            <a href="http://mygang.ru" target="_blank" rel="noreferrer">
+              Gang
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   </footer>
